@@ -1,0 +1,31 @@
+{{ define "content" }}
+<form class="form-signin" role="form" action="/sign_up_account" method="post">
+  <h2 class="form-signin-heading">
+    <i class="fa fa-signal">
+      Ewe
+    </i>
+  </h2>
+
+  <div class="lead">Register for an account below</div>
+
+  <input id="name" name="name" class="form-control" placeholder="Name">
+
+  <input id="account"  name="account" class="form-control" placeholder="Account">
+
+  <input id="findPassword"  type="password" name="findPassword" class="form-control"
+         placeholder="String uses to find your password">
+
+  <input id="password"type="password" name="password" class="form-control" placeholder="Password">
+   <br/>
+  <br/>
+
+  <input id="conformFindPassword" type="password" name="conformFindPassword" class="form-control" placeholder="Conform string" >
+
+  <input type="password" id="conformPassword" name="conformPassword" class="form-control" placeholder="Conform password">
+  <br/>
+  <br/>
+  <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="return checkConform()">Submit</button>
+
+</form>
+
+{{ end }}

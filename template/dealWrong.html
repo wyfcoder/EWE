@@ -1,0 +1,13 @@
+{{ define "content" }}
+        <p class="lead" >
+            Wrongs
+        </p>
+        <textarea rows="3" class="form-control" readonly="readonly" >{{.Wrong}}</textarea>
+            <br/>
+        <p class="lead">
+            Solutions
+        </p>
+        <textarea rows="3" class="form-control" readonly>{{.Solustion}}</textarea>
+        <br/>
+        <p class="lead"><a href="{{.Way}}">Ok</a></p>
+{{ end }}

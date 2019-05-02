@@ -1,0 +1,17 @@
+{{ define "content" }}
+
+    <form class="form-signin center" role="form" action="/deal_forget" method="post">
+        <h2 class="form-signin-heading">
+            <i class="fa fa-signal">
+                Ewe
+            </i>
+        </h2>
+        <div class="lead">Find back your account</div>
+        <br/>
+        <input name="accountOrName" class="form-control" placeholder="Account | Name" required autofocus>
+        <input name="findPassword" type="password" class="form-control" placeholder="String" required>
+        <br/>
+        <br/>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">findBack</button>
+    </form>
+{{ end }}

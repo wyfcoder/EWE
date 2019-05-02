@@ -1,0 +1,23 @@
+{{ define "content" }}
+    <p class="lead">
+        <a href="/download">Download</a>
+    </p>
+
+    {{ range . }}
+
+        <div class="panel panel-default">
+
+            <div class="panel-heading">
+                <span class="lead"> <i class="fa fa-star-o"></i> {{.GetTitle}}-{{.GetTag}}</span>
+            </div>
+
+            <div class="panel-body">
+                <a>{{.GetDate}}</a>
+                <div class="pull-right"><a href="/downloadFile?path={{.GetPath}}" download={{.GetTitle}}>Download</a></div>
+            </div>
+
+        </div>
+    {{else}}
+        <p class="lead">Don't have any file.</p>
+    {{ end }}
+{{ end }}

@@ -1,0 +1,61 @@
+{{ define "content" }}
+
+    <p class="lead"><a>Upload a new file</a></p>
+
+    <form action="/uploadFileM" method="post"  enctype="multipart/form-data">
+
+        <div id="file">
+
+            <input class="form-control" placeholder="Title" id="title" name="title" required>
+            <br/>
+
+            <select class="form-control" name="tag" id="tag">
+                <option>.pdf</option>
+                <option>.png</option>
+                <option>.dat</option>
+                <option>.txt</option>
+                <option>.rar</option>
+                <option>.exe</option>
+                <option>.apk</option>
+                <option>.ppt</option>
+                <option>.ppxt</option>
+                <option>.doc</option>
+                <option>.docx</option>
+                <option>.xls</option>
+                <option>.xlsx</option>
+            </select>
+
+            <br/>
+            <input type="file"  id="upload" name="upload" required/>
+
+            <p class="help-block">Data file.File size does not exceed 1G</p>
+
+        </div>
+        <br/>
+        <button class="btn btn-primary button">Go</button>
+    </form>
+    <br/>
+
+    <p class="lead"><a>Exist Files</a></p>
+
+
+     {{ range . }}
+
+        <div class="panel panel-default">
+
+            <div class="panel-heading">
+                <span class="lead"> <i class="fa fa-star-o"></i> {{.GetTitle}}-{{.GetTag}}</span>
+                <div class="pull-right"><a href="/deleteMFile?Date={{.GetDate}}&Name={{.GetTitle}}&Path={{.GetPath}}"><i class="fa fa-remove"></i></a></div>
+            </div>
+
+            <div class="panel-body">
+                <a>{{.GetDate}}</a>
+                <div class="pull-right"><a href="/downloadFile?path={{.GetPath}}&name={{.GetTitle}}{{.GetTag}}">Download</a></div>
+            </div>
+
+        </div>
+    {{else}}
+        <p class="lead">Don't have any file,You can upload one.</p>
+    {{ end }}
+
+{{end}}

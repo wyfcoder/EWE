@@ -1,0 +1,25 @@
+{{ define "content" }}
+    <p class="lead"><a href="/upload">Upload Data</a></p>
+<form method="post" action="/checkUploadFile" enctype="multipart/form-data">
+    <input name="name" class="form-control" placeholder="Name of the file" required>
+    <br/>
+    <input class="form-control" id="describe" name="describe"  placeholder="Describe of the file" required> </input>
+    <br/>
+    <br/>
+    <select class="form-control" name="selectType" id="selectType">
+        <option>2D Scatter Diagram</option>
+        <option>2D Graph</option>
+        <option>2D Polar Graph</option>
+        <option>Heat Map Graph</option>
+    </select>
+    <p class="help-block">Graph Type</p>
+    <br/>
+    <input type="date" name="date" required/>
+    <p class="help-block">Date</p>
+    <br/>
+    <input type="file" id="file" name="file"/>
+    <p class="help-block">Data file.File size does not exceed 10M</p>
+    <br/>
+    <button type="submit" class="btn btn-primary btn-sm" onclick="return check_file()" >upload</button>
+</form>
+{{ end }}

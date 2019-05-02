@@ -1,0 +1,32 @@
+{{ define "content" }}
+
+    <p class="lead"><a>Edit a New Notice</a></p>
+        <form action="/addNotice" method="post">
+    <div id="news">
+        <input class="form-control" placeholder="Title" id="name" name="name" required>
+        <br/>
+        <textarea rows="5" class="text"  id="content" name="content" required></textarea>
+    </div>
+    <br/>
+    <button class="btn btn-primary">Go</button>
+        </form>
+        <br/>
+    <p class="lead"><a>Exist Notices</a></p>
+
+    {{ range . }}
+
+        <div class="panel panel-default">
+
+            <div class="panel-heading">
+                <span class="lead"> <i class="fa fa-star-o"></i> {{.GetTitle}}</span>
+                <div class="pull-right"><a href="/Delete_Notice?Date={{.GetDate}}&Name={{.GetTitle}}"><i class="fa fa-remove"></i></a></div>
+            </div>
+
+            <div class="panel-body">
+                <a>{{.GetDate}}</a> {{.GetContent}}
+            </div>
+        </div>
+    {{else}}
+        <p class="lead">Don't have any notice,You can write one.</p>
+    {{end}}
+{{ end }}
