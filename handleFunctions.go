@@ -20,9 +20,6 @@ func parseTemplateFiles(filenames ...string) (t *template.Template) {
 	return
 }
 
-
-
-
 //登陆逻辑
 func logIn(w http.ResponseWriter, r *http.Request) {
 	t := parseTemplateFiles("login.layout", "public.navbar", "login")
@@ -93,29 +90,25 @@ func managerMode(writer http.ResponseWriter, request *http.Request) {
 	http.Redirect(writer, request, "/Manager_Notice", 302) //跳转管理界面
 }
 
-
-
-
 //检验用户状态的有效性
-func checkUser(writer http.ResponseWriter,request *http.Request) bool{
+func checkUser(writer http.ResponseWriter, request *http.Request) bool {
 	if !isCookieExit(request, "account") {
 		DealWrongCookie(request, writer, "The time is out.", "Login again.", "/login")
 		http.Redirect(writer, request, "/deal_wrong", 302)
-	} else if !checkCode(request){
+	} else if !checkCode(request) {
 		t := parseTemplateFiles("layout", "close.navbar", "closeWindow")
 		t.Execute(writer, "The password has expired.")
-	}else {
+	} else {
 		return true
 	}
 	return false
 }
 
-
 func home(writer http.ResponseWriter, request *http.Request) {
-	if(checkUser(writer,request)) {
+	if checkUser(writer, request) {
 		datas, _ := sqlOperate.Datas(getCookieValue("account", request))
 		generateHTML(writer, datas, "layout", "private.navbar", "home")
-		}
+	}
 }
 
 //注册逻辑
@@ -277,8 +270,14 @@ func draw(writer http.ResponseWriter, request *http.Request) {
 	t.Execute(writer, nil)
 }
 
-
 func danger(args ...interface{}) {
 	logger.SetPrefix("ERROR ")
 	logger.Println(args...)
+}
+
+func test(writer http.ResponseWriter, request *http.Request) {
+	t := template.New("tmpl.html")
+	t, _ = t.Parse(makeTemplate.MakeTest())
+	t.Execute(writer, nil)
+	return
 }

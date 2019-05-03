@@ -3,7 +3,7 @@ package makeTemplate
 import "strconv"
 
 func MakePlorGraph(datas []float64) string {
-	m:=`<html>
+	html := `<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,50 +36,9 @@ func MakePlorGraph(datas []float64) string {
     </style>
   
 </head>
-<body>
-<div class="navbar navbar-default navbar-static-top" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand">
-          <i class="fa fa-signal"></i>
-          Ewe
-        </a>
-      </div>
-      <div class="navbar-collapse collapse">
-
-        <ul class="nav navbar-nav">
-          <li><a href="/market">Market</a></li>
-        </ul>
-
-        <ul class="nav navbar-nav">
-          <li><a href="/home">MyData</a></li>
-        </ul>
-
-        <ul class="nav navbar-nav">
-          <li><a href="/download">Download</a></li>
-        </ul>
-
-        <ul class="nav navbar-nav">
-          <li><a href="/upload">Upload Data</a></li>
-        </ul>
-
-        <ul class="nav navbar-nav">
-          <li><a>About Lab</a></li>
-        </ul>
-
-        <ul class="nav navbar-nav">
-          <li><a>Contact Us</a></li>
-        </ul>
-
-      </div>
-    </div>
-  </div>
+<body>`
+	html += Navbar
+	html += `
 <p class="lead">Graph</p>
 <div id="container"></div>
 <p class="lead">Edit Graph</p>
@@ -137,17 +96,17 @@ func MakePlorGraph(datas []float64) string {
 <script>
 var m2=[`
 
-	for i:=0;i<len(datas);i+=2{
-		x:=strconv.FormatFloat(datas[i], 'f', -1, 64)
-		y:=strconv.FormatFloat(datas[i+1], 'f', -1, 64)
-		m+="["+x+","+y+"]"
-		if(i!=len(datas)-2){
-			m+=","
-		}else{
-			m+="]"
+	for i := 0; i < len(datas); i += 2 {
+		x := strconv.FormatFloat(datas[i], 'f', -1, 64)
+		y := strconv.FormatFloat(datas[i+1], 'f', -1, 64)
+		html += "[" + x + "," + y + "]"
+		if i != len(datas)-2 {
+			html += ","
+		} else {
+			html += "]"
 		}
 	}
-	m+=`;
+	html += `;
     drawP("Plor Graph","line",8);
 function redraw() {
     let color =document.getElementById("picker");
@@ -206,5 +165,5 @@ return  Highcharts.chart('container', {
 </script>
 </body>
 </html>`
-	return m
+	return html
 }

@@ -8,6 +8,7 @@ import (
 	"github.com/WebForEME/Functions/Manager_File"
 	"github.com/WebForEME/Functions/Manager_Notice"
 	"github.com/WebForEME/Functions/Manager_Page"
+	"github.com/WebForEME/Functions/RayRun"
 	"github.com/WebForEME/Functions/User_Data"
 	"github.com/WebForEME/Functions/User_File"
 	"github.com/WebForEME/Functions/User_Market"
@@ -21,20 +22,18 @@ func main() {
 	files := http.FileServer(http.Dir(config.Static))
 	mux.Handle("/static/", http.StripPrefix("/static/", files))
 
-
 	//登陆
 	mux.HandleFunc("/login", logIn)
 
-	mux.HandleFunc("/dealLogin",dealLogin)
+	mux.HandleFunc("/dealLogin", dealLogin)
 
-
-	mux.HandleFunc("/home",home)
+	mux.HandleFunc("/home", home)
 
 	mux.HandleFunc("/download", User_File.Download)
 
-	mux.HandleFunc("/downloadFile",Functions.Download)
+	mux.HandleFunc("/downloadFile", Functions.Download)
 
-    mux.HandleFunc("/deleteMFile",DeleteService.DeleteMFile)
+	mux.HandleFunc("/deleteMFile", DeleteService.DeleteMFile)
 
 	//注册
 	mux.HandleFunc("/register", register)
@@ -54,41 +53,44 @@ func main() {
 	mux.HandleFunc("/updatePassword", updatePassword)
 
 	//绘图
-	mux.HandleFunc("/draw",draw)
+	mux.HandleFunc("/draw", draw)
 
 	//删除文件
-	mux.HandleFunc("/deleteData",User_Data.DeleteFile)
-
-
+	mux.HandleFunc("/deleteData", User_Data.DeleteFile)
 
 	//User    集市功能 数据功能
-	mux.HandleFunc("/Market",User_Market.Market)
+	mux.HandleFunc("/Market", User_Market.Market)
 
-	mux.HandleFunc("/Data",User_Data.Data)
+	mux.HandleFunc("/Data", User_Data.Data)
 
-	mux.HandleFunc("/checkUploadFile",User_Data.CheckUploadFile)
+	mux.HandleFunc("/checkUploadFile", User_Data.CheckUploadFile)
 
 	//User Lab
-	mux.HandleFunc("/Lab",AboutLab.Lab)
+	mux.HandleFunc("/Lab", AboutLab.Lab)
 
 	//User Contact Us
-	mux.HandleFunc("/ContactUs",ContactUs.ContactUs)
+	mux.HandleFunc("/ContactUs", ContactUs.ContactUs)
 	//Manager 模式登陆,Notice 服务 和 File 服务
 
-	mux.HandleFunc("/Manager_Notice",Manager_Page.ManagerPage)
+	mux.HandleFunc("/Manager_Notice", Manager_Page.ManagerPage)
 
-	mux.HandleFunc("/Delete_Notice",Manager_Notice.DeleteNotice)
+	mux.HandleFunc("/Delete_Notice", Manager_Notice.DeleteNotice)
 
-	mux.HandleFunc("/Manager_File",Manager_File.ManagerFile)
+	mux.HandleFunc("/Manager_File", Manager_File.ManagerFile)
 
-	mux.HandleFunc("/uploadFileM",Manager_File.UploadFileM)
+	mux.HandleFunc("/uploadFileM", Manager_File.UploadFileM)
 
-	mux.HandleFunc("/addNotice",Manager_Notice.AddNotice)
+	mux.HandleFunc("/addNotice", Manager_Notice.AddNotice)
+
+	//小程序,射线追踪
+	mux.HandleFunc("/RayRun", RayRun.RayRun)
+	mux.HandleFunc("/RayRunDeal", RayRun.RayRunDeal)
+	//测试程序
+	mux.HandleFunc("/test", test)
 
 	server := &http.Server{
 		Addr:    "0.0.0.0:8080",
 		Handler: mux,
 	}
-
 	server.ListenAndServe()
 }

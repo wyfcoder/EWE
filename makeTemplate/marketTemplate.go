@@ -5,9 +5,9 @@ import "github.com/WebForEME/sqlOperate"
 func MakeMarketTemplate() string {
 	//获得所有的Notices -把其赋值给一个javascript的数组
 	//监听按钮，上滑下滑事件
-	notices :=sqlOperate.Notices()
+	notices := sqlOperate.Notices()
 
-	html:=`<!DOCTYPE HTML>
+	html := `<!DOCTYPE HTML>
 <html>
 <head>
     <meta charset="utf-8">
@@ -31,47 +31,10 @@ func MakeMarketTemplate() string {
     </style>
 
 </head>
-<body>
- <div class="navbar navbar-default navbar-static-top" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand">
-          <i class="fa fa-signal"></i>
-          Ewe
-        </a>
-      </div>
-      <div class="navbar-collapse collapse">
+<body>`
+	html += Navbar
 
-        <ul class="nav navbar-nav">
-          <li><a href="/Data">Data</a></li>
-        </ul>
-
-        <ul class="nav navbar-nav">
-          <li><a href="/Market">Market</a></li>
-        </ul>
-
-        <ul class="nav navbar-nav">
-          <li><a href="/download">Download</a></li>
-        </ul>
-
-        <ul class="nav navbar-nav">
-          <li><a href="/Lab">About Lab</a></li>
-        </ul>
-
-        <ul class="nav navbar-nav">
-          <li><a>Contact Us</a></li>
-        </ul>
-
-      </div>
-    </div>
-  </div>
-
+	html += `
 <div id="news">
     <a><p class="lead" id="title"></p></a>
    <textarea rows="3" class="text"  id="content" readonly>
@@ -146,30 +109,30 @@ func MakeMarketTemplate() string {
 </script>`
 
 	//数据转化为javascript数组
-   datas:=`<script>
+	datas := `<script>
    var   position=1
    var   datas=[`
-   for i:=0;i<len(notices);i++{
-   	datas+=`[`
-   	datas+="`"+notices[i].Title+"`"
-   	datas+=`,`
-   	datas+="`"+notices[i].Date+"`"
-   	datas+=`,`
-   	datas+="`"+notices[i].Content+"`"
-   	datas+=`]`
-   	if(len(notices)-1!=i){
-   	datas+=`,`
-	}else{
-		datas+=`] 
+	for i := 0; i < len(notices); i++ {
+		datas += `[`
+		datas += "`" + notices[i].Title + "`"
+		datas += `,`
+		datas += "`" + notices[i].Date + "`"
+		datas += `,`
+		datas += "`" + notices[i].Content + "`"
+		datas += `]`
+		if len(notices)-1 != i {
+			datas += `,`
+		} else {
+			datas += `] 
     var   size=datas.length;
     showInformation();
 `
+		}
 	}
-   }
-   html+=datas
+	html += datas
 
-   //书写监听函数
-   functions :=`
+	//书写监听函数
+	functions := `
 function next(){
 if(position==size){
 position=1;
@@ -198,14 +161,14 @@ function showInformation(){
 }
 </script>`
 
-   html+=functions
+	html += functions
 
-    end :=`<script src="/static/js/jquery-2.1.1.min.js"></script>
+	end := `<script src="/static/js/jquery-2.1.1.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
 
 </body>
 </html>`
 
-    html+=end
+	html += end
 	return html
 }

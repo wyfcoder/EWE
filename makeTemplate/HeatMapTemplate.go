@@ -4,8 +4,8 @@ import (
 	"strconv"
 )
 
-func MakeHeatMapTemplate(heatMap []float64)  string{
-	html:=`<!DOCTYPE HTML>
+func MakeHeatMapTemplate(heatMap []float64) string {
+	html := `<!DOCTYPE HTML>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -30,50 +30,9 @@ func MakeHeatMapTemplate(heatMap []float64)  string{
         #r-result{height:100%;}
     </style>
 </head>
-<body>
-<div class="navbar navbar-default navbar-static-top" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand">
-          <i class="fa fa-signal"></i>
-          Ewe
-        </a>
-      </div>
-      <div class="navbar-collapse collapse">
-
-        <ul class="nav navbar-nav">
-          <li><a href="/market">Market</a></li>
-        </ul>
-
-        <ul class="nav navbar-nav">
-          <li><a href="/home">MyData</a></li>
-        </ul>
-
-        <ul class="nav navbar-nav">
-          <li><a href="/download">Download</a></li>
-        </ul>
-
-        <ul class="nav navbar-nav">
-          <li><a href="/upload">Upload Data</a></li>
-        </ul>
-
-        <ul class="nav navbar-nav">
-          <li><a>About Lab</a></li>
-        </ul>
-
-        <ul class="nav navbar-nav">
-          <li><a>Contact Us</a></li>
-        </ul>
-
-      </div>
-    </div>
-  </div>
+<body>`
+	html += Navbar
+	html += `
 <div id="container"></div>
 <div id="r-result">
 <input type="button"  onclick="openHeatmap();" value="Show"/>
@@ -87,24 +46,24 @@ func MakeHeatMapTemplate(heatMap []float64)  string{
     map.addControl(new BMap.ScaleControl());
     map.addControl(new BMap.OverviewMapControl());
     map.addControl(new BMap.MapTypeControl());
-    var point = new BMap.Point(`+strconv.FormatFloat(heatMap[0], 'f', -1, 64)+`,`+strconv.FormatFloat(heatMap[1], 'f', -1, 64)+`);`
+    var point = new BMap.Point(` + strconv.FormatFloat(heatMap[0], 'f', -1, 64) + `,` + strconv.FormatFloat(heatMap[1], 'f', -1, 64) + `);`
 
-	html+=`map.centerAndZoom(point, 15);             // 初始化地图，设置中心点坐标和地图级别
+	html += `map.centerAndZoom(point, 15);             // 初始化地图，设置中心点坐标和地图级别
     map.enableScrollWheelZoom(); // 允许滚轮缩放
     var points =[`
 
-	for i:=0;i< len(heatMap);i+=3{
-		ln:=strconv.FormatFloat(heatMap[i], 'f', -1, 64)
-		la:=strconv.FormatFloat(heatMap[i+1], 'f', -1, 64)
-		count:=strconv.FormatFloat(heatMap[i+2], 'f', -1, 64)
-		html+=`{"lng":`+ln+`,"lat":`+la+`,"count":`+count+`}`
-		if(i!=len(heatMap)-3) {
-			html+=","
-			}else {
-				html+="];"
+	for i := 0; i < len(heatMap); i += 3 {
+		ln := strconv.FormatFloat(heatMap[i], 'f', -1, 64)
+		la := strconv.FormatFloat(heatMap[i+1], 'f', -1, 64)
+		count := strconv.FormatFloat(heatMap[i+2], 'f', -1, 64)
+		html += `{"lng":` + ln + `,"lat":` + la + `,"count":` + count + `}`
+		if i != len(heatMap)-3 {
+			html += ","
+		} else {
+			html += "];"
 		}
 	}
-	html+=` if(!isSupportCanvas()){
+	html += ` if(!isSupportCanvas()){
         alert('热力图目前只支持有canvas支持的浏览器,您所使用的浏览器不能使用热力图功能~')
     }
     //详细的参数,可以查看heatmap.js的文档 https://github.com/pa7/heatmap.js/blob/master/README.md

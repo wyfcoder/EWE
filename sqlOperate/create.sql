@@ -46,4 +46,9 @@ create table filesM(
   pTime  varchar (100),
 )
 
+insert into Manager values('wyf','150031','wyf')
+
+insert into ManagerVerificationcode values('wyf','150031')
+
+
 
