@@ -1,12 +1,12 @@
 package User_Data
 
 import (
+	"github.com/WebForEME/AMethod/TextDeal"
 	"github.com/WebForEME/Functions"
 	"github.com/WebForEME/Functions/CheckService"
 	"github.com/WebForEME/sqlOperate"
 	"io/ioutil"
 	"net/http"
-	"strconv"
 )
 
 func CheckUploadFile(writer http.ResponseWriter, request *http.Request) {
@@ -63,7 +63,7 @@ func CheckUploadFile(writer http.ResponseWriter, request *http.Request) {
 func checkText(tag string, text *string) bool {
 	ok := false
 	count := 0
-	ok, count, (*text) = dealText(text)
+	ok, count, (*text) = TextDeal.DealText(text)
 	if !ok {
 		return false
 	}
@@ -89,38 +89,6 @@ func checkText(tag string, text *string) bool {
 		}
 	}
 	return false
-}
-
-func dealText(text *string) (bool, int, string) {
-	m := 0
-	s := []byte{}
-	s2 := ""
-	datas := ""
-	for i := 0; i < len(*text); i++ {
-		if (*text)[i] == '\r' {
-			if (*text)[i+1] == '\n' { // Windows换行
-				i++
-				continue
-			} else {
-				return false, 0, ""
-			}
-		}else if (*text)[i] != ' ' {
-			s = append(s, (*text)[i])
-			if i != len(*text)-1 {
-				continue
-			}
-		}
-		s2 = string(s)
-		datas += s2 + " "
-		_, err := strconv.ParseFloat(s2, 64)
-		if err == nil {
-			m += 1
-			s = s[0:0]
-		} else {
-			return false, 0, ""
-		}
-	}
-	return true, m, datas
 }
 
 func checkSuffixName(name string) bool{
