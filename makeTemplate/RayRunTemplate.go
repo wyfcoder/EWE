@@ -35,7 +35,7 @@ const (
         }
         #tab_nav li {
             float: left;
-            margin: 0 3px;
+            margin: 0% 20%;
             list-style: none;
             border: 1px solid #999;
             border-bottom: none;
@@ -68,11 +68,10 @@ const (
             height: 100%;
         }
         #leadText{float: left;margin-left:5%}
-        .text{width:70%;height:30%;margin-left:10%;border-width: 1px 1px 1px 5px; border-style: solid; border-color:lightblue;}
-        .buttonDiv{margin-right:20%}
-
-
-         #loading{
+        .text{width:50%;height:30%;margin-left:9%;border-width: 1px 1px 1px 5px; border-style: solid; border-color:lightblue}
+        .compile{width:25%;height:30%;border-width: 1px 1px 1px 5px; border-style: solid; border-color:black}
+        .buttonP{width:20%;height:10%;margin-left:20%;border-radius: 10px 20px 30px 40px;} 
+        #loading{
             background-color: #FFFFFF;
             display:none;
             height: 100%;
@@ -210,9 +209,6 @@ const (
   </div>`
 
 	RayRunBodyGraph = `
-<div id="leadText">
-<p class="lead" >Graph</p>
-</div>
 <br/>
 <br/>
 <div id="box">
@@ -231,16 +227,20 @@ const (
 
 	RayRunBodyConsolePre = `
  <form action="/RayRunDeal" method="post">
+ <ul id="tab_nav">
+        <li>编辑器</li>
+        <li>检查 && 输出</li>
+ </ul>
   <div id="text">
-   <textarea rows="5" class="text"  id="content" name="content" required  focus="setCss(this)" >`
-	RayRunBodyConsoleNex = `</textarea>
+   <textarea rows="5" class="text"  id="content" name="content" required>`
+	RayRunBodyConsoleNex = `</textarea>`
+	RayRunBodyCompilePre=`
+     <textarea rows="5" class="compile" id="compile" name="compile" readonly>`
+	RayRunBodyCompileNext=`
+	</textarea>
   </div>
-  <br/>
-<div style="text-align:right;margin-right:20%"> 
-  <button class="btn btn-primary" onclick="showLoading()">Go</button>
-</div>
+ <button class="btn btn-primary buttonP"  onclick="showLoading()">Go</button>
  </form>
-
     <div id="loading">
         <div id="loading-center-absolute">
             <div class="object"></div>
@@ -256,7 +256,6 @@ const (
         </div>
 </div>
 `
-
 	RayRunBodyELine = `
 <script>
 var chart = Highcharts.chart('t_1', {
@@ -308,7 +307,6 @@ var chart = Highcharts.chart('t_1', {
     },
     series: [{
 `
-
 	RayRunBodyRLine = `
 }]
 });
@@ -363,7 +361,6 @@ var chart2 = Highcharts.chart('t_2', {
     },
     series: [{
 `
-
 	RayRunTail = `
     }]
     });
@@ -405,15 +402,58 @@ function setSelectionRange(input, selectionStart, selectionEnd) {
 }
 </script>
 </body>`
-
 	RayRunTextMain = "@main:\nE_"
+	RayRunTextCompile ="Hello , I' will check your input :)\n"
+
 )
 
 func MakeRayRun() string {
 	//第一部分：网页导航栏
 	html := RayRunHead
 
-	html += RayRunBodyPre + RayRunBodyGraph + RayRunBodyConsolePre + RayRunTextMain + RayRunBodyConsoleNex + RayRunBodyELine + RayRunBodyRLine + RayRunTail
+	html += RayRunBodyPre + RayRunBodyGraph + RayRunBodyConsolePre + RayRunTextMain + RayRunBodyConsoleNex+RayRunBodyCompilePre+RayRunTextCompile+RayRunBodyCompileNext+ RayRunBodyELine + RayRunBodyRLine + RayRunTail
 
 	return html
+}
+
+//导入信息 拆解出两部分 一部分为 body 一部分为 wrong
+func MakeRayRunWrite(text string) string{
+	size:=len(text)-1
+	i:=size
+	k:=0
+
+	for i >= 0{
+		if text[i] == '*'{
+			break
+		}
+		i--
+	}
+
+	body := ""
+	for k < i{
+		body += string(text[k])
+		k++
+	}
+
+	compile := ""
+
+	for  i <= size{
+		compile +=  string(text[i])
+		i++
+	}
+
+	html := RayRunHead
+	html += RayRunBodyPre + RayRunBodyGraph + writeEdit(body)+writeCompile(compile)+ RayRunBodyELine + RayRunBodyRLine + RayRunTail
+
+	return html
+}
+
+//把 内容写入到 edit 里面
+func writeEdit(text string) string{
+	return RayRunBodyConsolePre + text +RayRunBodyConsoleNex
+}
+
+//把内容写到 compile 里面
+func writeCompile(text string) string{
+	return  RayRunBodyCompilePre+RayRunTextCompile+text+RayRunBodyCompileNext
 }

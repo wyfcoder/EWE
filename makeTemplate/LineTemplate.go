@@ -102,7 +102,6 @@ var m2=[`
 	html += `;
     drawP("2D Graph","x","y");
 
-	
 function redraw() {
     let color =document.getElementById("picker");
     let name  =document.getElementById("title");

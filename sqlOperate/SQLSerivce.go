@@ -4,9 +4,9 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
+	"github.com/WebForEME/AMethod/TextDeal"
 	_ "github.com/lib/pq"
 	"log"
-	"strconv"
 )
 
 //使用PostgreSQL,执行数据库链接，查询等操作
@@ -198,20 +198,7 @@ func GetValue(id string, name string) []float64 {
 	if err == nil {
 		data.Next()
 		data.Scan(&text)
-		s := []byte{}
-		for i := 0; i < len(text); i++ {
-			if text[i] != ' ' {
-				s = append(s, text[i])
-				if i != len(text)-1 {
-					continue
-				}
-			}
-			s2 := string(s)
-			number, _ := strconv.ParseFloat(s2, 64)
-			datas = append(datas, number)
-			s = s[0:0]
-		}
-		//_,file:=makeJson.MakeHeatJson(datas,id)
+		TextDeal.DealText2(&text,&datas)
 		return datas
 	} else {
 		return nil

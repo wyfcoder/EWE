@@ -1,0 +1,305 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+
+    <title>CCMC ModelWeb model run</title>
+
+    <link rel="stylesheet" href="/css/ccmcweb.css" type="text/css" />
+
+    <!-- Navigation Script Starts Here-->
+
+    <script type="text/javascript">
+        <!--
+        var time = 3000;
+        var numofitems = 11;
+        var menuYmin = 50;
+        var menuYmax = 350;
+        var finished = false;
+
+        //menu constructor
+        function menu(allitems,thisitem,startstate){
+            callname= "gl"+thisitem;
+            divname="subglobal"+thisitem;
+            this.numberofmenuitems = numofitems;
+            this.caller = document.getElementById(callname);
+            this.thediv = document.getElementById(divname);
+            this.thediv.style.visibility = startstate;
+        }
+
+        //menu methods
+        function ehandler(event,menuNumber){
+            if (!finished)
+                return;
+            theobj = eval( "menuitem"+menuNumber );
+            for (var i=1; i<= theobj.numberofmenuitems; i++){
+                var shutdiv =eval( "menuitem"+i+".thediv");
+                shutdiv.style.visibility="hidden";
+            }
+            theobj.thediv.style.visibility="visible";
+        }
+
+        function setfinished(){
+            finished = true;
+        }
+
+        function closesubnav(event){
+            if (!finished)
+                return;
+            var top = (window.pageYOffset)?window.pageYOffset:(document.documentElement)?document.documentElement.scrollTop:document.body.scrollTop;
+            if ((event.clientY <menuYmin-top)||(event.clientY > menuYmax-top)){
+                for (var i=1; i<= numofitems; i++){
+                    var shutdiv =eval('menuitem'+i+'.thediv');
+                    shutdiv.style.visibility='hidden';
+                }
+            }
+        }
+        // -->
+    </script>
+
+    <!-- End of Navigation Script --> <p>
+
+        <!-- Google Analytics TRACKING Code -->
+
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-43094756-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+
+        <!-- FEDERATED Google Analytics TRACKING Code -->
+
+        <script id="_fed_an_js_tag" type="text/javascript" src="/federated-analytics.all.min.js"?agency=NASA&sub-agency=NASAGSFC&pua=UA-43094756-1&sp=find&yt=true">
+
+        </script>
+
+        </head>
+
+
+<body onmousemove="closesubnav(event);" >
+
+<div class="skipLinks">skip to: <a href="#content">page content</a> | <a href="#pageNav">links on this page</a> | <a href="#globalNav">site navigation</a> | <a href="#siteInfo">footer (site information)</a> </div>
+
+<!-- Start of Logos and Navigation -->
+<div id="masthead">
+
+    <!-- CCMC Logo -->
+    <div id="CCMClogo"><a href="/index.php"><img src="/images/CCMC-LOGO-2.gif" alt="CCMC logo" border="0" /></a></div>
+
+    <!-- Utility Navigation: Related Links, FAQ, Sitemap, etc.  -->
+
+    <div id="utilitynavigation"> <a href="/related.php">Related Links</a>&nbsp;|&nbsp;<a href="/FAQ.php">Frequently Asked Questions</a>&nbsp;|&nbsp;<a href="/ComQues/index.php">Community Feedback</a>&nbsp;|&nbsp;<a href="/downloads/index.php">Downloads</a>&nbsp;|&nbsp;<a href="/sitemap.php">Sitemap</a></div>
+
+    <!-- NASA Logo  -->
+
+    <!--div id="nasalogo"><a href="http://www.nasa.gov" target="top"><img src="/images/NASALogo-small.gif" border="0" alt="National Aeronautics and Space Administration" ></a></div-->
+    <div id="nasalogo"><a href="http://www.nasa.gov" target="top"><img src="/images/nasa_logo1.gif" border="0" height="46" alt="National Aeronautics and Space Administration" ></a><a href="https://www.nsf.gov" target="top"><img src="/images/nsf_logo_grey.gif" border="0" height="56" alt="National Science Foundation" ></a></div>
+
+    <!-- Main Navigation: About Us, Models, Request a Run, etc.-->
+
+    <div id="globalNav"> <img src="/images/glbnav_left.gif" alt="" name="gnl" width="4" height="32" id="gnl" /> <img alt="" src="/images/glbnav_right.gif" height="32" width="4" id="gnr" />
+
+
+        <div id="globalLink">
+            <a href="/about.php" id="gl1" class="glink" onmouseover="ehandler(event,1);">&nbsp;&nbsp;&nbsp; About &nbsp;&nbsp;</a>
+            <a href="/models/index.php" id="gl2" class="glink" onmouseover="ehandler(event,2);">Models at CCMC</a>
+            <a href="/requests/requests.php" id="gl3" class="glink" onmouseover="ehandler(event,3);">Request A Run</a>
+            <a href="/results/index.php" id="gl4" class="glink" onmouseover="ehandler(event,4);">View Results</a>
+            <a href="/requests/instant_run.php" id="gl5" class="glink" onmouseover="ehandler(event,5);">Instant Run</a>
+            <a href="/challenges/index.php" id="gl7" class="glink" onmouseover="ehandler(event,7);">Metrics and Validation</a>
+            <a href="/support" id="gl8" class="glink" onmouseover="ehandler(event,8);">Education</a>
+            <a href="/realtime.php" title="Research To Operations Simulations" id="gl6" class="glink" onmouseover="ehandler(event,6);">R2O Support</a>
+            <a href="/missionsupport/" id="gl9" class="glink" onmouseover="ehandler(event,9);">Mission Support</a>
+            <a href="/community/" id="gl10" class="glink" onmouseover="ehandler(event,10);">Community Support</a>
+            <a href="/tools/" id="gl11" class="glink" onmouseover="ehandler(event,11);">Tools</a>
+        </div>
+
+        <!-- If adding more nav items, update the Navigation Script - javascript above -  numofitems -->
+
+    </div>
+
+    <!-- Sub Navigation: Everything Underneath -->
+
+    <div id="subglobal1" class="subglobalNav"> <a href="/index.php">CCMC Home</a> | <a href="/partners.php"> CCMC Stakeholders</a> | <a href="/staff/index.php">Our Team</a> | <a href="/publications/userpubs/papers-and-presentations.php">Publications</a> | <a href="/workshops/index.php">Meetings and Workshops</a> | <a href="/CONOPS_final.pdf">Concept of Operations</a> </div>
+
+    <div id="subglobal2" class="subglobalNav"> <a href="/models/models_at_glance.php">Models At A Glance</a> |  <a href="/modelweb/">ModelWeb Catalog and Archive</a> </div>
+
+    <div id="subglobal3" class="subglobalNav"> <a href="/requests/RunRequestInstructions.php">Request Procedures</a> | <a href="/requests/fileGeneration.php">Generate Input Data Files &amp; Parameters</a> | <a href="/Movies_on_request.php">Movies on Request</a> | <a href="/aboutRun.php">About the Run Process</a> | <a href="/PubPolicy.php">Publications Policy</a></div>
+
+    <div id="subglobal4" class="subglobalNav"> <a href="/ungrouped/search_main.php">Search run database</a> | <a href="/ComQues/request_output.php">Request run output</a> | <a href="/SECevents/index.php">Special events</a> | <a href="/downloads/Kameleon/Overview.html">Kameleon Software</a> | <a href="/swx2">Space Weather Explorer</a> |  <a href="/PubPolicy.php">Publications policy</a></div>
+
+    <div id="subglobal5" class="subglobalNav"> <a href="/requests/instant_run.php">Instant Model Run</a>  </div>
+
+    <div id="subglobal6" class="subglobalNav"> <a href="/forecasting_support.php">Forecasting Support tools</a> | <a href="/iswa/">iSWA</a> | <a href="/donki/">DONKI</a> | <a href="/missionsupport/">Mission Support</a> | <a href="/rt_simulations.php">Experimental Real Time Simulations</a> | <a href="/challenges/dBdt/">Operational Geospace Model Validations</a> </div>
+
+    <div id="subglobal7" class="subglobalNav"> <a href="/assessment/">Intl Forum | <a href="/support/GEM_metrics_08/">GEM Challenge</a> | <a href="/support/CETI2010/">CEDAR ETI Challenge</a>  | <a href="/challenges/GEM-CEDAR">GEM-CEDAR Challenge</a> | <a href="/challenges/SHINE/">SHINE Challenge</a> | <a href="http://kauai.ccmc.gsfc.nasa.gov/CMEscoreboard/"> CME Arrival Time Scoreboard </a> | <a href="http://ccmc.gsfc.nasa.gov/challenges/flare.php"> Flare Scoreboard </a> | <a href="http://ccmc.gsfc.nasa.gov/challenges/sep.php"> SEP Scoreboard </a> | <a href="http://ccmc.gsfc.nasa.gov/challenges/bz.php"> IMF Bz Scoreboard </a></div>
+
+    <div id="subglobal8" class="subglobalNav"> <a href="/support/">Educational materials &activities</a> | <a href="/support/SWREDI//swredi.php">Space Weather REDI Initiative</a> | <a href="/support/SWREDI/bootcamp/">SW REDI Bootcamp</a> |<a href="/support/student_research_contest_main.php/"> Student Research Contest</a> | <a href="/support/cedar-tutorial.php">Tutorial at CEDAR</a> | <a href="/forecasting_support.php">Forecaster Tools</a></div>
+
+    <div id="subglobal9" class="subglobalNav"> <a href="http://ccmc.gsfc.nasa.gov/missionsupport/#nearearth">Missions near Earth/in Earth-orbit</a> | <a href="http://ccmc.gsfc.nasa.gov/missionsupport/MMS_support.php">MMS</a> | <a href="http://ccmc.gsfc.nasa.gov/missionsupport/#vap">Van Allen Probes</a> | <a href="http://ccmc.gsfc.nasa.gov/missionsupport/#themis">THEMIS</a> | <a href="http://ccmc.gsfc.nasa.gov/missionsupport/#messenger">MESSENGER</a> | <a href="http://ccmc.gsfc.nasa.gov/missionsupport/#stereo">STEREO</a> | <a href="http://ccmc.gsfc.nasa.gov/missionsupport/#spitzer">Spitzer</a> | <a href="http://ccmc.gsfc.nasa.gov/missionsupport/#maven">MAVEN</a> | <a href="http://ccmc.gsfc.nasa.gov/missionsupport/#msl">MSL</a> | <a href="http://ccmc.gsfc.nasa.gov/missionsupport/#dawn">Dawn</a> | <a href="http://ccmc.gsfc.nasa.gov/missionsupport/#kepler">Kepler</a> | <a href="http://ccmc.gsfc.nasa.gov/missionsupport/#epoxi">EPOXI</a> | <a href="http://ccmc.gsfc.nasa.gov/missionsupport/#juno">Juno</a> | <a href="http://ccmc.gsfc.nasa.gov/missionsupport/#cassini">CASSINI</a> | <a href="http://ccmc.gsfc.nasa.gov/missionsupport/#voyager">Voyager</a> | <a href="http://ccmc.gsfc.nasa.gov/missionsupport/NewHorizons_support.php">New Horizons</a>  | <a href="http://ccmc.gsfc.nasa.gov/missionsupport/#rocket">Sounding Rockets</a> | <a href="http://ccmc.gsfc.nasa.gov/missionsupport/#international">International</a></div>
+
+    <div id="subglobal10" class="subglobalNav"> <a href="/community/">Research Community Support</a> | <a href="/workshops/">CCMC Workshops</a> | <a href="http://swrc.gsfc.nasa.gov/main/workshops">NASA Robotic Mission Operator Workshops</a> | <a href="/community/LWS/">LWS Support</a> | <a href="/community/EXO/">Exo-CCMC</a> | <a href="/community/DREAM2/">DREAM2 Support</a> | <a href="/community/HELCATS/">HELCATS Support</a>  </div>
+
+    <div id="subglobal11" class="subglobalNav"> <a href="/iswa/">iSWA</a> | <a href="/donki/">DONKI</a> | <a href="/Kameleon/">Kameleon</a> | <a href="/stereocat">StereoCat</a> | <a href="/eeggl/">EEGGL</a>  | <a href="https://kauai.ccmc.gsfc.nasa.gov/CMEscoreboard/">CME Scoreboard</a> | <a href="https://ccmc.gsfc.nasa.gov/challenges/sep.php">SEP Scoreboard</a> |   <a href="https://ccmc.gsfc.nasa.gov/challenges/flare.php">FLR Scoreboard</a> | <a href="/sea5/">SEA5</a> </div>
+
+</div>
+<!-- END of All Navigation-->
+
+<!-- Start of Content on white background.-->
+<div id="pagecell">
+
+
+
+    <!--content-->
+    <div id="content">
+
+        <!-- Header Ends Here and Content Starts Here-->
+        <HEAD><TITLE>ModelWeb Results</TITLE></HEAD>
+        <BODY>
+        <Body><center><font size=5 color=red>VITMO ModelWeb Browser Results </font><br>
+            <font size=5 color=red><i>iri2016</i> model listing </font></center>
+        <font size=3 color=black><b>Required input parameters</b> </font><br>
+        Year= 2000., Month= 01, Day= 01, Hour=1.5, <BR>
+        Time_type = Local<BR>
+        Coordinate_type = Geographic<BR>
+        Latitude= 50., Longitude= 40., Height= 100.<BR>
+        Prof. parameters: Start= 100. Stop= 2000. Step= 0.5  <BR>
+        <br>
+        <b>Optional input parameters:</b> <BR>
+        Sunspot number(Rz12) =not specified <BR>
+        F10.7 radio flux (daily)= not specified <BR>
+        F10.7 radio flux (81-day)= not specified <BR>
+        Ionospheric index(IG12) =not specified <BR>
+        Upper limit for Electron content = not specified <BR>
+        F peak model = URSI <BR>
+        F-peak height = AMTB2013<BR>
+        Ne Topside = NeQuick <BR>
+        foF2 Storm model = on <BR>
+        Bottomside Thickness = ABT-2009 <BR>
+        F1 occurrence probability = Scotto-1997 no L <BR>
+        foE Storm model = off <BR>
+        D-Region Ne = IRI-95 <BR>
+        Topside Te = TBT2012+SA <BR>
+        Ion Composition = RBV10/TBT15 <BR>
+        NmF2 or foF2 not specified = 0., <BR>
+        hmF2 or M(3000)F2 not specified = 0., <BR>
+        NmE or foE not specified = 0., <BR>
+        Auroral boundary = off <BR>
+        <i>A value of -1 indicates that the parameter is not available for the specified range</i><br>
+        <i>TEC=-1, means you have not entered an upper boundary height in the OPTIONAL INPUT section.</i><br>
+        <br>
+        <b>Selected output parametes:</b> <BR>
+        Height, km<BR>
+        Electron_density_Ne, m-3<BR>
+        <H2><TT>REQUESTED DATA HAS BEEN CREATED</TT></H2><p>Data may be downloaded now by clicking on the file hyperlinks below:<br> <a href="https://ccmc.gsfc.nasa.gov/idl_images/MODELWEB_DATA//iri2016_19850.lst"> https://ccmc.gsfc.nasa.gov/idl_images/MODELWEB_DATA//iri2016_19850.lst</a>
+        <HR>
+
+        </td></tr>
+        </table>
+        </BODY>
+</HTML>
+<HR>
+ModelWeb Curator (please contact me if you are having problems):<br>
+<SCRIPT LANGUAGE="JavaScript">
+    user="Lutz.Rastaetter-1";
+    site="nasa.gov";
+    document.write('<a href="mailto:' + user + '@' + site + '">');
+    document.write('Dr. Lutz Rast&auml;tter</a>');
+    // last modified script by Bernhard Friedrich; should work in all browsers
+    // adapted for international users - Lutz Rastaetter
+    var a;
+    a=new Date("2017-11-01T12:00:00Z");
+    // a=new Date(document.lastModified);
+    lm_year=a.getYear();
+    if (lm_year<1000){
+//just in case date is not delivered with 4 digits
+        if (lm_year<70){ lm_year=2000+lm_year; }
+        else { lm_year=1900+lm_year; }
+    }
+    //end workaround
+    lm_month=a.getMonth()+1;
+    if (lm_month == 1){    lm_month='January';}
+    if (lm_month == 2){    lm_month='February';}
+    if (lm_month == 3){    lm_month='March';}
+    if (lm_month == 4){    lm_month='April';}
+    if (lm_month == 5){    lm_month='May';}
+    if (lm_month == 6){    lm_month='June';}
+    if (lm_month == 7){    lm_month='July';}
+    if (lm_month == 8){    lm_month='August';}
+    if (lm_month == 9){    lm_month='September';}
+    if (lm_month == 10){    lm_month='October';}
+    if (lm_month == 11){    lm_month='November';}
+    if (lm_month == 12){    lm_month='December';}
+    lm_day=a.getDate();
+    if (lm_day<10){ lm_day='0'+lm_day; }
+    document.write("<H5>Last script update: " + lm_month + " " + lm_day + ", " + lm_year+"</h5>");
+
+</SCRIPT>
+</div>
+
+
+<!-- Footer on Gray Background Starts Here -->
+
+<div id="siteInfo">
+
+    <!-- Footer Logos Start Here -->
+
+    <table align="center">
+        <tr>
+            <td><a href="http://www.nasa.gov"><img src="/images/NASALogo-small.gif" alt="National Aeronautics and Space Administration" border="0"/></a></td>
+            <td><a href="http://www.afmc.af.mil"><img alt="Air Force Materiel Command" src="/images/afmc-logo-small.gif" border="0"/></a></td>
+            <td><a href="http://www.afosr.af.mil"><img alt="Air Force Office of Scientific Research" src="/images/afosr-logo-small.gif" border="0"/></a></td>
+            <td><a href="http://www.wpafb.af.mil/AFRL/"><img alt="Air Force Research Laboratory" src="/images/afrl-logo.gif"  border="0"/></a></td>
+            <td><a href="http://www.afweather.af.mil/"><img alt="Air Force Weather Agency" src="/images/afg-logo-small.gif"  border="0"/></a></td>
+            <td><a href="http://www.swpc.noaa.gov"><img alt="NOAA Space Environment Center" src="/images/noaa-logo-small.gif"  border="0"/></a></td>
+            <td><a href="http://www.nsf.gov"><img alt="National Science Foundation" src="/images/nsf-logo-small.gif" border="0"/></a></td>
+            <td><a href="http://www.onr.navy.mil"><img alt="Office of Naval Research" src="/images/onr_logo.gif" height="39" width="46" border="0"/></a></td>
+        </tr>
+    </table>
+
+
+    <!-- Site Contact Information Starts Here -->
+
+    <p>  <SCRIPT LANGUAGE="JavaScript">
+            user="anna.chulaki";
+            site="nasa.gov";
+            document.write('<a href=\"mailto:' + user + '@' + site + '\">');
+            document.write('Curator: Anna Chulaki<\/a>');
+        </SCRIPT> |
+        <SCRIPT LANGUAGE="JavaScript">
+            user="Maria.M.Kuznetsova";
+            site="nasa.gov";
+            document.write('<a href=\"mailto:' + user + '@' + site + '\">');
+            document.write('NASA Official:  Dr. Masha Kuznetsova<\/a>');
+        </SCRIPT>
+        | <a href="http://www.nasa.gov/about/highlights/HP_Privacy.html">Privacy, Security Notices</a></p>
+
+    <div id="LogoCredits">
+        CCMC logo designed by artist <a href="http://nanabagdavadze.com/">Nana Bagdavadze</a></p>
+    </div>
+</div>
+
+</div>
+<!-- Pagecell Ends Here -->
+
+<script type="text/javascript">
+    <!--
+    for(var i=1;i<=numofitems;i++){ window["menuitem"+i] = new menu(numofitems,i,"hidden"); }
+    setfinished();
+    // -->
+</script>
+
+
+</body>
+</html>
+<!-- Footer Ends Here -->

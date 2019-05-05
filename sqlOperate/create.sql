@@ -51,4 +51,21 @@ insert into Manager values('wyf','150031','wyf')
 insert into ManagerVerificationcode values('wyf','150031')
 
 
+//为rayRun数据库加载数据
+create table rayrun(
+ id varchar(11)  primary key,
+ data text
+)
+
+//RayRun iri 模型
+
+create table iridata(
+    id varchar(11) primary key,
+    year varchar(20),
+    month varchar(20),
+    day   varchar(20),
+    data text
+)
+
+
 

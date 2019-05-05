@@ -7,7 +7,6 @@ import (
 )
 
 //处理一段字符输入将其变为更加规整的数据流,其中要解决一些特殊的数字表达形式
-
 //返回 数据是否正确 数据量 规整的字符数
 func DealText(text *string) (bool, int, string) {
 	count := 0
@@ -29,7 +28,7 @@ func DealText(text *string) (bool, int, string) {
 
 			if i<len(*text)-1 {
 				char = (*text)[i]
-				if char == 'E' { //科学计数法计数
+				if char == 'E' || char == 'e' { //科学计数法计数
 					i++
 					char = (*text)[i]
 					i++
@@ -54,6 +53,23 @@ func DealText(text *string) (bool, int, string) {
 	return true,count,datas
 }
 
+//处理文本使其返回一个数组
+
+func DealText2(text *string,data *[]float64){
+	s:=[]byte{}
+	for i := 0; i < len(*text); i++ {
+		if (*text)[i] != ' ' {
+			s = append(s, (*text)[i])
+			if i != len(*text)-1 {
+				continue
+			}
+		}
+		s2 := string(s)
+		number, _ := strconv.ParseFloat(s2, 64)
+		(*data) = append((*data), number)
+		s = s[0:0]
+	}
+}
 
 //返回一个数字
 func readANumber(text *string,start int) (int,float64,error){
@@ -85,3 +101,4 @@ func isNumber(char byte) bool{
 	}
 
 }
+
