@@ -16,6 +16,7 @@ import (
 )
 
 func main() {
+
 	p("EME", "started at", config.Address)
 
 	mux := http.NewServeMux()
@@ -85,6 +86,11 @@ func main() {
 	//小程序,射线追踪
 	mux.HandleFunc("/RayRun", RayRun.RayRun)
 	mux.HandleFunc("/RayRunDeal", RayRun.RayRunDeal)
+	mux.HandleFunc("/DocumentForRayRunScript", RayRun.RayRunHelpScript)
+	mux.HandleFunc("/DocumentForRayRunIRI", RayRun.RayRunHelpIRI)
+	mux.HandleFunc("/DocumentForRayRunPRO", RayRun.RayRunHelpPRO)
+	mux.HandleFunc("/DocumentForRayRunAH0", RayRun.RayRunHelpAH0)
+
 	//测试程序
 	mux.HandleFunc("/test", test)
 
@@ -92,5 +98,6 @@ func main() {
 		Addr:    "0.0.0.0:8080",
 		Handler: mux,
 	}
+
 	server.ListenAndServe()
 }

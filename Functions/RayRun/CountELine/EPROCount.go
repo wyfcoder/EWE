@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/WebForEME/AMethod/Compile"
 	"github.com/WebForEME/AMethod/TextDeal"
+	"github.com/WebForEME/AMethod/TimeTool"
 	"github.com/WebForEME/Functions/RayRun/RayRunDataStruct"
 	"github.com/WebForEME/sqlOperate"
 	"math"
@@ -18,10 +19,12 @@ import (
 //从数据库直接调用
 func CountEPRO(instruct Compile.Instruct, eLine *RayRunDataStruct.RayRunData) {
 	if len(instruct.Body) == 0 {
-		CountEPROOne(eLine, TextDeal.MonthToInt(time.Now().Month()), time.Now().Day())
+		CountEPROOne(eLine, TimeTool.MonthToInt(time.Now().Month()), time.Now().Day())
+		eLine.Name=PROJECTNAME+"Auto."
 	} else {
-		timeN, _ := TextDeal.StringToDate(instruct.Body[0])
-		CountEPROOne(eLine, TextDeal.MonthToInt(timeN.Month()), timeN.Day())
+		timeN, _ := TimeTool.StringToDate(instruct.Body[0])
+		CountEPROOne(eLine, TimeTool.MonthToInt(timeN.Month()), timeN.Day())
+		eLine.Name=PROJECTNAME+instruct.Body[0]
 	}
 }
 func CountEPROOne(eLine *RayRunDataStruct.RayRunData, month int, day int) {
@@ -31,13 +34,7 @@ func CountEPROOne(eLine *RayRunDataStruct.RayRunData, month int, day int) {
 	_,_,text=TextDeal.DealText(&text)
 	data :=[]float64{}
 	TextDeal.DealText2(&text,&data)
-	EPROMode(data[0],data[1],data[2],data[3],data[4],data[5],data[6],eLine) //调用
-	for i:=0 ; i<len((*eLine).Data) ;i+=2{
-		fmt.Print((*eLine).Data[i])
-		fmt.Print(" ")
-		fmt.Print((*eLine).Data[i+1])
-		fmt.Print("\n")
-	}
+	EPROMode(data[0],data[1],data[2],data[3],data[4],data[5],eLine) //调用
 }
 //编码时间，获得一个唯一的标识符
 func GetId(month int, day int) int {
@@ -52,7 +49,8 @@ func GetId(month int, day int) int {
 	return month
 }
 //直接主函数 By XiaoMing 存在一些小问题 待修改
-func EPROMode(hmE float64, foE float64, foF2 float64, hmF1 float64, hmF2 float64, NmE float64, NmF2 float64, eLine *RayRunDataStruct.RayRunData) {
+func EPROMode( foE float64, foF2 float64, hmF1 float64, hmF2 float64, NmE float64, NmF2 float64, eLine *RayRunDataStruct.RayRunData) {
+	hmE:=110.0
 	h, eds_e:=0.0,0.0;      //高度，E层电子密度
 	ymE := 20.0       //E层的厚度
 	ymF2 := hmF2-hmF1;      //F2半厚度，ymF2=hmf2-hmf1
@@ -64,7 +62,7 @@ func EPROMode(hmE float64, foE float64, foF2 float64, hmF1 float64, hmF2 float64
 
 	//计算E层电子密度分布
 
-	h=95.0
+	h=START
 	for  h<hmE{
 		eds_e=(1.0-math.Pow((hmE-h)*0.05,2.0))*NmE
 		(*eLine).Data = append((*eLine).Data, h)
@@ -89,7 +87,6 @@ func EPROMode(hmE float64, foE float64, foF2 float64, hmF1 float64, hmF2 float64
 	}
 
 	//计算F2电子密度分布
-	h=hj;
 	for  h<hmF2{
 		eds_f2 = NmF2 * (1.0 -math.Pow((hmF2 - h) / ymF2, 2.0));      //抛物线模型计算法f2层电子密度
 		(*eLine).Data = append((*eLine).Data, h)
@@ -98,7 +95,7 @@ func EPROMode(hmE float64, foE float64, foF2 float64, hmF1 float64, hmF2 float64
 	}
 
 
-	for h< 1000 {
+	for h< END {
 		HH = 0.85 * math.Pow((1.0 + h / 6378.0), 2.0) * 200;     //一个参数
 		eds_up = NmF2 * math.Exp(0.5 * (1.0 - (h - hmF2) / HH - math.Exp((h - hmF2) / HH)));     //卡尔曼模型计算上电离层电子密度
 		(*eLine).Data = append((*eLine).Data, h)

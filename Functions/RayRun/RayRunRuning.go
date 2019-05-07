@@ -3,6 +3,7 @@ package RayRun
 import (
 	"github.com/WebForEME/AMethod/Compile"
 	"github.com/WebForEME/Functions/RayRun/CountELine"
+	"github.com/WebForEME/Functions/RayRun/CountRLine"
 	"github.com/WebForEME/Functions/RayRun/RayRunDataStruct"
 	"sync"
 )
@@ -20,6 +21,8 @@ func RayRunCount(instructs []Compile.Instruct) ([]RayRunDataStruct.RayRunData, [
 		char := instruct.Head[0]
 		//判断是否为电子密度曲线
 		if char == 'E' {
+			eLine.Name=""
+			eLine.Data=nil
 			err:=countELine(instruct, &eLine)
 			if err!= nil{
 				return nil,nil,err
@@ -67,6 +70,12 @@ func countELine(instruct Compile.Instruct, eLine *RayRunDataStruct.RayRunData) e
 //计算射线轨迹
 func countRLine(instruct Compile.Instruct, eLine *RayRunDataStruct.RayRunData, rLine *RayRunDataStruct.RayRunData, group *sync.WaitGroup) {
 	defer group.Done()
+	//对射线指令分类 分为 两类 考虑磁场 和 不考虑磁场
+	if instruct.Head == "R_AH0"{
+		CountRLine.CountAH0(instruct,eLine,rLine)
+	}else{
+		CountRLine.CountAH1(instruct,eLine,rLine)
+	}
 }
 
 
@@ -95,7 +104,7 @@ func addRLine(rLine *[]RayRunDataStruct.RayRunData, count int) int {
 	return start
 }
 
-//添加一个默认的模型
+//添加一个默认的iri模型
 func addNullELine(eLine *RayRunDataStruct.RayRunData){
 	instruct:= Compile.Instruct{}
 	instruct.Head="E_IRI"

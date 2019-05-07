@@ -12,7 +12,7 @@ import (
 
 //初始化 RayRun 数据库 //打开数据文件 取值 加入数据库
 func InitRayRun(){
-	fi, err := os.Open("sqlOperate/datas/datasOfRayRun.txt")
+	fi, err := os.Open("sqlOperate/datas/iri数据.txt")
 	if err != nil {
 		fmt.Printf("Error: %s\n", err)
 		return

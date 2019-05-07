@@ -456,10 +456,10 @@
     <h1>RayRun 文档</h1>
     <br>
     <ul>
-        <li><a href="/DocumentForRayRun">FScript</a></li>
-        <li><a href="/DocumentForRayRun1">E_IRI</a></li>
-        <li><a href="/DocumentForRayRun2">E_PRO</a></li>
-        <li><a href="/DocumentForRayRun3">R_AH0</a></li>
+        <li><a href="/DocumentForRayRunScript">FScript</a></li>
+        <li><a href="/DocumentForRayRunIRI">E_IRI</a></li>
+        <li><a href="/DocumentForRayRunPRO">E_PRO</a></li>
+        <li><a href="/DocumentForRayRunAH0">R_AH0</a></li>
         <li><a href="/RayRun">返回 </a></li>
     </ul>
     <h2 id="_name">指令名称</h2>
@@ -477,7 +477,7 @@
     <em>E_IRI(Time)</em>
     <em>E_IRI(Date,Time,Latitude,Longitude)</em>
     <em>Time = AM or PM</em>
-    <em>Date = YYYY-MM-DD </em>
+    <em>Date = YYYY-MM-DD | MMMM >1959 && MMMM <= Now.MMMM </em>
     <em>Latitude = [-90,90]</em>
     <em>Longitude =[-180,180]</em>
     <em></em>
@@ -508,7 +508,7 @@
             </div>
             <div class="paragraph">
                 <p>第三种，添加四个参数，分别表示日期，时间点，纬度，经度。他可以根据输入的四个参数，绘制对应地区，对应时间的电子密度随高度变化图。该指令
-                的执行周期较长。其中日期的表达形式是<code>YYYY-MM-DD</code>,比如要表示2008的2月2日，就是<code>2008-02-02</code>。
+                的执行周期较长。其中日期的表达形式是<code>YYYY-MM-DD</code>,比如要表示2008的2月2日，就是<code>2008-02-02</code>。还要保证输入的年大于1959小于等于当下的年。
                 而时间点参数只有两个，<code>AM</code>或<code>PM</code>。<code>AM</code>代表下午14:00，<code>PM</code>代表凌晨2:00。纬度是一个在[-90,90]之间的浮点数。
                 经度是在[-180,180]的浮点数。例子：</p>
                 <p><code>E_IRI(2008-03-02,AM,10,108)</code></p>
@@ -532,7 +532,8 @@
             </div>
             <div class="literalblock">
                 <div class="content">
-<pre>E_IRI()</pre>
+                    <pre>@ main
+E_IRI()</pre>
                 </div>
             </div>
             <div class="literalblock">
@@ -544,7 +545,8 @@
             </div>
             <div class="literalblock">
                 <div class="content">
-<pre>E_IRI(AM)</pre>
+                    <pre>@ main
+E_IRI(AM)</pre>
                 </div>
             </div>
             <div class="literalblock">
@@ -556,7 +558,8 @@
             </div>
             <div class="literalblock">
                 <div class="content">
-                    <pre>E_IRI(2013-04-03,PM,35.31,20.0)</pre>
+                    <pre>@ main
+E_IRI(2013-04-03,PM,35.31,20.0)</pre>
                 </div>
             </div>
 
@@ -564,7 +567,7 @@
     </div>
 <div id="footer">
     <div id="footer-text">
-        Last updated 2019-02-26 19:31:11 UTC
+        Last updated 2019-05-07
     </div>
 </div></div>
 </body>

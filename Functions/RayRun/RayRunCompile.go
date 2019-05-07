@@ -4,7 +4,9 @@ import (
 	"errors"
 	"github.com/WebForEME/AMethod/Compile"
 	"github.com/WebForEME/AMethod/TextDeal"
+	"github.com/WebForEME/AMethod/TimeTool"
 	"math"
+	"time"
 )
 
 //射线函数编译，输入的是一个instructs，进行检查，出错的话输出错误信息
@@ -40,12 +42,12 @@ var CommandSet map[string]int = map[string]int{
 //检查编译的错误
 // 第一种 指令不存在
 // 第二种 参数有误，确定好参数的形式
-func RayRunCompile(instructs []Compile.Instruct) (error, string) {
+func RayRunCompile(instructs *[]Compile.Instruct) (error, string) {
 
 	err := errors.New("CW")
 
-	for i := 0; i < len(instructs); i++ {
-		head := instructs[i].Head
+	for i := 0; i < len(*instructs); i++ {
+		head := (*instructs)[i].Head
 		key := CommandSet[head]
 		isOk := false
 		if key == 0 {
@@ -53,22 +55,23 @@ func RayRunCompile(instructs []Compile.Instruct) (error, string) {
 		}
 		switch key {
 		case E_IRI:
-			isOk = CheckEIRI(instructs[i].Body)
+			isOk = CheckEIRI((*instructs)[i].Body)
 			break
 		case E_PRO:
-			isOk = CheckEPRO(instructs[i].Body)
+			isOk = CheckEPRO((*instructs)[i].Body)
 			break
 		case R_AH1:
-			isOk = CheckRAH(instructs[i].Body)
+			isOk = CheckRAH((*instructs)[i].Body,instructs,i)
 			break
 		case R_AH0:
-			isOk = CheckRAH(instructs[i].Body)
+			isOk = CheckRAH((*instructs)[i].Body,instructs,i)
 			break
 		}
 		if !isOk {
-			return err, CommandParamWrong + string('\n') + "At " + Compile.ReturnString(instructs[i])
+			return err, CommandParamWrong + string('\n') + "At " + Compile.ReturnString((*instructs)[i])
 		}
 	}
+
 
 	return nil, CommandSuccess
 }
@@ -79,7 +82,6 @@ func RayRunCompile(instructs []Compile.Instruct) (error, string) {
 // E_IRI(PM)
 // E_IRI(2012-01-12,AM,20,20)
 func CheckEIRI(body []string) bool {
-	isOk :=false
 	size := len(body)
 	switch size {
 	case 0:
@@ -88,8 +90,8 @@ func CheckEIRI(body []string) bool {
 		return CheckTime(body[0])
 	case 4:
 		param := body[0]
-		_, isOk = TextDeal.StringToDate(param)
-		if !isOk {
+		timec, isOk := TimeTool.StringToDate(param)
+		if !isOk || timec.Year() < 1959|| timec.Year() > time.Now().Year(){
 			return false
 		}
 		isOk = CheckTime(body[1])
@@ -121,7 +123,7 @@ func CheckEPRO(body []string) bool {
 		return true
 	case 1:
 		param := body[0]
-		_, isOk := TextDeal.StringToDate(param)
+		_, isOk := TimeTool.StringToDate(param)
 		return isOk
 	default:
 		return false
@@ -130,33 +132,154 @@ func CheckEPRO(body []string) bool {
 
 //R_AH0(f,angle)            f:频率 MHz angle: -90,90)  n不考虑磁场
 //R_AH1(f,angle)            f:频率 MHz angle: [0,90)  n不考虑磁场  出两条曲线
-func CheckRAH(body []string) bool{
-
+func CheckRAH(body []string,instructs *[]Compile.Instruct,position int) bool{
 	if len(body) == 2{
 		param :=body[0]
-
 		number ,isOk :=TextDeal.StringToFloat(param)
-
-		if !isOk || number <= 0{
+		if !isOk || !CheckF(number){
 			return false
 		}
-
 		number,isOk =TextDeal.StringToFloat(param)
 
-		if !isOk || number >= 90 || number <= -90{
+		if !isOk || !CheckA(number){
 			return false
 		}
-
 		return true
-	}
-
+	}else if len(body)== 3{   //循环队列
+	     //分析  (f1-f2,step,angle) (f,step,angle1-angle2)
+		step:=body[1]
+		number ,isOk :=TextDeal.StringToFloat(step)
+		if !CheckStep(number){
+			return false
+		}
+		param :=body[0]
+		number ,isOk =TextDeal.StringToFloat(param)
+		if isOk{
+			start , end , isOk :=CheckContinueA(body)
+			if !isOk{
+				return false
+			}
+			MakeListForFA(start,end,step,body[0],instructs,position,false)
+		}else{
+			start , end , isOk :=CheckContinueF(body)
+			if !isOk{
+				return false
+			}
+			MakeListForFA(start,end,step,body[2],instructs,position,true)
+		}
+		return true
+	  }
 	return false
 }
 
+
+//检查连续的 f
+func CheckContinueF(body []string) (string,string ,bool){
+	//对应 (10-20,1,100)
+	a ,isOk :=TextDeal.StringToFloat(body[2])
+	if !isOk || !CheckA(a){
+		return "","",false
+	}
+	params,isOk :=Compile.GetParams(body[0])
+	if !isOk  || len(params) !=2 {
+		return "","",false
+	}
+	if !CheckParams(params){
+		return "","",false
+	}
+	return params[0],params[1],true
+}
+
+//检查连续的 a 对应 (10,1,10-100)
+func CheckContinueA(body []string) (string,string ,bool){
+
+	f , isOk :=TextDeal.StringToFloat(body[0])
+	if  !isOk || !CheckF(f){
+		return  "","",false
+	}
+	params,isOk :=Compile.GetParams(body[2])
+
+	if !isOk  || len(params) !=2 {
+		return "","",false
+	}
+	if !CheckParams(params){
+		return "","",false
+	}
+	return params[0],params[1],true
+}
+//检查 F 的合法性
+func CheckF(f float64)bool{
+	if f <= 0{
+		return false
+	}
+	return true
+}
+//检查 a 的合法性
+func CheckA(a float64)bool{
+	if math.Abs(a) >= 90{
+		return false
+	}
+	return true
+}
+//检查步长
+func CheckStep(step float64) bool{
+	return CheckF(step)
+}
+//检查PM 与 AM
 func CheckTime(time string) bool {
 
 	if time != AM && time != PM {
 		return false
 	}
 	return true
+}
+
+//检查连续的变量 保证 a>b
+func CheckParams(list []string) bool{
+	start,isOk :=TextDeal.StringToFloat(list[0])
+	if !isOk{
+		return false
+	}
+	end ,isOk :=TextDeal.StringToFloat(list[1])
+	if !isOk{
+		return false
+	}
+	if start >= end{
+		return false
+	}
+	return true
+}
+
+//制作f 或 a 队列
+func MakeListForFA(start string,end string,step string,con string,instructs *[]Compile.Instruct,i int,isF bool){
+	numberStart,_:=TextDeal.StringToFloat(start)
+	numberEnd,_:=TextDeal.StringToFloat(end)
+	numberStep,_:=TextDeal.StringToFloat(step)
+	instructsNew :=[]Compile.Instruct{}
+	head :=(*instructs)[i].Head
+	for numberStart < numberEnd{
+		a:=TextDeal.FloatToString(numberStart)
+		if isF {
+			instructsNew=append(instructsNew,MakeInstruct(a,con,head))
+		}else {
+			instructsNew = append(instructsNew,MakeInstruct(con,a,head))
+			}
+		numberStart += numberStep
+	}
+	if isF {
+		instructsNew=append(instructsNew,MakeInstruct(end,con,head))
+	}else{
+		instructsNew=append(instructsNew,MakeInstruct(con,end,head))
+	}
+	Compile.Combine(instructs,&instructsNew,i)
+}
+
+func MakeInstruct(f string ,a string,head string )Compile.Instruct{
+	instruct :=Compile.Instruct{}
+	instruct.Head=head
+	instruct.Body=append(instruct.Body, "")
+	instruct.Body=append(instruct.Body, "")
+	instruct.Body[0]=f
+	instruct.Body[1]=a
+	return instruct
 }

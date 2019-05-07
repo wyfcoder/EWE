@@ -1,7 +1,6 @@
 package RayRun
 
 import (
-	"fmt"
 	"github.com/WebForEME/AMethod/Compile"
 	"github.com/WebForEME/Functions"
 	"github.com/WebForEME/makeTemplate"
@@ -29,23 +28,21 @@ func RayRunDeal(writer http.ResponseWriter, request *http.Request) {
 		return
 	}
 
-	err,text2 :=RayRunCompile(instructs)       //编译对应程序的指令
+	err,text2 :=RayRunCompile(&instructs)       //编译对应程序的指令
 	Compile.CombineText(&text,&text2)
 	if err!= nil{
 		t,_=t.Parse(makeTemplate.MakeRayRunWrite(text))
 		t.Execute(writer,nil)
 		return
 	}
-	eLines,rLines,err:= RayRunCount(instructs)                                     //开启绘图程序，
-	if err !=nil{                                                                 //网址访问问题
+	eLines,rLines,err:= RayRunCount(instructs)
+	if err !=nil{                                                                  //网址访问问题
 	    text +=string('\n')+WEBWRONG
 		t,_=t.Parse(makeTemplate.MakeRayRunWrite(text))
 		t.Execute(writer,nil)
 		return
 	}
-	fmt.Print(eLines)
-	fmt.Print(rLines)
 
-	t, _ = t.Parse(makeTemplate.MakeRayRunWrite(text))
+	t, _ = t.Parse(makeTemplate.DrawData(&eLines,&rLines,text))
 	t.Execute(writer, nil)
 }

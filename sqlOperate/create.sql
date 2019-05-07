@@ -58,7 +58,8 @@ create table rayrun(
 )
 
 //RayRun iri 模型
-
+insert into iridata values('PM','2011','10','11','')
+insert into iridata values('AM','2011','10','11','')
 create table iridata(
     id varchar(11) primary key,
     year varchar(20),

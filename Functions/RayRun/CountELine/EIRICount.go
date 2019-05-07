@@ -3,8 +3,11 @@ package CountELine
 import (
 	"github.com/WebForEME/AMethod/Compile"
 	"github.com/WebForEME/AMethod/TextDeal"
+	"github.com/WebForEME/AMethod/TimeTool"
 	"github.com/WebForEME/AMethod/WebTool"
 	"github.com/WebForEME/Functions/RayRun/RayRunDataStruct"
+	"github.com/WebForEME/sqlOperate"
+	time2 "time"
 )
 
 
@@ -14,19 +17,23 @@ import (
 // E_IRI(2012-01-12,AM,20,20)
 func CountEIRI(instruct Compile.Instruct, eLine *RayRunDataStruct.RayRunData) error{
 	if len(instruct.Body) != 4{                     //调用一个更新程序 调用数据库文件 解析即可得到数据
-	time := 0
+	time := AM
 		       if len(instruct.Body) == 0{
+		       	now:=time2.Now()
+		       	if now.Hour() >= 8 || now.Hour()<= 18{
+		       		time=PM  //做一个判断 给出时间点
+				}
 			   }else{
 			   	 if instruct.Body[0] == "PM"{
-			   	 	time =1
+			   	 	time =PM
 				 }
 			   }
 		   eLine.Data=GetDatabaseData(time)
-	       eLine.Name=IRIName + "Auto ."
+	       eLine.Name=IRIName + "Auto:"+time
 	       return nil
 	}else{
 	     err:=GetWebData(instruct,& eLine.Data)
-		 eLine.Name =IRIName + instruct.Body[0]+" "+instruct.Body[1]+" ("+instruct.Body[2]+","+instruct.Body[3]
+		 eLine.Name =IRIName + instruct.Body[0]+" "+instruct.Body[1]+" ("+instruct.Body[2]+","+instruct.Body[3]+")"
 		 return err
 	}
 }
@@ -75,8 +82,8 @@ func PostWebData(year string , month string ,day string , time string, latitude 
 }
 
 func GetWebData(instruct Compile.Instruct,data *[]float64)error{
-    date :=TextDeal.TextToTime(instruct.Body[0])
-    time :=AM
+    date :=TimeTool.TextToTime(instruct.Body[0])
+    time :=AM  //0
     if instruct.Body[1] == "PM"{
     	time=PM
 	}
@@ -90,10 +97,25 @@ func GetWebData(instruct Compile.Instruct,data *[]float64)error{
 	}
 
 //数据库操作
-func GetDatabaseData(time int) []float64{
-	return nil
+func GetDatabaseData(time string) []float64{
+	//给用户回馈数据里的信息
+	year,month,day,txt :=sqlOperate.GetIRIData(time)
+	_,_,txt=TextDeal.DealText(&txt)
+	data :=[]float64{}
+	TextDeal.DealText2(&txt,&data)
+	if !TimeTool.IsSameTime(year,month,day){
+		go UpdateDatabase()
+	}
+	return data
 }
 
-func UpdateDatabase(year string , month string ,day string ){
-
+func UpdateDatabase(){
+	//获取PM AM 的信息 执行四次的POST
+	timeString :=TimeTool.TimeStringNow()
+	am,err :=CombineWebData(timeString.Year,timeString.Month,timeString.Day,AM,XiAnLatitude,XiAnLongitude)
+	if err!=nil{
+		return
+	}
+	pm,err :=CombineWebData(timeString.Year,timeString.Month,timeString.Day,PM,XiAnLatitude,XiAnLongitude)
+	sqlOperate.UpDateIRIData(am,pm)
 }

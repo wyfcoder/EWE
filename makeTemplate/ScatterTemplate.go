@@ -1,6 +1,6 @@
 package makeTemplate
 
-import "strconv"
+import "github.com/WebForEME/AMethod/HtmlTool"
 
 func MakeScatterTemplate(datas []float64) string {
 	html := `<html>
@@ -100,17 +100,8 @@ func MakeScatterTemplate(datas []float64) string {
 <script>
 var m2=[`
 
-	for i := 0; i < len(datas); i += 2 {
-		x := strconv.FormatFloat(datas[i], 'f', -1, 64)
-		y := strconv.FormatFloat(datas[i+1], 'f', -1, 64)
-		html += "[" + x + "," + y + "]"
-		if i != len(datas)-2 {
-			html += ","
-		} else {
-			html += "]"
-		}
-	}
-	html += `;
+	html += HtmlTool.DrawData(&datas)
+	html += `];
 
 drawP("2D Scatter Diagram","x","y",5,'rgba(119, 152, 191, .5)')
 

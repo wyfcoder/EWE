@@ -31,15 +31,17 @@ func Compile(text *string)(error,[]Instruct,string) {
 
 	err :=errors.New("Command is wrong ")
 
+    hasStart :=false
+
 	i:=0
 
-	for i=len(*text)-1;i>=0;i--{
+	for i=len(*text)-1;i >=0;i--{
 
 		char :=(*text)[i]
 		//开始一条指令
 		if char == ')' {
-			for char == ')' {
-				i--
+			i--
+			for char == ')' && i >=0 {
 				err, i = readBody(text, i, &instruct)
 				if err != nil {
 					return err, instructs,MakeWrongText(text,i)
@@ -50,16 +52,27 @@ func Compile(text *string)(error,[]Instruct,string) {
 				}
 				instructs = append(instructs, instruct)
 				instruct.Body=nil
-				char =(*text)[i]
+				if i >= 0 {
+					char = (*text)[i]
+				}else {
+					break
+				}
+				i--
 			}
 		}
 
 		if char == '@'{
+			hasStart=true
 			break
 		}
 	}
-	ReverseInstructs(&instructs)
 
+	if hasStart {
+		ReverseInstructs(&instructs)
+	}else{
+		err =errors.New("Don't have @ .")
+		return err,nil,MakeWrongNull(text)
+	}
 	return nil,instructs,MakeReturnText(text,i)
 }
 
@@ -269,6 +282,10 @@ func MakeWrongText(text *string, start int) string{
 	return wrong
 }
 
+//空开始错误文本
+func MakeWrongNull(text *string) string{
+	return (*text)+string('*')+string('\n')+"Don't have @ ."
+}
 //制作还原指令指令
 func ReturnString(instruct Instruct)string{
 
@@ -285,4 +302,24 @@ func ReturnString(instruct Instruct)string{
 		}
 	}
 	return text
+}
+
+
+//提取 1-2-3 类似的指令
+func GetParams(text string) ([]string,bool){
+	param:=""
+	list:=[]string{}
+	for i:=0 ; i<len(text) ;i++{
+		if text[i] == '-'{
+			if param == ""{
+				return nil,false
+			}
+			list=append(list,param)
+			param=""
+			continue
+		}
+		param+=string(text[i])
+	}
+	list=append(list,param)
+	return list,true
 }

@@ -456,10 +456,10 @@
     <h1>RayRun 文档</h1>
     <br>
     <ul>
-        <li><a href="/DocumentForRayRun">FScript</a></li>
-        <li><a href="/DocumentForRayRun1">E_IRI</a></li>
-        <li><a href="/DocumentForRayRun2">E_PRO</a></li>
-        <li><a href="/DocumentForRayRun3">R_AH0</a></li>
+        <li><a href="/DocumentForRayRunScript">FScript</a></li>
+        <li><a href="/DocumentForRayRunIRI">E_IRI</a></li>
+        <li><a href="/DocumentForRayRunPRO">E_PRO</a></li>
+        <li><a href="/DocumentForRayRunAH0">R_AH0</a></li>
         <li><a href="/RayRun">返回 </a></li>
     </ul>
     <h2 id="_name">脚本说明</h2>
@@ -469,18 +469,12 @@
 </div>
 <div id="content">
     <div class="sect1">
-        <h2 id="_synopsis">调用形式</h2>
+        <h2 id="_synopsis">形式</h2>
         <div class="sectionbody">
             <div class="verseblock">
 <pre class="content">
-    <em>E_IRI()</em>
-    <em>E_IRI(Time)</em>
-    <em>E_IRI(Date,Time,Latitude,Longitude)</em>
-    <em>Time = AM or PM</em>
-    <em>Date = YYYY-MM-DD </em>
-    <em>Latitude = [-90,90]</em>
-    <em>Longitude =[-180,180]</em>
-    <em></em>
+    <em>子元素: functionName( param1 , param2 , param3 , ...)</em>
+    <em>关键字 : @ ( , )</em>
 </pre>
             </div>
         </div>
@@ -490,29 +484,16 @@
         <h2 id="_description">描述</h2>
         <div class="sectionbody">
             <div class="paragraph">
-                <p>该指令利用国际参考电离层IRI模型来绘制电子密度随高度的变化曲线,高度起点95Km,终点1000Km。</p>
-            </div>
-            <div class="paragraph">
-                <p>你可以选择三种形式调用该指令完成描绘电子密度随高度变化的曲线。</p>
-            </div>
-            <div class="paragraph">
-                <p>第一种，不添加任何参数。他可以快速的绘制出当前时间西安地区的电子密度随高度的变化。您会发现，在一天的不同时间调用，只有两种结果。一种是凌晨2:00的情况，一种是下午14:00的情况。
-                    例子：</p>
-                <p><code>E_IRI()</code></p>
-            </div>
-            <div class="paragraph">
-                <p>第二种，添加一个表示时间点的时间参数。他可以根据你输入的时间点快速绘制当天西安地区对应时间点的曲线。该参数的值是<code>AM</code>或是<code>PM</code>。其中<code>AM</code>表示绘制当天凌晨2:00的电子密度随高度的变化情况，而<code>PM</code>
-                    表示绘制当天下午14：00的电子密度随高度的变化曲线。例子：</p>
-                <p><code>E_IRI(AM)</code></p>
-                <p><code>E_IRI(PM)</code></p>
-            </div>
-            <div class="paragraph">
-                <p>第三种，添加四个参数，分别表示日期，时间点，纬度，经度。他可以根据输入的四个参数，绘制对应地区，对应时间的电子密度随高度变化图。该指令
-                    的执行周期较长。其中日期的表达形式是<code>YYYY-MM-DD</code>,比如要表示2008的2月2日，就是<code>2008-02-02</code>。
-                    而时间点参数只有两个，<code>AM</code>或<code>PM</code>。<code>AM</code>代表下午14:00，<code>PM</code>代表凌晨2:00。纬度是一个在[-90,90]之间的浮点数。
-                    经度是在[-180,180]的浮点数。例子：</p>
-                <p><code>E_IRI(2008-03-02,AM,10,108)</code></p>
-                <p><code>E_IRI(2018-12-02,PM,60,18)</code></p>
+                <p>FScript 是一种调用代码的表达式集合，用于RayRun的用户输入约束，只要遵守他，就能让代码运行。</p>
+                <p>其约束如下：</p>
+                <p>@ 符合表示代码的入口点。编译器会从下到上搜索@符号，把最先发现的@当作代码入口，从该点开始读用户的指令。</p>
+                <p>FScript 的元素只有函数，函数表示一个操作。</p>
+                <p>函数的格式: functionName(param1,param2,param3,...)</p>
+                <p>其中 functionName为操作名称，为一段字符串，保证其中不包含空格，换行和关键字 。</p>
+                <p>(param1,param2,param3,...)表示函数体，他表示函数的参数列表。 （ 为函数体起点， ) 表示函数体终点。
+                param1，为函数体的一个参数，同样保证param1为一段字符串，保证其中不包含空格，换行和关键字。一个函数
+                的参数为n,n >= 0。各个参数之间由逗号间隔，参数和逗号之间可以有任意数量的空格和换行。</p>
+                <p>其余在函数结构之外的字符且不为关键字的都为无关字符,</p>
             </div>
         </div>
     </div>
@@ -521,7 +502,7 @@
         <h2 id="EXAMPLES">例子</h2>
         <div class="sectionbody">
             <div class="paragraph">
-                <p>如下使用该指令</p>
+                <p>FScript的一些输入实例</p>
             </div>
             <div class="literalblock">
                 <div class="content">
@@ -532,6 +513,7 @@
             </div>
             <div class="literalblock">
                 <div class="content">
+                    <pre>@ main</pre>
                     <pre>E_IRI()</pre>
                 </div>
             </div>
@@ -544,7 +526,8 @@
             </div>
             <div class="literalblock">
                 <div class="content">
-                    <pre>E_IRI(AM)</pre>
+                    <pre>@ main
+E_IRI( AM )</pre>
                 </div>
             </div>
             <div class="literalblock">
@@ -556,7 +539,11 @@
             </div>
             <div class="literalblock">
                 <div class="content">
-                    <pre>E_IRI(2013-04-03,PM,35.31,20.0)</pre>
+                    <pre>@ main
+E_IRI(2013-04-03 ,
+       PM,
+       35.31,
+       20.0)</pre>
                 </div>
             </div>
 
@@ -564,7 +551,7 @@
     </div>
     <div id="footer">
         <div id="footer-text">
-            Last updated 2019-02-26 19:31:11 UTC
+            Last updated 2019-05-07
         </div>
     </div></div>
 </body>

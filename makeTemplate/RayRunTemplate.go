@@ -1,5 +1,10 @@
 package makeTemplate
 
+import (
+	"github.com/WebForEME/AMethod/HtmlTool"
+	"github.com/WebForEME/Functions/RayRun/RayRunDataStruct"
+)
+
 //射线追踪的模板程序,先架构一个静态的网页
 const (
 	RayRunHead = `<head>
@@ -24,7 +29,7 @@ const (
     <style type="text/css">
             #box {
             width: 90%;
-            height: 60%;
+            height: 80%;
             margin-left:10%;
         }
         #tab_nav {
@@ -35,7 +40,7 @@ const (
         }
         #tab_nav li {
             float: left;
-            margin: 0% 20%;
+            margin: 0% 17.5%;
             list-style: none;
             border: 1px solid #999;
             border-bottom: none;
@@ -188,7 +193,7 @@ const (
         </button>
         <a class="navbar-brand">
           <i class="fa fa-signal"></i>
-          Ewe
+          RayRun
         </a>
       </div>
       <div class="navbar-collapse collapse">
@@ -198,7 +203,7 @@ const (
         </ul>
 
         <ul class="nav navbar-nav">
-          <li><a href="/DocumentForRayRun">Document</a></li>
+          <li><a href="/DocumentForRayRunScript">Document</a></li>
         </ul>
 
         <ul class="nav navbar-nav">
@@ -270,11 +275,11 @@ var chart = Highcharts.chart('t_1', {
         reversed: false,
         title: {
             enabled: true,
-            text: '高度'
+            text: '高度  Km'
         },
         labels: {
             formatter: function () {
-                return this.value + 'km';
+                return this.value;
             }
         },
         maxPadding: 0.05,
@@ -282,21 +287,21 @@ var chart = Highcharts.chart('t_1', {
     },
     yAxis: {
         title: {
-            text: '距离'
+            text: '电子浓度  10E+10 个/m^3 '
         },
         labels: {
             formatter: function () {
-                return this.value + 'km';
+                return this.value/1E10;
             }
         },
-        lineWidth: 2
+        lineWidth: 1
     },
     legend: {
-        enabled: false
+        enabled: true
     },
     tooltip: {
         headerFormat: '<b>{series.name}</b><br/>',
-        pointFormat: '{point.x} km: {point.y} km'
+        pointFormat: '{point.x} km: {point.y} 个/m^3'
     },
     plotOptions: {
         spline: {
@@ -343,10 +348,10 @@ var chart2 = Highcharts.chart('t_2', {
                 return this.value + 'km';
             }
         },
-        lineWidth: 2
+        lineWidth: 1
     },
     legend: {
-        enabled: false
+        enabled: true
     },
     tooltip: {
         headerFormat: '<b>{series.name}</b><br/>',
@@ -418,6 +423,14 @@ func MakeRayRun() string {
 
 //导入信息 拆解出两部分 一部分为 body 一部分为 wrong
 func MakeRayRunWrite(text string) string{
+
+	body,compile :=resolveText(text)
+	html := RayRunHead
+	html += RayRunBodyPre + RayRunBodyGraph + writeEdit(body)+writeCompile(compile)+ RayRunBodyELine + RayRunBodyRLine + RayRunTail
+	return html
+}
+//在text内容里分解出compile 和 edit
+func resolveText(text string) (string,string){
 	size:=len(text)-1
 	i:=size
 	k:=0
@@ -441,14 +454,10 @@ func MakeRayRunWrite(text string) string{
 		compile +=  string(text[i])
 		i++
 	}
-
-	html := RayRunHead
-	html += RayRunBodyPre + RayRunBodyGraph + writeEdit(body)+writeCompile(compile)+ RayRunBodyELine + RayRunBodyRLine + RayRunTail
-
-	return html
+	return body,compile
 }
 
-//把 内容写入到 edit 里面
+//把内容写入到 edit 里面
 func writeEdit(text string) string{
 	return RayRunBodyConsolePre + text +RayRunBodyConsoleNex
 }
@@ -456,4 +465,31 @@ func writeEdit(text string) string{
 //把内容写到 compile 里面
 func writeCompile(text string) string{
 	return  RayRunBodyCompilePre+RayRunTextCompile+text+RayRunBodyCompileNext
+}
+
+
+//绘图函数 接收两个 底层实现
+func DrawData( eLines *[]RayRunDataStruct.RayRunData,rLines *[]RayRunDataStruct.RayRunData,text string)string{
+	html :=RayRunHead
+	body,compile :=resolveText(text)
+	html += RayRunBodyPre + RayRunBodyGraph + writeEdit(body)+writeCompile(compile)+RayRunBodyELine+drawLines(eLines)+RayRunBodyRLine+drawLines(rLines)+RayRunTail
+	return html
+}
+
+//绘制曲线
+func drawLines (lines *[]RayRunDataStruct.RayRunData) string{
+	html:=""
+	for i:=0 ;i<len(*lines) ;i++{
+		if i!=0{
+			html+="{"
+		}
+		html+="name: '"+(*lines)[i].Name+"',"
+		html+="data :["
+		html+=HtmlTool.DrawData(&(*lines)[i].Data)
+		html+="]"
+		if i!=len(*lines)-1{
+			html+="},"
+		}
+	}
+	return html
 }

@@ -2,11 +2,14 @@ package CountELine
 
 const (
 	STEP          = 0.5 //电子计算的步长
+	START         =95.0
+	END           =1000.0
 	AM            = "02"
 	PM            = "14"
-	XiAnLatitude  = ""
-	XiAnLongitude = ""
+	XiAnLatitude  = "34"
+	XiAnLongitude = "108"
 	IRIName       = "IRI Mode :"
+	PROJECTNAME   ="Project Mode :"
 	IRIPOSTHead = `
    model=iri2016
    time_flag=1
