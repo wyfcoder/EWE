@@ -1,7 +1,6 @@
-package main
+package Functions
 
 import (
-	"encoding/json"
 	"fmt"
 	"log"
 	"os"
@@ -35,15 +34,21 @@ func init() {
 }
 
 func loadConfig() {
-	file, err := os.Open("config.json")
+	/*file, err := os.Open("config.json")
 	if err != nil {
 		log.Fatalln("Cannot open config file", err)
 	}
 
 	decoder := json.NewDecoder(file)
 	config = Configuration{}
-	err = decoder.Decode(&config)
-	if err != nil {
+	err = decoder.Decode(&config)*/
+
+	config.WriteTimeout=600
+	config.ReadTimeout=10
+	config.Address="0.0.0.0:8080"
+	config.Static="public"
+
+	/*if err != nil {
 		log.Fatalln("Cannot get configuration from file", err)
-	}
+	}*/
 }
