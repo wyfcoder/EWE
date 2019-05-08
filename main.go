@@ -12,15 +12,18 @@ import (
 	"github.com/WebForEME/Functions/User_Data"
 	"github.com/WebForEME/Functions/User_File"
 	"github.com/WebForEME/Functions/User_Market"
+	"github.com/WebForEME/sqlOperate"
 	"net/http"
 )
 
 func main() {
+	sqlOperate.InitRayRun()  //运行一次之后就可以注释掉
 
 	p("EME", "started at", config.Address)
-
 	mux := http.NewServeMux()
+
 	files := http.FileServer(http.Dir(config.Static))
+
 	mux.Handle("/static/", http.StripPrefix("/static/", files))
 
 	//登陆

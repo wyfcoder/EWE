@@ -1,5 +1,4 @@
-package main
-
+package Functions
 import (
 	"fmt"
 	"log"
