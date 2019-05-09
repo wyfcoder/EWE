@@ -48,7 +48,7 @@ func GetId(month int, day int) int {
 	}
 	return month
 }
-//直接主函数 By XiaoMing 存在一些小问题 待修改
+//直接主函数 By XiaoMing
 func EPROMode( foE float64, foF2 float64, hmF1 float64, hmF2 float64, NmE float64, NmF2 float64, eLine *RayRunDataStruct.RayRunData) {
 	hmE:=110.0
 	h, eds_e:=0.0,0.0;      //高度，E层电子密度

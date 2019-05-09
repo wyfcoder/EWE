@@ -5,7 +5,7 @@ const (
 	START         =95.0
 	END           =1000.0
 	AM            = "02"
-	PM            = "14"
+	PM            = "14.50"
 	XiAnLatitude  = "34"
 	XiAnLongitude = "108"
 	IRIName       = "IRI Mode :"

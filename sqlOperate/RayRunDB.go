@@ -12,7 +12,7 @@ const  deleteIRIDATA         = "delete from iridata"
 const  insertIRIDATA         = "insert into iridata values($1,$2,$3,$4,$5)"
 const (
 	AM            = "02"
-	PM            = "14"
+	PM            = "14.50"
 	)
 func insertRayRun(id string,text string){
 	stmt, _ := Db.Prepare(insertIntoRayRun)

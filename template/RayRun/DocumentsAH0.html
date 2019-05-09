@@ -476,8 +476,8 @@
             <div class="verseblock">
 <pre class="content">
     <em>R_AH0(frequence,angle)</em>
-    <em>R_AH0(frequenceStart-frequenceEnd,step,angle)</em>
-    <em>R_AH0(frequence,step,angleStart-angleEnd)</em>
+    <em>R_AH0(frequenceStart~frequenceEnd,step,angle)</em>
+    <em>R_AH0(frequence,step,angleStart~angleEnd)</em>
     <em>frequence > 0</em>
     <em>frequenceStart >0</em>
     <em>frequenceEnd >0</em>
@@ -524,11 +524,11 @@
                 <p>第一个参数frequence：frequenceStart表示电波起始频率单位为MHz，取值为大于0的浮点数；
                     frequenceEnd表示电波中止频率单位为MHz，取值为大于frequenceStart的浮点数。</p>
                 <p>第二个参数step,表示第一个参数频率的步长。step为大于0的浮点数，和第一参数一起确定绘制射线的条数。</p>
-                <p>第三个参数angleStart-angleEnd，表示电波的一段入射天顶角，angleStart表示起始入射角，单位为°，取值为
+                <p>第三个参数angleStart~angleEnd，表示电波的一段入射天顶角，angleStart表示起始入射角，单位为°，取值为
                     (-90,90)的浮点数。angleEnd表示中止入射角，单位为°，取值为 (angleStart,90)的浮点数</p>
                 <p>例子：</p>
-                <p><code>R_AH0(3,1,10-30)</code></p>
-                <p><code>R_AH0(2,0.1,40-41)</code></p>
+                <p><code>R_AH0(3,1,10~30)</code></p>
+                <p><code>R_AH0(2,0.1,40~41)</code></p>
             </div>
         </div>
     </div>
@@ -563,7 +563,7 @@ R_AH0(3,30)</pre>
                 <div class="content">
 <pre>@ main
 E_PRO()
-R_AH0(2-3,0.1,40)</pre>
+R_AH0(2~3,0.1,40)</pre>
                 </div>
             </div>
             <div class="literalblock">
@@ -577,7 +577,7 @@ R_AH0(2-3,0.1,40)</pre>
                 <div class="content">
                     <pre>@ main
 E_PRO()
-R_AH0(2,1,20-30)</pre>
+R_AH0(2,1,20~30)</pre>
                 </div>
             </div>
 

@@ -305,12 +305,12 @@ func ReturnString(instruct Instruct)string{
 }
 
 
-//提取 1-2-3 类似的指令
+//提取 1~2~3 类似的指令
 func GetParams(text string) ([]string,bool){
 	param:=""
 	list:=[]string{}
 	for i:=0 ; i<len(text) ;i++{
-		if text[i] == '-'{
+		if text[i] == '~'{
 			if param == ""{
 				return nil,false
 			}

@@ -19,4 +19,3 @@ const (
 	//获取文件到指定的目的地******可以修改目录
 	Dir="C:\\GoPath\\src\\github.com\\WebForEME\\files\\"
 )
-
