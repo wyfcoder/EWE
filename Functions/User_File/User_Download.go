@@ -9,7 +9,7 @@ import (
 
 func Download(writer http.ResponseWriter, request *http.Request){
 	if(CheckService.CheckUser(writer,request)){
-		t := Functions.ParseTemplateFiles("layout", "private.navbar", "download")
+		t := Functions.ParseTemplateFiles("Tools/layout", "Tools/private.navbar", "Download/download")
 		files:=sqlOperate.Files()
 		t.Execute(writer, files)
 	}

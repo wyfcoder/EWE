@@ -8,7 +8,7 @@ import (
 
 func Lab(writer http.ResponseWriter, request *http.Request){
 	if(CheckService.CheckUser(writer,request)){
-		t := Functions.ParseTemplateFiles("aboutLabLay","aboutLab","private.navbar")
+		t := Functions.ParseTemplateFiles("Lab/aboutLabLay","Lab/aboutLab","Tools/private.navbar")
 		t.Execute(writer,nil)
 	}
 }

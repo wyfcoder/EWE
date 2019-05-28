@@ -20,18 +20,150 @@ func MakeMarketTemplate() string {
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=znos8mGRdphs0uYwfsffj4NOLofXIMmT"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
 
+
+    <link rel="stylesheet" href="http://jrain.oscitas.netdna-cdn.com/tutorial/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css"/>
+
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
     <style type="text/css">
         html{height:100%}
         body{height:100%;padding:0px;font-family:"微软雅黑";}
-        #news{height:45%;width:80%;margin-left:2%;margin-right:2%}
+        #news{height:35%;width:80%;margin-left:2%;margin-right:2%}
         #plot{height:70%;width:80%;margin-left:2%;margin-left:2%;margin-top:5%}
         #container2{height:100%;width:100%;margin-left:2%;margin:5%}
-        .text{width:100%;height:70%}
         .next{margin-left:40%}
     </style>
+   
 
+    <style type="text/css">
+            .text{width:80%;height:80%;margin_left:10%}
+            #feedBack{width:100%; height:30%;margin-left:2%;margin-right:2%}
+            #support{width:100%; height:30%;margin-left:2%;margin-right:2%}
+     </style>
+
+      <style type="text/css">
+            .img-responsive {
+                display: inline-block;
+                height: auto;
+                max-width: 100%;
+            }
+            #news{width:100%; height:50%;margin-left:2%;margin-right:2%}
+
+            .post-slide{
+                background: #fff;
+                margin: 0 15px;
+                padding:27px 30px;
+                border-bottom: 1px solid #dedde1;
+            }
+            .post-slide .post-header{
+                margin-bottom: 10px;
+            }
+            .post-slide .subtitle{
+                color:#0b99bc;
+                font-size:14px;
+                display: inline-block;
+                margin-bottom:5px;
+                text-transform: uppercase;
+                transition: all 0.4s ease 0s;
+            }
+            .post-slide .subtitle:hover{
+                color:#333;
+                text-decoration: none;
+            }
+            .post-slide .post-title{
+                margin: 0;
+            }
+            .post-slide .post-title a{
+                color:#333;
+                font-size:18px;
+                font-weight: bold;
+                text-transform:capitalize;
+                transition: all 0.4s ease 0s;
+            }
+            .post-slide .post-title a:hover{
+                color:#0b99bc;
+                text-decoration: none;
+            }
+            .post-slide .pic{
+                overflow: hidden;
+                position: relative;
+            }
+            .post-slide .pic img{
+                width: 100%;
+                height: auto;
+                transform: rotate(0deg) scale(1,1);
+                transition: all 0.9s ease 0s;
+            }
+            .post-slide:hover img{
+                transform: rotate(-2deg) scale(1.1,1.1);
+            }
+            .post-slide .pic:after{
+                content: "";
+                position: absolute;
+                top:0;
+                left:0;
+                width: 100%;
+                height: 100%;
+                background: rgba(255,255,255,0);
+                transition: all 0.9s ease 0s;
+
+            }
+            .post-slide:hover .pic:after{
+                background: rgba(255,255,255,0.2);
+            }
+            .post-slide .post-bar{
+                list-style: none;
+                padding:12px 0;
+                margin: 0;
+            }
+            .post-slide .post-bar li{
+                display: inline-block;
+                margin-right:3px;
+                color:#aaa;
+            }
+            .post-slide .post-bar li:last-child{
+                margin-right: 0;
+            }
+            .post-slide .post-bar li a{
+                color:#aaa;
+                transition:0.3s ease;
+            }
+            .post-slide .post-bar li a:hover{
+                text-decoration: none;
+                color:#0b99bc;
+            }
+            .post-slide .post-description{
+                font-size: 14px;
+                line-height: 24px;
+                margin-bottom:15px;
+                color:#767676;
+            }
+            .post-slide .read-more{
+                color:#0b99bc;
+                font-size: 14px;
+                font-style: italic;
+                text-transform: capitalize;
+            }
+            .post-slide .read-more:hover{
+                color:#333;
+                text-decoration:none;
+            }
+            @media only screen and (max-width: 479px) {
+                .post-slide{
+                    padding: 15px;
+                }
+                .post-slide .post-bar li{
+                    margin-bottom: 5px;
+                }
+                .post-slide .post-bar li:last-child{
+                    margin-bottom: 0;
+                }
+            }
+        </style>
 </head>
 <body>`
+
 	html += Navbar
 
 	html += `
@@ -43,72 +175,110 @@ func MakeMarketTemplate() string {
  <button class="btn btn-default next"onclick="return previous()">previous</button>
  <button class="btn btn-primary" onclick="return next()">next</button>
 </div>
-<div id="plot">
-<a><p class="lead">Signal Foresee</p></a>
-<div id="container2">
-</div>
-</div>
+<br/>`
 
-<script type="text/javascript">
- var map = new BMap.Map("container2");
-            map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
-            map.addControl(new BMap.NavigationControl());
-            map.addControl(new BMap.ScaleControl());
-            map.addControl(new BMap.OverviewMapControl());
-            map.addControl(new BMap.MapTypeControl());
-            map.centerAndZoom(new BMap.Point(108.840053,34.129522), 15.8);
-            map.enableScrollWheelZoom();
-    if(!isSupportCanvas()){
-        alert('热力图目前只支持有canvas支持的浏览器,您所使用的浏览器不能使用热力图功能~')
-    }
-    //详细的参数,可以查看heatmap.js的文档 https://github.com/pa7/heatmap.js/blob/master/README.md
-    //参数说明如下:
-    /* visible 热力图是否显示,默认为true
-     * opacity 热力的透明度,1-100
-     * radius 势力图的每个点的半径大小
-     * gradient  {JSON} 热力图的渐变区间 . gradient如下所示
-     *	{
-            .2:'rgb(0, 255, 255)',
-            .5:'rgb(0, 110, 255)',
-            .8:'rgb(100, 0, 255)'
-        }
-        其中 key 表示插值的位置, 0~1.
-            value 为颜色值.
-     */
-    heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
-    map.addOverlay(heatmapOverlay);
-    heatmapOverlay.setDataSet({data:points,max:100});
-    //是否显示热力图
-    function openHeatmap(){
-        heatmapOverlay.show();
-    }
-    function closeHeatmap(){
-        heatmapOverlay.hide();
-    }
-    closeHeatmap();
-    function setGradient(){
-        /*格式如下所示:
-       {
-             0:'rgb(102, 255, 0)',
-             .5:'rgb(255, 170, 0)',
-             1:'rgb(255, 0, 0)'
-       }*/
-        var gradient = {};
-        var colors = document.querySelectorAll("input[type='color']");
-        colors = [].slice.call(colors,0);
-        colors.forEach(function(ele){
-            gradient[ele.getAttribute("data-key")] = ele.value;
-        });
-        heatmapOverlay.setOptions({"gradient":gradient});
-    }
-    //判断浏览区是否支持canvas
-    function isSupportCanvas(){
-        var elem = document.createElement('canvas');
-        return !!(elem.getContext && elem.getContext('2d'));
-    }
-</script>`
+	html+=`
+    <form action="/feedBack" method="post">
+        <div id="feedBack">
+   <p class="lead"><a>FeedBack</a></p>
+   <textarea rows="5" class="text"  id="content" name="content" placeholder="   Any suggests for our andorid appliaction or webside can be edited.
+   They will make us better.
+   Thank you." required></textarea>
+        <br/>
+        <button class="btn btn-primary">Go</button>
+        </div>
+    </form>
+<br/>`
 
-	//数据转化为javascript数组
+	html+=`
+<div id="support">
+   <a><p class="lead">Technical Support</p></a>
+<br/>
+ <div class="htmleaf-container">
+  <div class="demo" style="background: #f7f8fa;">
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <div id="news-slider" class="owl-carousel">
+
+       <div class="post-slide">
+        <div class="post-header">
+         <a class=lead>Go</a>
+        </div>
+
+        <div class="pic">
+         <img src="static/img/Go.jpg" alt=""/>
+        </div>
+
+        <ul class="post-bar">
+         <li><i class="fa fa-users"></i> <a>Support</a></li>
+        </ul>
+        <p class="post-description">
+         Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.
+         <br/>
+         Our website is builded by Go.
+        </p>
+        <a href="https://golang.google.cn/" class="read-more" target="_blank">Official website</a>
+       </div>
+
+       <div class="post-slide">
+        <div class="post-header">
+         <a class="lead">Andorid</a>
+        </div>
+        <div class="pic">
+         <img src="static/img/andorid.jpg." alt=""/>
+        </div>
+        <ul class="post-bar">
+         <li><i class="fa fa-users"></i> <a >Support</a></li>
+        </ul>
+        <p class="post-description">
+            Android is a free and open source operating system based on Linux. Mainly used in mobile devices, such as smartphones and tablets, led and developed by Google (Google) and the Open Mobile Alliance.
+        </p>
+        <a href="https://developer.android.google.cn/" class="read-more" target="_blank">Official website</a>
+       </div>
+
+       <div class="post-slide">
+        <div class="post-header">
+         <a class="lead">Baidu map</a>
+        </div>
+        <div class="pic">
+         <img src="static/img/baidumap.jpg." alt=""/>
+        </div>
+        <ul class="post-bar">
+         <li><i class="fa fa-users"></i> <a >Support</a></li>
+        </ul>
+        <p class="post-description">
+            Baidu Map is a platform for users to provide travel-related services including intelligent route planning, intelligent navigation (driving, walking, cycling), real-time road conditions and so on.
+        </p>
+        <a href="http://lbsyun.baidu.com/" class="read-more" target="_blank">Official website</a>
+       </div>
+
+       <div class="post-slide">
+        <div class="post-header">
+         <a class="lead">highcharts</a>
+        </div>
+        <div class="pic">
+         <img src="static/img/highcharts.png" alt=""/>
+        </div>
+        <ul class="post-bar">
+         <li><i class="fa fa-users"></i> <a >Support</a></li>
+        </ul>
+        <p class="post-description">
+            Highcharts is a graphics library written in pure JavaScript.
+            It can easily add interactive graphics to web sites or web applications, and it is free for personal learning, personal websites and non-commercial use.
+        </p>
+        <a href="https://www.highcharts.com.cn/" class="read-more" target="_blank">Official website</a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+`
+
+	//通知数据转化为javascript数组
 	datas := `<script>
    var   position=1
    var   datas=[`
@@ -165,7 +335,20 @@ function showInformation(){
 
 	end := `<script src="/static/js/jquery-2.1.1.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
-
+        <script src="/static/js/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+    <script>
+        $(function(){
+            $("#news-slider").owlCarousel({
+                items : 3,
+                itemsDesktop:[1199,3],
+                itemsDesktopSmall:[1000,2],
+                itemsMobile : [650,1],
+                navigationText:false,
+                autoPlay:true
+            });
+        })
+    </script>
 </body>
 </html>`
 

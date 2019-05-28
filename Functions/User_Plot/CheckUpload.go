@@ -1,4 +1,4 @@
-package User_Data
+package User_Plot
 
 import (
 	"github.com/WebForEME/AMethod/TextDeal"

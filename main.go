@@ -3,15 +3,14 @@ package main
 import (
 	"github.com/WebForEME/Functions"
 	"github.com/WebForEME/Functions/AboutLab"
-	"github.com/WebForEME/Functions/ContactUs"
 	"github.com/WebForEME/Functions/DeleteService"
 	"github.com/WebForEME/Functions/Manager_File"
 	"github.com/WebForEME/Functions/Manager_Notice"
 	"github.com/WebForEME/Functions/Manager_Page"
 	"github.com/WebForEME/Functions/RayRun"
-	"github.com/WebForEME/Functions/User_Data"
 	"github.com/WebForEME/Functions/User_File"
 	"github.com/WebForEME/Functions/User_Market"
+	"github.com/WebForEME/Functions/User_Plot"
 	"github.com/WebForEME/sqlOperate"
 	"net/http"
 )
@@ -60,20 +59,18 @@ func main() {
 	mux.HandleFunc("/draw", draw)
 
 	//删除文件
-	mux.HandleFunc("/deleteData", User_Data.DeleteFile)
+	mux.HandleFunc("/deleteData", User_Plot.DeleteFile)
 
 	//User    集市功能 数据功能
 	mux.HandleFunc("/Market", User_Market.Market)
 
-	mux.HandleFunc("/Data", User_Data.Data)
+	mux.HandleFunc("/Data", User_Plot.Data)
 
-	mux.HandleFunc("/checkUploadFile", User_Data.CheckUploadFile)
+	mux.HandleFunc("/checkUploadFile", User_Plot.CheckUploadFile)
 
 	//User Lab
 	mux.HandleFunc("/Lab", AboutLab.Lab)
 
-	//User Contact Us
-	mux.HandleFunc("/ContactUs", ContactUs.ContactUs)
 	//Manager 模式登陆,Notice 服务 和 File 服务
 
 	mux.HandleFunc("/Manager_Notice", Manager_Page.ManagerPage)
@@ -93,9 +90,6 @@ func main() {
 	mux.HandleFunc("/DocumentForRayRunIRI", RayRun.RayRunHelpIRI)
 	mux.HandleFunc("/DocumentForRayRunPRO", RayRun.RayRunHelpPRO)
 	mux.HandleFunc("/DocumentForRayRunAH0", RayRun.RayRunHelpAH0)
-
-	//测试程序
-	mux.HandleFunc("/test", test)
 
 	server := &http.Server{
 		Addr:    "0.0.0.0:8080",

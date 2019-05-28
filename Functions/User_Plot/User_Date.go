@@ -1,4 +1,4 @@
-package User_Data
+package User_Plot
 
 import (
 	"github.com/WebForEME/Functions"
@@ -9,7 +9,7 @@ import (
 
 func Data(writer http.ResponseWriter,request *http.Request){
 	if(CheckService.CheckUser(writer,request)){
-		t := Functions.ParseTemplateFiles("layout", "private.navbar", "DatasofUser")
+		t := Functions.ParseTemplateFiles("Tools/layout", "Tools/private.navbar", "Plot/plot")
 		datas, _ := sqlOperate.Datas(Functions.GetCookieValue("account", request))
 		t.Execute(writer, datas)
 	}
