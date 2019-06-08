@@ -203,7 +203,7 @@ const (
         </ul>
 
         <ul class="nav navbar-nav">
-          <li><a href="/DocumentForRayRunScript"  style="font-size: 20px;color: #0b99bc">Document</a></li>
+          <li><a href="/DocumentForRayRunScript"  target="_blank" style="font-size: 20px;color: #0b99bc">Document</a></li>
         </ul>
 
         <ul class="nav navbar-nav">
@@ -407,8 +407,11 @@ function setSelectionRange(input, selectionStart, selectionEnd) {
 }
 </script>
 </body>`
-	RayRunTextMain = "@main:\nE_IRI()\n//IRIMode plot.\nR_AH0(4.5,60)\n//plotRay f=4.5Mhz angle=60degree in IRIMode\nE_PRO()\n//ProjectMode plot.\n" +
-		"R_AH0(4.5,60)\n//plotRay f=4.5Mhz angle=60degree in ProMode\n//Have a try?"
+	RayRunTextMain = "@main:\nE_IRI() //IRIMode plot. plot Xian's graph. You can read document to plot another place.\n" +
+		"R_AH0(3,10,10~60) //plotRay f=4.5Mhz angle from 10 degree to 60 degree,step 10 using IRIMode\n" +
+		"E_PRO() //ProjectMode plot.\n" +
+		"R_AH0(1~5,0.5,40) //plotRay from 1Mhz to 5Mhz,step 0.5 ,angle=40degree in ProMode\n" +
+		"//Have a try?"
 	RayRunTextCompile ="Hello , I' will check your input :)\n"
 
 )

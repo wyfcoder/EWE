@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48e98fcf-d183-4a65-a495-1eb7994256d0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/img/People/wyf.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/People/wyy.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/makeTemplate/RayRunTemplate.go" beforeDir="false" afterPath="$PROJECT_DIR$/makeTemplate/RayRunTemplate.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/李良超.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/People/llc.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/郭宏福.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/People/ghf.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template/Lab/aboutLab.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/Lab/aboutLab.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/RayRun/DocumentsAH0.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/RayRun/DocumentsAH0.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,11 +42,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/template/Lab/aboutLab.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/makeTemplate/RayRunTemplate.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+            <state relative-caret-position="266">
+              <caret line="205" column="66" selection-start-line="205" selection-start-column="66" selection-end-line="205" selection-end-column="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/template/RayRun/DocumentsAH0.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1041">
+              <caret line="519" column="33" selection-start-line="519" selection-start-column="33" selection-end-line="519" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -72,7 +88,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ManagerModeInit.go" />
         <option value="$PROJECT_DIR$/InitWebsite/ManagerModeInit.go" />
         <option value="$PROJECT_DIR$/InitWebsite/UserModeInit.go" />
         <option value="$PROJECT_DIR$/InitWebsite/ManagerInit.go" />
@@ -121,8 +136,9 @@
         <option value="$PROJECT_DIR$/makeTemplate/ConstValue.go" />
         <option value="$PROJECT_DIR$/makeTemplate/marketTemplate.go" />
         <option value="$PROJECT_DIR$/template/Tools/public.navbar.html" />
-        <option value="$PROJECT_DIR$/makeTemplate/RayRunTemplate.go" />
         <option value="$PROJECT_DIR$/template/Lab/aboutLab.html" />
+        <option value="$PROJECT_DIR$/makeTemplate/RayRunTemplate.go" />
+        <option value="$PROJECT_DIR$/template/RayRun/DocumentsAH0.html" />
       </list>
     </option>
   </component>
@@ -140,6 +156,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -150,19 +167,23 @@
             <path>
               <item name="WebForEME" type="b2602c69:ProjectViewProjectNode" />
               <item name="WebForEME" type="462c0819:PsiDirectoryNode" />
+              <item name="ManagerOperator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebForEME" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WebForEME" type="462c0819:PsiDirectoryNode" />
               <item name="template" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="WebForEME" type="b2602c69:ProjectViewProjectNode" />
               <item name="WebForEME" type="462c0819:PsiDirectoryNode" />
               <item name="template" type="462c0819:PsiDirectoryNode" />
-              <item name="Lab" type="462c0819:PsiDirectoryNode" />
+              <item name="RayRun" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -177,25 +198,25 @@
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img/Pepole" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/img/Pepole" />
+      <recent name="$PROJECT_DIR$/public/img" />
+      <recent name="$PROJECT_DIR$/public/img/Logo" />
+      <recent name="$PROJECT_DIR$/template/Success" />
+      <recent name="F:\GO\src\github.com\WebForEME\public\img\Logo" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/img/Support" />
       <recent name="F:\GO\src\github.com\WebForEME\Functions\DealWrongs" />
       <recent name="F:\GO\src\github.com\WebForEME\template\Tools" />
       <recent name="F:\GO\src\github.com\WebForEME\template\SignUp" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/img" />
-      <recent name="$PROJECT_DIR$/public/img/Logo" />
-      <recent name="$PROJECT_DIR$/template/Success" />
-      <recent name="F:\GO\src\github.com\WebForEME\public\img\Logo" />
-      <recent name="F:\GO\src\github.com\WebForEME\public\background" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -249,12 +270,13 @@
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24060751" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24460432" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Thumbnails" sideWeight="0.49960032" weight="0.32952693" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49960032" weight="0.32789558" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4964029" weight="0.1680261" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49560353" weight="0.1680261" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4045677" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -263,7 +285,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32786885" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49924356" weight="0.32459018" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50359714" side_tool="true" visible="true" weight="0.1680261" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5043965" side_tool="true" visible="true" weight="0.1680261" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -386,16 +408,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Functions/User_Market/Market.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Functions/User_File/User_Download.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="11" column="80" lean-forward="true" selection-start-line="11" selection-start-column="80" selection-end-line="11" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sqlOperate/dataStruct.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -719,21 +731,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/makeTemplate/RayRunTemplate.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="747">
-          <caret line="410" column="72" selection-start-line="410" selection-start-column="72" selection-end-line="410" selection-end-column="72" />
-          <folding>
-            <element signature="e#178#5787#1" />
-            <element signature="e#5806#6773#1" />
-            <element signature="e#6794#7052#1" />
-            <element signature="e#7078#7288#1" />
-            <element signature="e#9074#10065#1" />
-            <element signature="e#10080#11123#1" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Functions/RayRun/RayRunCompile.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -751,6 +748,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/People/wyy.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/Lab/aboutLab.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2831">
+          <caret line="149" column="82" lean-forward="true" selection-start-line="149" selection-start-column="82" selection-end-line="149" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -758,10 +765,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/Lab/aboutLab.html">
+    <entry file="file://$PROJECT_DIR$/makeTemplate/RayRunTemplate.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+        <state relative-caret-position="266">
+          <caret line="205" column="66" selection-start-line="205" selection-start-column="66" selection-end-line="205" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/RayRun/DocumentsAH0.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1041">
+          <caret line="519" column="33" selection-start-line="519" selection-start-column="33" selection-end-line="519" selection-end-column="33" />
         </state>
       </provider>
     </entry>
