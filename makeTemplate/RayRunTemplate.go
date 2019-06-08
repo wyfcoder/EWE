@@ -182,7 +182,7 @@ const (
 </head>`
 
 	RayRunBodyPre = `<body>
-    <div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="navbar navbar-default navbar-static-top" role="navigation" style="background: white">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -191,7 +191,7 @@ const (
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand">
+        <a class="navbar-brand"  style="font-size: 20px">
           <i class="fa fa-signal"></i>
           RayRun
         </a>
@@ -199,15 +199,15 @@ const (
       <div class="navbar-collapse collapse">
 
         <ul class="nav navbar-nav">
-          <li><a href="/RayRun">Console</a></li>
+          <li><a href="/RayRun"  style="font-size: 20px;color: #00bf00">Console</a></li>
         </ul>
 
         <ul class="nav navbar-nav">
-          <li><a href="/DocumentForRayRunScript">Document</a></li>
+          <li><a href="/DocumentForRayRunScript"  style="font-size: 20px;color: #0b99bc">Document</a></li>
         </ul>
 
         <ul class="nav navbar-nav">
-          <li><a href="/Data">back</a></li>
+          <li><a href="/Data"  style="font-size: 20px;color: #ff76b5">back</a></li>
         </ul>
       </div>
     </div>
@@ -244,7 +244,7 @@ const (
 	RayRunBodyCompileNext=`
 	</textarea>
   </div>
- <button class="btn btn-primary buttonP"  onclick="showLoading()">Go</button>
+ <button class="btn btn-success buttonP"  onclick="showLoading()">Go</button>
  </form>
     <div id="loading">
         <div id="loading-center-absolute">
@@ -407,7 +407,8 @@ function setSelectionRange(input, selectionStart, selectionEnd) {
 }
 </script>
 </body>`
-	RayRunTextMain = "@main:\nE_"
+	RayRunTextMain = "@main:\nE_IRI()\n//IRIMode plot.\nR_AH0(4.5,60)\n//plotRay f=4.5Mhz angle=60degree in IRIMode\nE_PRO()\n//ProjectMode plot.\n" +
+		"R_AH0(4.5,60)\n//plotRay f=4.5Mhz angle=60degree in ProMode\n//Have a try?"
 	RayRunTextCompile ="Hello , I' will check your input :)\n"
 
 )

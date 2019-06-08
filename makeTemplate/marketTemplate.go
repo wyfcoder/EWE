@@ -207,7 +207,7 @@ func MakeMarketTemplate() string {
         </div>
 
         <div class="pic">
-         <img src="static/img/Go.jpg" alt=""/>
+         <img src="static/img/Support/Go.jpg" alt=""/>
         </div>
 
         <ul class="post-bar">
@@ -226,7 +226,7 @@ func MakeMarketTemplate() string {
          <a class="lead">Andorid</a>
         </div>
         <div class="pic">
-         <img src="static/img/andorid.jpg." alt=""/>
+         <img src="static/img/Support/andorid.jpg." alt=""/>
         </div>
         <ul class="post-bar">
          <li><i class="fa fa-users"></i> <a >Support</a></li>
@@ -242,7 +242,7 @@ func MakeMarketTemplate() string {
          <a class="lead">Baidu map</a>
         </div>
         <div class="pic">
-         <img src="static/img/baidumap.jpg." alt=""/>
+         <img src="static/img/Support/baidumap.jpg." alt=""/>
         </div>
         <ul class="post-bar">
          <li><i class="fa fa-users"></i> <a >Support</a></li>
@@ -258,7 +258,7 @@ func MakeMarketTemplate() string {
          <a class="lead">highcharts</a>
         </div>
         <div class="pic">
-         <img src="static/img/highcharts.png" alt=""/>
+         <img src="static/img/Support/highcharts.png" alt=""/>
         </div>
         <ul class="post-bar">
          <li><i class="fa fa-users"></i> <a >Support</a></li>
