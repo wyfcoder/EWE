@@ -1,0 +1,16 @@
+{{ define "content" }}
+    <div style="text-align:center">
+        <img style="-webkit-user-select: none;" src="/static/img/robot.png">
+    </div>
+        <h2 class="form-signin-heading">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true" display="block"> Error</span>
+        </h2>
+            <br/>
+            <textarea class="text" style="font-size: 15px;font-family: 宋体"  readonly>  {{.Wrong}}</textarea>
+            <br/>
+        <h2 class="form-signin-heading">
+            <span class="glyphicon glyphicon-ok"  aria-hidden="true" > Way</span>
+        </h2>
+    <br/>
+    <textarea class="text" style="font-size: 15px;font-family: 宋体"  readonly>  {{.Solve}}</textarea>
+{{end}}

@@ -27,6 +27,7 @@ func logIn(w http.ResponseWriter, r *http.Request) {
 }
 
 func dealLogin(writer http.ResponseWriter, request *http.Request) {
+
 	err := request.ParseForm()
 	if err != nil {
 		danger(err, "Cannot parse form.")
@@ -104,12 +105,12 @@ func checkUser(writer http.ResponseWriter, request *http.Request) bool {
 	return false
 }
 
-func home(writer http.ResponseWriter, request *http.Request) {
+/*func home(writer http.ResponseWriter, request *http.Request) {
 	if checkUser(writer, request) {
 		datas, _ := sqlOperate.Datas(getCookieValue("account", request))
 		generateHTML(writer, datas, "layout", "private.navbar", "home")
 	}
-}
+}*/
 
 //注册逻辑
 func register(w http.ResponseWriter, r *http.Request) {

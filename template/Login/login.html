@@ -1,0 +1,68 @@
+{{ define "content" }}
+
+<form class="form-signin center" role="form" action="/dealLogin" method="post" target="_self">
+  <p style="text-align: center"><img src="/static/img/Logo/EWE.png"></p>
+  <input id="accountOrName" name="accountOrName" class="form-control" placeholder="Account | Name" required autofocus>
+  <input id="Password"     type="Password" name="password" class="form-control" placeholder="Password" required>
+  <select class="form-control" id="people" name="people">
+    <option>User</option>
+    <option>Manager</option>
+  </select>
+  <div class="item">
+    <div class="grid">
+
+      <div class="box">
+        <div class="side side1"></div>
+        <div class="side side2"></div>
+      </div>
+
+      <div class="box">
+        <div class="side side1"></div>
+        <div class="side side2"></div>
+      </div>
+
+      <div class="box">
+        <div class="side side1"></div>
+        <div class="side side2"></div>
+      </div>
+
+      <div class="box">
+        <div class="side side1"></div>
+        <div class="side side2"></div>
+      </div>
+
+      <div class="box">
+        <div class="side side1"></div>
+        <div class="side side2"></div>
+      </div>
+
+      <div class="box">
+        <div class="side side1"></div>
+        <div class="side side2"></div>
+      </div>
+
+      <div class="box">
+        <div class="side side1"></div>
+        <div class="side side2"></div>
+      </div>
+
+      <div class="box">
+        <div class="side side1"></div>
+        <div class="side side2"></div>
+      </div>
+
+      <div class="box">
+        <div class="side side1"></div>
+        <div class="side side2"></div>
+      </div>
+    </div>
+  </div>
+  <input id="numberPaper"  class="form-control" readonly >
+  <br/>
+  <button class="btn btn-lg btn-success btn-block" type="submit" onclick="return showNumber()">Sign in</button>
+  <br/>
+  <a class="lead pull-left" href="/forget"  target=_blank>Forget</a>
+  <a class="lead pull-right" href="/register"  target=_blank>Register</a>
+  <br/>
+</form>
+{{ end }}

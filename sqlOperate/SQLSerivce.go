@@ -38,23 +38,26 @@ func AddUsers(name string, account string, password string, findPasswordString s
 
 	if err != nil {
 		//找出错误的原因
-		message := "Register wrong."
+		message := "Register wrong:"
 		if Db.QueryRow(selectID, account).Scan(&account) == nil {
 			message += "Account has been used."
 		}
-		if Db.QueryRow(selectID, name).Scan(&account) == nil {
+		if Db.QueryRow(selectName, name).Scan(&account) == nil {
 			message += "Name has been used."
 		}
-		if Db.QueryRow(selectID, findPasswordString).Scan(&account) == nil {
-			message += "String has been used."
+
+		//不知名原因
+		if message == ""{
+			message += "Database wrongs ."
 		}
+
 		return err, message
 	}
 	//创建验证组
 	statement = "insert into verificationCode values($1,$2) returning id"
 	stmt, err = Db.Prepare(statement)
+	//插入一个码
 	err = stmt.QueryRow(account, "123").Scan(&account)
-
 	return nil, ""
 }
 

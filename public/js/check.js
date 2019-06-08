@@ -13,17 +13,17 @@ function checkName() {
     return true;
 }
 
-//检查账号，账号长度为11，且都为数字组成，唯一
+//检查账号，账号长度为6～11，且都为数字组成，唯一
 function checkAccount() {
     let account=document.getElementById("account");
     let message=account.value.toString();
-    if(message.length!=11){
-        alert("Account needs 11 charsets from 0-9 .");
+    if(message.length>11 || message.length<6){
+        alert("Account needs 6～11 charsets from 0-9 .");
         return false;
     }else{
         for(i=0;i<11;i++){
             if(!(message[i]>='0'&&message[i]<='9')){
-                alert("The charset is from 0-9");
+                alert("The Account's charset is from 0-9");
                 return false;
             }
         }
@@ -86,13 +86,13 @@ function checkConform() {
     let account=document.getElementById("account");
     let message=account.value.toString();
 
-    if(message.length!==11){
-        alert("Account needs 11 charsets from 0-9 .");
+    if(message.length>11 || message.length < 6){
+        alert("Account needs 6~11 charsets from 0-9 .");
         return false;
     }else{
-        for(i=0;i<11;i++){
+        for(i=0;i<message.length;i++){
             if(!(message[i]>='0'&&message[i]<='9')){
-                alert("The charset is from 0-9");
+                alert("Account charset is from 0-9");
                 return false;
             }
         }
@@ -117,8 +117,8 @@ function checkConform() {
         return false;
     }
 
-    if(findPassword.value.length>50){
-        alert("The Length of string is more than 50. Set your string shorter.");
+    if(findPassword.value.length>12){
+        alert("The Length of string is more than 12. Set your string shorter.");
         return false;
     }
 

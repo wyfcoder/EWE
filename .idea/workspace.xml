@@ -1,0 +1,973 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="48e98fcf-d183-4a65-a495-1eb7994256d0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Functions/DealWrongs/DataStruct.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Functions/DealWrongs/DealWrong.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Functions/DealWrongs/constValue.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Functions/Draw/Draw.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Functions/EProgram/EProgram.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Functions/FindBackPasswords/findbackPasswords.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Functions/LoginService/LoginService.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Functions/LoginService/Manager.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Functions/LoginService/User.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Functions/MakeCooke.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Functions/Register/ResgisterService.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InitWebsite/DealWrongInit.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InitWebsite/FindBackPasswordsInit.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InitWebsite/LoginInit.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InitWebsite/ManagerInit.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InitWebsite/RegisterInit.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InitWebsite/UserInit.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/bootstrap-theme.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/bootstrap-theme.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/bootstrap-theme.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Logo/EWE.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Logo/EWE_small.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/robot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/success.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/wrong.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/npm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/DealWrong/DealWrong.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/DealWrong/DealWrongLayout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/SignUp/signUp.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/Success/Success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/Tools/public.navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EWE.udb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Functions/Cookies.go" beforeDir="false" afterPath="$PROJECT_DIR$/Functions/Cookies.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Functions/Manager_Page/Manager_Page.go" beforeDir="false" afterPath="$PROJECT_DIR$/Functions/Manager_Page/Manager_Page.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagerOperator/ConstValue.go" beforeDir="false" afterPath="$PROJECT_DIR$/ManagerOperator/ConstValue.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/Function.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/Function.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/MathBoxPlot.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/MathBoxPlot.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/Matrix.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/Matrix.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/Number.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/Number.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/m.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/平行极化的投射系数_并发.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/handleFunctions.go" beforeDir="false" afterPath="$PROJECT_DIR$/handleFunctions.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/background/bg1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/background/login.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/Icomoon/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/Icomoon/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/bootstrap-grid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/bootstrap-grid.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/htmleaf-demo.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/htmleaf-demo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/os-theme-round-dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/os-theme-round-dark.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/os-theme-round-light.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/os-theme-round-light.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/reset.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/bocfe.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/bocfe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/check.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/check.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/checkNotice.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/checkNotice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/draw.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/draw.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery-1.11.0.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/jquery-1.11.0.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/jquery-2.0.2.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/jquery-2.0.2.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/zturn.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/zturn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sqlOperate/RayRunDB.go" beforeDir="false" afterPath="$PROJECT_DIR$/sqlOperate/RayRunDB.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sqlOperate/SQLSerivce.go" beforeDir="false" afterPath="$PROJECT_DIR$/sqlOperate/SQLSerivce.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sqlOperate/constValue.go" beforeDir="false" afterPath="$PROJECT_DIR$/sqlOperate/constValue.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sqlOperate/create.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sqlOperate/create.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sqlOperate/datas/datasOfRayRun.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sqlOperate/datas/datasOfRayRun.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sqlOperate/datas/iri数据.txt" beforeDir="false" afterPath="$PROJECT_DIR$/sqlOperate/datas/iri数据.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ss.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/Download/download.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/Download/download.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/Lab/aboutLab.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/Lab/aboutLab.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/Lab/aboutLabLay.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/Lab/aboutLabLay.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/ManagerBar.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/ManagerBar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/ManagerFile.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/ManagerFile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/ManagerLayout.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/ManagerLayout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/ManagerNotice.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/ManagerNotice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/Plot/plot.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/Plot/plot.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/RayRun/DocumentsAH0.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/RayRun/DocumentsAH0.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/RayRun/DocumentsIRI.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/RayRun/DocumentsIRI.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/RayRun/DocumentsPRO.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/RayRun/DocumentsPRO.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/RayRun/DocumentsScript.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/RayRun/DocumentsScript.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/Tools/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/Tools/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/a.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/a.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/close.navbar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/closeWindow.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/Tools/closeWindow.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/dealWrong.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/dealWrong.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/forget.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/Forget/forget.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/lineBasic.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/lineBasic.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/Login/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/login.layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/Login/login.layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/showInformationOfUsers.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/Forget/showInformationOfUsers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/test2.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/test2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/upload.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/wrong.navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/wrong.navbar.html" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="22" column="37" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Functions/FindBackPasswords/findbackPasswords.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+              <folding>
+                <element signature="n#!!block;n#Forget#0" />
+                <element signature="n#!!block;n#DealForget#0" />
+                <element signature="n#!!block;n#ShowInformation#0" />
+                <element signature="n#!!block;n#UpdatePassword#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Functions/Cookies.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
+              <folding>
+                <element signature="e#19#41#0" expanded="true" />
+                <element signature="n#!!block;n#DealWrongCookie#0" />
+                <element signature="n#!!block;n#DealInformationCookie#0" />
+                <element signature="n#!!block;n#IsCookieExit#0" />
+                <element signature="n#!!block;n#DeleteCookie#0" />
+                <element signature="n#!!block;n#AddCookie#0" />
+                <element signature="n#!!block;n#GetCookieValue#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Functions/Register/ResgisterService.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="532">
+              <caret line="37" column="19" lean-forward="true" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+              <folding>
+                <element signature="e#18#154#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Functions/MakeCooke.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+              <folding>
+                <element signature="e#19#76#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Functions/DealWrongs/DealWrong.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+              <folding>
+                <element signature="e#20#83#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go Application" />
+        <option value="HTML File" />
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <dirStrings>
+      <dir>$PROJECT_DIR$/Functions</dir>
+    </dirStrings>
+  </component>
+  <component name="GOROOT" path="$PROJECT_DIR$/../../.." />
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="wyfcoder &lt;41947876+wyfcoder@users.noreply.github.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/makeTemplate/marketTemplate.go" />
+        <option value="$PROJECT_DIR$/makeTemplate/ConstValue.go" />
+        <option value="$PROJECT_DIR$/template/Tools/private.navbar.html" />
+        <option value="$PROJECT_DIR$/ManagerOperator/ConstValue.go" />
+        <option value="$PROJECT_DIR$/Functions/EProgram/EProgram.go" />
+        <option value="$PROJECT_DIR$/UserModeInit.go" />
+        <option value="$PROJECT_DIR$/ManagerModeInit.go" />
+        <option value="$PROJECT_DIR$/InitWebsite/ManagerModeInit.go" />
+        <option value="$PROJECT_DIR$/InitWebsite/UserModeInit.go" />
+        <option value="$PROJECT_DIR$/InitWebsite/ManagerInit.go" />
+        <option value="$PROJECT_DIR$/InitWebsite/LoginInit.go" />
+        <option value="$PROJECT_DIR$/Functions/LoginService/User.go" />
+        <option value="$PROJECT_DIR$/Functions/LoginService/Manager.go" />
+        <option value="$PROJECT_DIR$/InitWebsite/DealWrongInit.go" />
+        <option value="$PROJECT_DIR$/InitWebsite/FindBackWordsInit.go" />
+        <option value="$PROJECT_DIR$/handleFunctions.go" />
+        <option value="$PROJECT_DIR$/Functions/FindBackPasswords/constValue.go" />
+        <option value="$PROJECT_DIR$/InitWebsite/FindBackPasswordsInit.go" />
+        <option value="$PROJECT_DIR$/Functions/constValue.go" />
+        <option value="$PROJECT_DIR$/Functions/Register/Register.go" />
+        <option value="$PROJECT_DIR$/template/Tools/Register.go" />
+        <option value="$PROJECT_DIR$/Functions/Manager_Page/Manager_Page.go" />
+        <option value="$PROJECT_DIR$/Functions/Draw/Draw.go" />
+        <option value="$PROJECT_DIR$/InitWebsite/UserInit.go" />
+        <option value="$PROJECT_DIR$/template/DealWrong/DealWrongLayout.html" />
+        <option value="$PROJECT_DIR$/template/DealWrong/DataStruct.go" />
+        <option value="$PROJECT_DIR$/Functions/DealWrongs/DataStruct.go" />
+        <option value="$PROJECT_DIR$/template/Tools/layout.html" />
+        <option value="$PROJECT_DIR$/Functions/LoginService/LoginService.go" />
+        <option value="$PROJECT_DIR$/template/Login/login.layout.html" />
+        <option value="$PROJECT_DIR$/template/Login/login.html" />
+        <option value="$PROJECT_DIR$/sqlOperate/create.sql" />
+        <option value="$PROJECT_DIR$/sqlOperate/RayRunDB.go" />
+        <option value="$PROJECT_DIR$/InitWebsite/RegisterInit.go" />
+        <option value="$PROJECT_DIR$/public/js/check.js" />
+        <option value="$PROJECT_DIR$/Functions/Cookies.go" />
+        <option value="$PROJECT_DIR$/main.go" />
+        <option value="$PROJECT_DIR$/template/SignUp/signUp.html" />
+        <option value="$PROJECT_DIR$/sqlOperate/SQLSerivce.go" />
+        <option value="$PROJECT_DIR$/sqlOperate/constValue.go" />
+        <option value="$PROJECT_DIR$/template/Tools/public.navbar.html" />
+        <option value="$PROJECT_DIR$/template/DealWrong/DealWrong.html" />
+        <option value="$PROJECT_DIR$/template/Success/Success.html" />
+        <option value="$PROJECT_DIR$/template/Forget/forget.html" />
+        <option value="$PROJECT_DIR$/template/Forget/showInformationOfUsers.html" />
+        <option value="$PROJECT_DIR$/Functions/DealWrongs/constValue.go" />
+        <option value="$PROJECT_DIR$/Functions/MakeCooke.go" />
+        <option value="$PROJECT_DIR$/Functions/Register/ResgisterService.go" />
+        <option value="$PROJECT_DIR$/Functions/SuccessInformation/SuccessDeal.go" />
+        <option value="$PROJECT_DIR$/Functions/FindBackPasswords/findbackPasswords.go" />
+        <option value="$PROJECT_DIR$/Functions/DealWrongs/DealWrong.go" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="67" />
+    <option name="y" value="88" />
+    <option name="width" value="1289" />
+    <option name="height" value="555" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="WebForEME" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WebForEME" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebForEME" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WebForEME" type="462c0819:PsiDirectoryNode" />
+              <item name="Functions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebForEME" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="WebForEME" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Go SDK 1.12.1" type="20ee2d1f:SyntheticLibraryElementNode" />
+            </path>
+            <path>
+              <item name="WebForEME" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Go SDK 1.12.1" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebForEME" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Go SDK 1.12.1" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="github.com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebForEME" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Go SDK 1.12.1" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="github.com" type="462c0819:PsiDirectoryNode" />
+              <item name="WebForEME" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebForEME" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Go SDK 1.12.1" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="github.com" type="462c0819:PsiDirectoryNode" />
+              <item name="WebForEME" type="462c0819:PsiDirectoryNode" />
+              <item name="Functions" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="GO_FMT" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="configurable.Global.GOPATH.is.expanded" value="true" />
+    <property name="configurable.Module.GOPATH.is.expanded" value="true" />
+    <property name="configurable.Project.GOPATH.is.expanded" value="true" />
+    <property name="go.gopath.indexing.explicitly.defined" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/img" />
+      <recent name="$PROJECT_DIR$/template/Success" />
+      <recent name="F:\GO\src\github.com\WebForEME\public\img\Logo" />
+      <recent name="F:\GO\src\github.com\WebForEME\public\background" />
+      <recent name="F:\GO\src\github.com\WebForEME\public\img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\GO\src\github.com\WebForEME\Functions\DealWrongs" />
+      <recent name="F:\GO\src\github.com\WebForEME\template\Tools" />
+      <recent name="F:\GO\src\github.com\WebForEME\template\SignUp" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Go Build.go build github.com/WebForEME">
+    <configuration name="go build github.com/WebForEME" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="WebForEME" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/" />
+      <package value="github.com/WebForEME" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="WebForEME" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <package value="github.com/WebForEME" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build github.com/WebForEME" />
+        <item itemvalue="Go Build.go build main.go" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="67" y="25" width="1299" height="743" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2286171" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49880096" weight="0.1680261" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4045677" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3295082" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32786885" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49924356" weight="0.32459018" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50119907" side_tool="true" visible="true" weight="0.1680261" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.37777779" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.16923077" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4076923" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3295082" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32786885" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49924356" weight="0.32459018" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50075644" side_tool="true" weight="0.3295082" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Third commite" />
+    <option name="LAST_COMMIT_MESSAGE" value="Third commite" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Functions/RayRun/RayRunCompile.go</url>
+          <line>112</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Functions/RayRun/CountELine/EIRICount.go</url>
+          <line>93</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Functions/RayRun/CountELine/EIRICount.go</url>
+          <line>94</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Functions/RayRun/CountELine/EIRICount.go</url>
+          <line>60</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Functions/RayRun/CountELine/EIRICount.go</url>
+          <line>62</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Functions/RayRun/CountELine/EIRICount.go</url>
+          <line>52</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Functions/RayRun/CountELine/EIRICount.go</url>
+          <line>50</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Functions/RayRun/CountELine/EIRICount.go</url>
+          <line>47</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Functions/RayRun/CountELine/EPROCount.go</url>
+          <line>52</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Functions/RayRun/CountELine/EIRICount.go</url>
+          <line>103</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Functions/RayRun/CountELine/EIRICount.go</url>
+          <line>104</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Functions/RayRun/CountELine/EIRICount.go</url>
+          <line>108</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Functions/RayRun/CountELine/EIRICount.go</url>
+          <line>106</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/sqlOperate/initFunction.go</url>
+          <line>29</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="GoApplicationRunConfiguration">
+        <watch expression="*(*&quot;[]github.com/WebForEME/AMethod/Compile.Instruct&quot;)(824634194048)" />
+        <watch expression="*(*&quot;[]string&quot;)(824634088832)" />
+        <watch expression="*(*&quot;sync.WaitGroup&quot;)(824634737152)" />
+        <watch expression="*(*&quot;string&quot;)(824634999104)" />
+        <watch expression="*(*&quot;string&quot;)(824635047936)" />
+        <watch expression="data" />
+        <watch expression="text" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Functions/constValue.go" />
+    <entry file="file://$PROJECT_DIR$/Functions/LoginService/User.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="919">
+          <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+          <folding>
+            <element signature="e#22#197#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/prompt.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/Manager_Page/Manager_Page.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/Draw/Draw.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+          <folding>
+            <element signature="e#14#96#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/bootstrap-theme.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InitWebsite/DealWrongInit.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="31" />
+          <folding>
+            <element signature="e#21#88#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InitWebsite/UserInit.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#21#338#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/RayRun/DocumentsScript.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/User_Market/Market.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/User_File/User_Download.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="11" column="80" lean-forward="true" selection-start-line="11" selection-start-column="80" selection-end-line="11" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqlOperate/dataStruct.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/Plot/plot.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="41" column="60" selection-start-line="41" selection-start-column="53" selection-end-line="41" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/wrong.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/DealWrong/DealWrongLayout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="10" lean-forward="true" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/background/login.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/dealWrong.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/Tools/private.navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" selection-start-line="1" selection-end-line="14" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../database/sql/sql.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="2545" selection-start-line="2545" selection-end-line="2545" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqlOperate/create.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="61" selection-start-line="61" selection-end-line="61" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../runtime/panic.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68">
+          <caret line="689" selection-start-line="689" selection-end-line="689" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/Tools/Register.go" />
+    <entry file="file://$PROJECT_DIR$/sqlOperate/RayRunDB.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+          <folding>
+            <element signature="e#20#78#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/Login/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/Tools/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handleFunctions.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1070">
+          <caret line="179" selection-start-line="179" selection-end-line="179" />
+          <folding>
+            <element signature="n#!!block;n#parseTemplateFiles#0" />
+            <element signature="n#!!block;n#userMode#0" />
+            <element signature="n#!!block;n#managerMode#0" />
+            <element signature="n#!!block;n#checkUser#0" />
+            <element signature="n#!!block;n#successfulSignUp#0" />
+            <element signature="n#!!block;n#dealWrong#0" />
+            <element signature="n#!!block;n#dealForget#0" />
+            <element signature="n#!!block;n#updatePassword#0" />
+            <element signature="n#!!block;n#checkCode#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/check.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="120" column="51" selection-start-line="120" selection-start-column="51" selection-end-line="120" selection-end-column="51" />
+          <folding>
+            <element signature="n#!!block;n#checkFindPassword#0" />
+            <element signature="n#!!block;n#checkConformPassword#0" />
+            <element signature="n#!!block;n#submit#0" />
+            <element signature="n#!!block;n#isNumberOr_Letter#0" />
+            <element signature="n#!!block;n#checkResetPassword#0" />
+            <element signature="n#!!block;n#check_file#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/Login/login.layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14">
+          <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/DealWrongs/DataStruct.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqlOperate/initFunction.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InitWebsite/RegisterInit.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="36" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="36" />
+          <folding>
+            <element signature="e#21#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqlOperate/SQLSerivce.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="52" column="8" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqlOperate/constValue.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/Tools/close.navbar.html" />
+    <entry file="file://$PROJECT_DIR$/template/Tools/public.navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/Success/Success.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="e#125#164#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/DealWrong/DealWrong.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="69" selection-start-line="8" selection-start-column="69" selection-end-line="8" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/Forget/forget.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/SignUp/signUp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/Forget/showInformationOfUsers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/LoginService/LoginService.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+          <folding>
+            <element signature="e#22#123#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InitWebsite/FindBackPasswordsInit.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="47" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="47" />
+          <folding>
+            <element signature="e#21#95#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="22" column="37" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/DealWrongs/constValue.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/SuccessInformation/SuccessDeal.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" lean-forward="true" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/Cookies.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="e#19#41#0" expanded="true" />
+            <element signature="n#!!block;n#DealWrongCookie#0" />
+            <element signature="n#!!block;n#DealInformationCookie#0" />
+            <element signature="n#!!block;n#IsCookieExit#0" />
+            <element signature="n#!!block;n#DeleteCookie#0" />
+            <element signature="n#!!block;n#AddCookie#0" />
+            <element signature="n#!!block;n#GetCookieValue#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/FindBackPasswords/findbackPasswords.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+          <folding>
+            <element signature="n#!!block;n#Forget#0" />
+            <element signature="n#!!block;n#DealForget#0" />
+            <element signature="n#!!block;n#ShowInformation#0" />
+            <element signature="n#!!block;n#UpdatePassword#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/DealWrongs/DealWrong.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="10" column="28" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+          <folding>
+            <element signature="e#20#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/MakeCooke.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#19#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/Register/ResgisterService.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="37" column="19" lean-forward="true" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+          <folding>
+            <element signature="e#18#154#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

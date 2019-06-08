@@ -1,6 +1,8 @@
 package sqlOperate
 
-import "github.com/WebForEME/AMethod/TimeTool"
+import (
+	"github.com/WebForEME/AMethod/TimeTool"
+)
 
 //RayRun 程序的数据库函数
 

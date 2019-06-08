@@ -1,0 +1,38 @@
+{{ define "navbar" }}
+  <div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-brand">
+        <img src="/static/img/Logo/EWE_small.png">
+        </div>
+      </div>
+
+
+    <div class="navbar-collapse collapse">
+
+      <ul class="nav navbar-nav">
+        <li><a href="#" onClick="javascript :history.back(-1);">Back</a></li>
+      </ul>
+
+
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="javascript:window.opener=null;window.open('','_self');window.close();">Close</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav">
+        <li><a href="/login">Login</a></li>
+      </ul>
+
+    </div>
+
+    </div>
+  </div>
+
+{{ end }}

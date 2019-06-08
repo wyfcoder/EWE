@@ -8,8 +8,6 @@ import (
 )
 
 func ManagerPage(writer http.ResponseWriter, request *http.Request) {
-
-
 	if(CheckService.CheckManager(writer,request)){
 		t := Functions.ParseTemplateFiles("ManagerLayout","ManagerBar","ManagerNotice")
 		notices:=sqlOperate.Notices()

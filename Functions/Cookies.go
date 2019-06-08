@@ -52,6 +52,13 @@ func AddCookie(name string, information string, w http.ResponseWriter, time int)
 
 //返回指定的cookie的值
 func GetCookieValue(name string, req *http.Request) string {
-	cookie, _ := req.Cookie(name)
-	return cookie.Value
+	cookie, err := req.Cookie(name)
+	if err == nil {
+		return cookie.Value
+	}else{
+		return ""
+	}
 }
+
+
+

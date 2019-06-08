@@ -5,8 +5,12 @@ const (
 	port              = 5432
 	user              = "postgres"
 	password          = "wyf"
-	dbname            = "eme"
+	dbname            = "ewe"
+
+	//验证存在性的方式
 	selectID          = "select id from informationofusers where id=$1"
+	selectName        = "select id from informationofusers where name=$1"
+
 	selectByName      = "select id,name,password,sfp from informationofusers where name=$1"
 	selectByAccount   = "select id,name,password,sfp from informationofusers where id=$1"
 	selectCode        = "select code from verificationcode where id=$1"

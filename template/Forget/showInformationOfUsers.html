@@ -1,0 +1,16 @@
+{{ define "content" }}
+
+    <form class="form-signin center" role="form" action="/updatePassword" method="post">
+        <p style="text-align: center"><img src="/static/img/Logo/EWE.png"></p>
+        <div class="lead">Your account</div>
+        <textarea class="form-control"  placeholder="Name:  {{.GetName}}" rows="1" readonly></textarea>
+        <textarea class="form-control"  placeholder="Account:  {{.Account}}" rows="1" name="account" readonly></textarea>
+        <textarea class="form-control"  placeholder="String:  {{.Sfp}}" rows="1" readonly></textarea>
+        <br/>
+        <input id="password"  name="password" type="password" class="form-control" placeholder="Edit your new password"required>
+        <input id="conformPassword" type="password" class="form-control" placeholder="Conform new password" required>
+        <br/>
+        <br/>
+        <button class="btn btn-lg btn-success btn-block" type="submit" onclick="return checkResetPassword()">Submit</button>
+    </form>
+{{ end }}

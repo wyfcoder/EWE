@@ -43,7 +43,7 @@ create table filesM(
   title  varchar(100),
   path   varchar (100),
   tag    varchar (40),
-  pTime  varchar (100),
+  pTime  varchar (100)
 )
 
 insert into Manager values('wyf','150031','wyf')
