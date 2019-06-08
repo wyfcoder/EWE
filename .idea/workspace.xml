@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48e98fcf-d183-4a65-a495-1eb7994256d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/img/success.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/wyf.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/makeTemplate/ConstValue.go" beforeDir="false" afterPath="$PROJECT_DIR$/makeTemplate/ConstValue.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/makeTemplate/RayRunTemplate.go" beforeDir="false" afterPath="$PROJECT_DIR$/makeTemplate/RayRunTemplate.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/makeTemplate/marketTemplate.go" beforeDir="false" afterPath="$PROJECT_DIR$/makeTemplate/marketTemplate.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/Go.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/Support/Go.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/Logo/EWE_small.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/Logo/EWE_small.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/andorid.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/Support/andorid.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/baidumap.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/Support/baidumap.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/highcharts.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/Support/highcharts.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/success.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/template/Lab/aboutLab.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/Lab/aboutLab.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/Success/Success.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/Success/Success.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/Tools/private.navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/Tools/private.navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/Tools/public.navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/Tools/public.navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/aboutLab.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/aboutLabLay.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/close.navbar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/closeWindow.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,11 +26,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
+            <state relative-caret-position="-1">
               <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/template/Lab/aboutLab.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="341">
+              <caret line="133" column="34" selection-start-line="133" selection-start-column="34" selection-end-line="133" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -130,9 +120,9 @@
         <option value="$PROJECT_DIR$/template/Tools/private.navbar.html" />
         <option value="$PROJECT_DIR$/makeTemplate/ConstValue.go" />
         <option value="$PROJECT_DIR$/makeTemplate/marketTemplate.go" />
-        <option value="$PROJECT_DIR$/template/Lab/aboutLab.html" />
         <option value="$PROJECT_DIR$/template/Tools/public.navbar.html" />
         <option value="$PROJECT_DIR$/makeTemplate/RayRunTemplate.go" />
+        <option value="$PROJECT_DIR$/template/Lab/aboutLab.html" />
       </list>
     </option>
   </component>
@@ -156,6 +146,17 @@
             <path>
               <item name="WebForEME" type="b2602c69:ProjectViewProjectNode" />
               <item name="WebForEME" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebForEME" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WebForEME" type="462c0819:PsiDirectoryNode" />
+              <item name="template" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebForEME" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WebForEME" type="462c0819:PsiDirectoryNode" />
+              <item name="template" type="462c0819:PsiDirectoryNode" />
+              <item name="Lab" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -248,7 +249,7 @@
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2326139" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23661071" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -678,20 +679,7 @@
     <entry file="file://$PROJECT_DIR$/public/img/Support/andorid.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/aboutLab.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="79" column="52" selection-start-line="79" selection-start-column="52" selection-end-line="79" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/Lab/aboutLab.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="607">
-          <caret line="147" column="63" selection-start-line="147" selection-start-column="63" selection-end-line="147" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/template/aboutLab.html" />
     <entry file="file://$PROJECT_DIR$/template/Tools/public.navbar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -765,8 +753,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
+        <state relative-caret-position="-1">
           <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/Lab/aboutLab.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="133" column="34" selection-start-line="133" selection-start-column="34" selection-end-line="133" selection-end-column="34" />
         </state>
       </provider>
     </entry>
