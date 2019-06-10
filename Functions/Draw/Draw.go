@@ -20,7 +20,7 @@ func DrawCharts(writer http.ResponseWriter, request *http.Request) {
 	err := request.ParseForm()
 	if err != nil {
 		Functions.Danger(err, "Cannot parse form.")
-		DealWrongs.DealWrongs(ERRORCODEFORSYSTEM,writer,request)
+		DealWrongs.DealWrongs(ERRORCODEFORSYSTEM,&writer,request)
 	}
 
 	//安全检查

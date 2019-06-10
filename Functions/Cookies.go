@@ -8,12 +8,12 @@ const WrongName = "WrongInformation"
 const SolutionName  ="SolutionInformation"
 const WayName  ="WayInformation"
 
-func DealWrongCookie(req *http.Request, writer http.ResponseWriter, w string,s string,way string) {
+func DealWrongCookie(req *http.Request, writer *http.ResponseWriter, w string,s string,way string) {
 
 	if IsCookieExit(req, WrongName) {
-		DeleteCookie(writer, WrongName)
-		DeleteCookie(writer,SolutionName)
-		DeleteCookie(writer,WayName)
+		DeleteCookie(*writer, WrongName)
+		DeleteCookie(*writer,SolutionName)
+		DeleteCookie(*writer,WayName)
 	}
 	AddCookie(WrongName, w, writer, 25)
 	AddCookie(SolutionName,s,writer,25)
@@ -40,14 +40,14 @@ func DeleteCookie(w http.ResponseWriter, s string) {
 }
 
 //添加cookie,time的单位是秒
-func AddCookie(name string, information string, w http.ResponseWriter, time int) {
+func AddCookie(name string, information string, w *http.ResponseWriter, time int) {
 	cookie := http.Cookie{
 		Name:     name,
 		Value:    information,
 		HttpOnly: true,
 		MaxAge:   time,
 	}
-	http.SetCookie(w, &cookie)
+	http.SetCookie(*w, &cookie)
 }
 
 //返回指定的cookie的值

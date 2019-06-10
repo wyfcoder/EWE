@@ -20,7 +20,7 @@ func DeleteFile(writer http.ResponseWriter, request *http.Request) {
 	if err != nil {
 		Functions.Danger(err, "Cannot parse form.")
 		sysW := Functions.SystemWrong()
-		Functions.DealWrongCookie(request, writer, sysW.W, sysW.S, sysW.Wa)
+		Functions.DealWrongCookie(request, &writer, sysW.W, sysW.S, sysW.Wa)
 		http.Redirect(writer, request, "/deal_wrong", 302)
 	}
 	if !CheckService.CheckCode(request) {

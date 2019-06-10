@@ -22,7 +22,7 @@ func DealContent(writer http.ResponseWriter,request *http.Request) bool{
 	if err != nil {
 		Danger(err, "Cannot parse form.")
 		sysW := SystemWrong()
-		DealWrongCookie(request, writer, sysW.W, sysW.S, sysW.Wa)
+		DealWrongCookie(request, &writer, sysW.W, sysW.S, sysW.Wa)
 		http.Redirect(writer, request, "/deal_wrong", 302)
 		return false
 	}

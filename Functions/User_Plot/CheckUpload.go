@@ -16,7 +16,7 @@ func CheckUploadFile(writer http.ResponseWriter, request *http.Request) {
 		if err != nil {
 			Functions.Danger(err, "Cannot parse form.")
 			sysW := Functions.SystemWrong()
-			Functions.DealWrongCookie(request, writer, sysW.W, sysW.S, sysW.Wa)
+			Functions.DealWrongCookie(request, &writer, sysW.W, sysW.S, sysW.Wa)
 			http.Redirect(writer, request, "/deal_wrong", 302)
 			return
 		}
@@ -45,7 +45,7 @@ func CheckUploadFile(writer http.ResponseWriter, request *http.Request) {
 				i:=sqlOperate.AddDataFile(name,tag,time,&describe,&text,account)
 				if(i!=0){
 					dataWrong :=Functions.DataUniqueWrong()
-					Functions.DealWrongCookie(request, writer, dataWrong.W, dataWrong.S, dataWrong.Wa)
+					Functions.DealWrongCookie(request, &writer, dataWrong.W, dataWrong.S, dataWrong.Wa)
 					http.Redirect(writer, request, "/deal_wrong", 302)
 					return
 				}
@@ -56,7 +56,7 @@ func CheckUploadFile(writer http.ResponseWriter, request *http.Request) {
 	}
 	//错误提示
 	dataWrong :=Functions.DataWrong()
-	Functions.DealWrongCookie(request, writer, dataWrong.W, dataWrong.S, dataWrong.Wa)
+	Functions.DealWrongCookie(request, &writer, dataWrong.W, dataWrong.S, dataWrong.Wa)
 	http.Redirect(writer, request, "/deal_wrong", 302)
 }
 

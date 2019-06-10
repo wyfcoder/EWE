@@ -7,9 +7,9 @@ import (
 )
 
 //处理错误 并返回帮助信息 TODO :构建这个错误处理系统
-func DealWrongs(errorCode int,writer http.ResponseWriter, request *http.Request){
+func DealWrongs(errorCode int,writer *http.ResponseWriter, request *http.Request){
 	DealErrorCode(errorCode,writer,request)
-	http.Redirect(writer,request,"/deal_wrong",302)
+	http.Redirect(*writer,request,"/deal_wrong",302)
 }
 
 //显示模块
@@ -37,9 +37,10 @@ func SolveWrongs(writer http.ResponseWriter, request *http.Request){
 }
 
 //处理错误码 ,借助cooke来显示解决方法和错误 统一从cookie中取出错误值
-func DealErrorCode(errorCode int, writer http.ResponseWriter,request * http.Request){
-	//获取存储的错误
+func DealErrorCode(errorCode int, writer *http.ResponseWriter,request * http.Request){
+	//获取存储的前错误
 	pre_information :=Functions.GetPreWrongCookie(request)
+
 	switch errorCode {
 	case ErrorCoderForSystem:    //系统错误
 		writerError(pre_information+SystemErrorInformation,SystemErrorSolve,writer)
@@ -57,7 +58,7 @@ func DealErrorCode(errorCode int, writer http.ResponseWriter,request * http.Requ
 	Functions.DeletePreWrongCookie(writer)
 }
 
-func writerError(information string,solve string,w http.ResponseWriter){
+func writerError(information string,solve string,w *http.ResponseWriter){
 	Functions.AddCookie("ErrorInformation",information,w,TIMEFORCOOKIE)
 	Functions.AddCookie("ErrorSolve",solve,w,TIMEFORCOOKIE)
 }

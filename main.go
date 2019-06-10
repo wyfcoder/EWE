@@ -27,6 +27,7 @@ func main() {
 	InitWebsite.InitDownload(mux)
 	InitWebsite.InitEProgram(mux)
 	InitWebsite.InitLab(mux)
+
 	mux.HandleFunc("/Data", User_Plot.Data)
 	mux.HandleFunc("/checkUploadFile", User_Plot.CheckUploadFile)
 

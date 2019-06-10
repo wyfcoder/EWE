@@ -27,7 +27,7 @@ func userMode(writer http.ResponseWriter, request *http.Request) {
 		Functions.DealWrongCookie(request, writer, err2.Error(), solutionToLogin, wayToLogin)
 		http.Redirect(writer, request, "/deal_wrong", 302)*/
 		// TODO:错误处理系统的构建
-		DealWrongs.DealWrongs(ERROCODEFORLOGIN,writer,request);
+		DealWrongs.DealWrongs(ERROCODEFORLOGIN,&writer,request);
 		return
 	}
 
@@ -35,8 +35,8 @@ func userMode(writer http.ResponseWriter, request *http.Request) {
 	code := randomOperator.CreateVerificationCode()
 	sqlOperate.UpdateCode(u.Account, code)
 
-	Functions.AddCookie("account", u.Account, writer, USERTIME) //有限时间的链接
-	Functions.AddCookie("code", code, writer, 1000)
+	Functions.AddCookie("account", u.Account, &writer, USERTIME) //有限时间的链接
+	Functions.AddCookie("code", code, &writer, 1000)
 
 	http.Redirect(writer, request, "/Market", 302)
 }

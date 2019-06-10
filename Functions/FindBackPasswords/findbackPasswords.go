@@ -26,7 +26,7 @@ func DealForget(writer http.ResponseWriter, request *http.Request){
 
 	if err != nil {
 		Functions.Danger(err, "Cannot parse form.")
-		DealWrongs.DealWrongs(ERROCODEFORSYSTEM,writer,request)
+		DealWrongs.DealWrongs(ERROCODEFORSYSTEM,&writer,request)
 	}
 
 	user := request.PostFormValue("accountOrName")
@@ -36,7 +36,7 @@ func DealForget(writer http.ResponseWriter, request *http.Request){
 	u, err2 := sqlOperate.FindBackPassword(user, findPassword)
 
 	if err2 != nil {
-		DealWrongs.DealWrongs(ERRPCDEFORFORGET,writer,request)
+		DealWrongs.DealWrongs(ERRPCDEFORFORGET,&writer,request)
 		return
 	}
 
@@ -61,7 +61,7 @@ func UpdatePassword(writer http.ResponseWriter, request *http.Request){
 
 	if err != nil {
 		Functions.Danger(err, "Cannot parse form.")
-		DealWrongs.DealWrongs(ERROCODEFORSYSTEM,writer,request)
+		DealWrongs.DealWrongs(ERROCODEFORSYSTEM,&writer,request)
 	}
 
 	account := Functions.GetCookieValue("account", request)

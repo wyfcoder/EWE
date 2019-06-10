@@ -24,7 +24,7 @@ func SignUpAccount(writer http.ResponseWriter, request *http.Request){
 
 	if err != nil {
 		Functions.Danger(err, "Cannot parse form.")
-		DealWrongs.DealWrongs(ERROCODEFORSYSTEM,writer,request)
+		DealWrongs.DealWrongs(ERROCODEFORSYSTEM,&writer,request)
 	}
 
 	name := request.PostFormValue("name")
@@ -36,8 +36,8 @@ func SignUpAccount(writer http.ResponseWriter, request *http.Request){
 
 	//处理重复错误
 	if err != nil {
-		Functions.MakePreWrongCookie(message,writer)
-		DealWrongs.DealWrongs(ERRORCODEFORREGISTER,writer,request) //注册错误
+		Functions.MakePreWrongCookie(message,&writer)
+		DealWrongs.DealWrongs(ERRORCODEFORREGISTER,&writer,request) //注册错误
 		return
 	}
 
@@ -51,7 +51,7 @@ func SuccessfulSignUp(writer http.ResponseWriter, request *http.Request){
 
 	if err != nil {
 		Functions.Danger(err, "Cannot parse form.")
-		DealWrongs.DealWrongs(ERROCODEFORSYSTEM,writer,request)
+		DealWrongs.DealWrongs(ERROCODEFORSYSTEM,&writer,request)
 	}
 
 	name := request.Form["name"][0]

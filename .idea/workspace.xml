@@ -2,14 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48e98fcf-d183-4a65-a495-1eb7994256d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/img/People/wyf.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/People/wyy.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/makeTemplate/RayRunTemplate.go" beforeDir="false" afterPath="$PROJECT_DIR$/makeTemplate/RayRunTemplate.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/李良超.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/People/llc.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/郭宏福.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/People/ghf.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/Lab/aboutLab.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/Lab/aboutLab.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/RayRun/DocumentsAH0.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/RayRun/DocumentsAH0.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Functions/CheckService/Check.go" beforeDir="false" afterPath="$PROJECT_DIR$/Functions/CheckService/Check.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Functions/Cookies.go" beforeDir="false" afterPath="$PROJECT_DIR$/Functions/Cookies.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Functions/DealService.go" beforeDir="false" afterPath="$PROJECT_DIR$/Functions/DealService.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Functions/DealWrongs/DealWrong.go" beforeDir="false" afterPath="$PROJECT_DIR$/Functions/DealWrongs/DealWrong.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Functions/Draw/Draw.go" beforeDir="false" afterPath="$PROJECT_DIR$/Functions/Draw/Draw.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Functions/FindBackPasswords/findbackPasswords.go" beforeDir="false" afterPath="$PROJECT_DIR$/Functions/FindBackPasswords/findbackPasswords.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Functions/LoginService/LoginService.go" beforeDir="false" afterPath="$PROJECT_DIR$/Functions/LoginService/LoginService.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Functions/LoginService/Manager.go" beforeDir="false" afterPath="$PROJECT_DIR$/Functions/LoginService/Manager.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Functions/LoginService/User.go" beforeDir="false" afterPath="$PROJECT_DIR$/Functions/LoginService/User.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Functions/MakeCooke.go" beforeDir="false" afterPath="$PROJECT_DIR$/Functions/MakeCooke.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Functions/Manager_File/Manager_File.go" beforeDir="false" afterPath="$PROJECT_DIR$/Functions/Manager_File/Manager_File.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Functions/RayRun/RayRunCompile.go" beforeDir="false" afterPath="$PROJECT_DIR$/Functions/RayRun/RayRunCompile.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Functions/Register/ResgisterService.go" beforeDir="false" afterPath="$PROJECT_DIR$/Functions/Register/ResgisterService.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Functions/User_Plot/CheckUpload.go" beforeDir="false" afterPath="$PROJECT_DIR$/Functions/User_Plot/CheckUpload.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Functions/User_Plot/User_Date.go" beforeDir="false" afterPath="$PROJECT_DIR$/Functions/User_Plot/User_Date.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/DealWrong/DealWrongLayout.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/DealWrong/DealWrongLayout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/Tools/public.navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/Tools/public.navbar.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,26 +47,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/makeTemplate/RayRunTemplate.go">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="266">
-              <caret line="205" column="66" selection-start-line="205" selection-start-column="66" selection-end-line="205" selection-end-column="66" />
+              <caret line="18" column="33" lean-forward="true" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/template/RayRun/DocumentsAH0.html">
+        <entry file="file://$PROJECT_DIR$/Functions/RayRun/RayRunCompile.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1041">
-              <caret line="519" column="33" selection-start-line="519" selection-start-column="33" selection-end-line="519" selection-end-column="33" />
+            <state relative-caret-position="160">
+              <caret line="141" column="21" selection-start-line="141" selection-start-column="21" selection-end-line="141" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Functions/RayRun/CountELine/EIRICount.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="27">
+              <caret line="52" selection-start-line="52" selection-end-line="52" />
             </state>
           </provider>
         </entry>
@@ -88,14 +99,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/InitWebsite/ManagerModeInit.go" />
-        <option value="$PROJECT_DIR$/InitWebsite/UserModeInit.go" />
-        <option value="$PROJECT_DIR$/InitWebsite/ManagerInit.go" />
-        <option value="$PROJECT_DIR$/InitWebsite/LoginInit.go" />
-        <option value="$PROJECT_DIR$/Functions/LoginService/User.go" />
-        <option value="$PROJECT_DIR$/Functions/LoginService/Manager.go" />
-        <option value="$PROJECT_DIR$/InitWebsite/DealWrongInit.go" />
-        <option value="$PROJECT_DIR$/InitWebsite/FindBackWordsInit.go" />
         <option value="$PROJECT_DIR$/handleFunctions.go" />
         <option value="$PROJECT_DIR$/Functions/FindBackPasswords/constValue.go" />
         <option value="$PROJECT_DIR$/InitWebsite/FindBackPasswordsInit.go" />
@@ -103,21 +106,16 @@
         <option value="$PROJECT_DIR$/Functions/Register/Register.go" />
         <option value="$PROJECT_DIR$/template/Tools/Register.go" />
         <option value="$PROJECT_DIR$/Functions/Manager_Page/Manager_Page.go" />
-        <option value="$PROJECT_DIR$/Functions/Draw/Draw.go" />
         <option value="$PROJECT_DIR$/InitWebsite/UserInit.go" />
-        <option value="$PROJECT_DIR$/template/DealWrong/DealWrongLayout.html" />
         <option value="$PROJECT_DIR$/template/DealWrong/DataStruct.go" />
         <option value="$PROJECT_DIR$/Functions/DealWrongs/DataStruct.go" />
         <option value="$PROJECT_DIR$/template/Tools/layout.html" />
-        <option value="$PROJECT_DIR$/Functions/LoginService/LoginService.go" />
         <option value="$PROJECT_DIR$/template/Login/login.layout.html" />
         <option value="$PROJECT_DIR$/template/Login/login.html" />
         <option value="$PROJECT_DIR$/sqlOperate/create.sql" />
         <option value="$PROJECT_DIR$/sqlOperate/RayRunDB.go" />
         <option value="$PROJECT_DIR$/InitWebsite/RegisterInit.go" />
         <option value="$PROJECT_DIR$/public/js/check.js" />
-        <option value="$PROJECT_DIR$/Functions/Cookies.go" />
-        <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/template/SignUp/signUp.html" />
         <option value="$PROJECT_DIR$/sqlOperate/SQLSerivce.go" />
         <option value="$PROJECT_DIR$/sqlOperate/constValue.go" />
@@ -125,20 +123,33 @@
         <option value="$PROJECT_DIR$/template/Forget/forget.html" />
         <option value="$PROJECT_DIR$/template/Forget/showInformationOfUsers.html" />
         <option value="$PROJECT_DIR$/Functions/DealWrongs/constValue.go" />
-        <option value="$PROJECT_DIR$/Functions/MakeCooke.go" />
-        <option value="$PROJECT_DIR$/Functions/Register/ResgisterService.go" />
         <option value="$PROJECT_DIR$/Functions/SuccessInformation/SuccessDeal.go" />
-        <option value="$PROJECT_DIR$/Functions/FindBackPasswords/findbackPasswords.go" />
-        <option value="$PROJECT_DIR$/Functions/DealWrongs/DealWrong.go" />
         <option value="$PROJECT_DIR$/template/Success/Success.html" />
         <option value="$PROJECT_DIR$/template/aboutLab.html" />
         <option value="$PROJECT_DIR$/template/Tools/private.navbar.html" />
         <option value="$PROJECT_DIR$/makeTemplate/ConstValue.go" />
         <option value="$PROJECT_DIR$/makeTemplate/marketTemplate.go" />
-        <option value="$PROJECT_DIR$/template/Tools/public.navbar.html" />
         <option value="$PROJECT_DIR$/template/Lab/aboutLab.html" />
         <option value="$PROJECT_DIR$/makeTemplate/RayRunTemplate.go" />
         <option value="$PROJECT_DIR$/template/RayRun/DocumentsAH0.html" />
+        <option value="$PROJECT_DIR$/Functions/DealService.go" />
+        <option value="$PROJECT_DIR$/Functions/CheckService/Check.go" />
+        <option value="$PROJECT_DIR$/Functions/User_Plot/CheckUpload.go" />
+        <option value="$PROJECT_DIR$/Functions/User_Plot/User_Date.go" />
+        <option value="$PROJECT_DIR$/Functions/Manager_File/Manager_File.go" />
+        <option value="$PROJECT_DIR$/Functions/Cookies.go" />
+        <option value="$PROJECT_DIR$/Functions/Register/ResgisterService.go" />
+        <option value="$PROJECT_DIR$/Functions/LoginService/LoginService.go" />
+        <option value="$PROJECT_DIR$/Functions/Draw/Draw.go" />
+        <option value="$PROJECT_DIR$/Functions/LoginService/User.go" />
+        <option value="$PROJECT_DIR$/Functions/FindBackPasswords/findbackPasswords.go" />
+        <option value="$PROJECT_DIR$/Functions/DealWrongs/DealWrong.go" />
+        <option value="$PROJECT_DIR$/main.go" />
+        <option value="$PROJECT_DIR$/Functions/MakeCooke.go" />
+        <option value="$PROJECT_DIR$/Functions/LoginService/Manager.go" />
+        <option value="$PROJECT_DIR$/template/Tools/public.navbar.html" />
+        <option value="$PROJECT_DIR$/template/DealWrong/DealWrongLayout.html" />
+        <option value="$PROJECT_DIR$/Functions/RayRun/RayRunCompile.go" />
       </list>
     </option>
   </component>
@@ -167,18 +178,18 @@
             <path>
               <item name="WebForEME" type="b2602c69:ProjectViewProjectNode" />
               <item name="WebForEME" type="462c0819:PsiDirectoryNode" />
-              <item name="ManagerOperator" type="462c0819:PsiDirectoryNode" />
+              <item name="Functions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="WebForEME" type="b2602c69:ProjectViewProjectNode" />
               <item name="WebForEME" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="WebForEME" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WebForEME" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
+              <item name="Functions" type="462c0819:PsiDirectoryNode" />
               <item name="RayRun" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebForEME" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WebForEME" type="462c0819:PsiDirectoryNode" />
+              <item name="template" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -198,7 +209,7 @@
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img/Pepole" />
+    <property name="last_opened_file_path" value="$USER_HOME$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -270,22 +281,22 @@
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24460432" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25259793" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Thumbnails" sideWeight="0.49960032" weight="0.32952693" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49960032" weight="0.32789558" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49560353" weight="0.1680261" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4045677" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4916067" weight="0.1680261" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.58353317" visible="true" weight="0.4045677" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3295082" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49960032" weight="0.32789558" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32786885" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49924356" weight="0.32459018" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5043965" side_tool="true" visible="true" weight="0.1680261" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49880096" weight="0.32300162" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.41646683" side_tool="true" visible="true" weight="0.4045677" />
+      <window_info anchor="bottom" id="Thumbnails" order="11" sideWeight="0.49960032" weight="0.32952693" />
+      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49960032" weight="0.32626426" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -339,44 +350,9 @@
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/Functions/RayRun/CountELine/EIRICount.go</url>
-          <line>60</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/Functions/RayRun/CountELine/EIRICount.go</url>
-          <line>62</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/Functions/RayRun/CountELine/EIRICount.go</url>
-          <line>52</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/Functions/RayRun/CountELine/EIRICount.go</url>
-          <line>50</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/Functions/RayRun/CountELine/EIRICount.go</url>
-          <line>47</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/Functions/RayRun/CountELine/EPROCount.go</url>
           <line>52</line>
           <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/Functions/RayRun/CountELine/EIRICount.go</url>
-          <line>103</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/Functions/RayRun/CountELine/EIRICount.go</url>
-          <line>104</line>
-          <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/Functions/RayRun/CountELine/EIRICount.go</url>
@@ -393,6 +369,68 @@
           <line>29</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Functions/DealWrongs/DealWrong.go</url>
+          <line>45</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Functions/DealWrongs/DealWrong.go</url>
+          <line>48</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Functions/DealWrongs/DealWrong.go</url>
+          <line>51</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Functions/DealWrongs/DealWrong.go</url>
+          <line>54</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Functions/RayRun/RayRunCompile.go</url>
+          <line>51</line>
+          <properties />
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Functions/RayRun/RayRunCompile.go</url>
+          <line>136</line>
+          <properties />
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Functions/RayRun/RayRunCompile.go</url>
+          <line>150</line>
+          <properties />
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Functions/RayRun/RayRunCompile.go</url>
+          <line>137</line>
+          <properties />
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Functions/RayRun/RayRunCompile.go</url>
+          <line>142</line>
+          <properties />
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Functions/RayRun/RayRunCompile.go</url>
+          <line>145</line>
+          <properties />
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/Functions/RayRun/RayRunCompile.go</url>
+          <line>147</line>
+          <properties />
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -408,100 +446,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sqlOperate/dataStruct.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/Plot/plot.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="41" column="60" selection-start-line="41" selection-start-column="53" selection-end-line="41" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/img/wrong.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/DealWrong/DealWrongLayout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="10" lean-forward="true" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/background/login.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/dealWrong.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../database/sql/sql.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="2545" selection-start-line="2545" selection-end-line="2545" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sqlOperate/create.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="61" selection-start-line="61" selection-end-line="61" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../runtime/panic.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68">
-          <caret line="689" selection-start-line="689" selection-end-line="689" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/Tools/Register.go" />
-    <entry file="file://$PROJECT_DIR$/sqlOperate/RayRunDB.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-          <folding>
-            <element signature="e#20#78#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/Login/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/Tools/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/handleFunctions.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1070">
-          <caret line="179" selection-start-line="179" selection-end-line="179" />
-          <folding>
-            <element signature="n#!!block;n#parseTemplateFiles#0" />
-            <element signature="n#!!block;n#userMode#0" />
-            <element signature="n#!!block;n#managerMode#0" />
-            <element signature="n#!!block;n#checkUser#0" />
-            <element signature="n#!!block;n#successfulSignUp#0" />
-            <element signature="n#!!block;n#dealWrong#0" />
-            <element signature="n#!!block;n#dealForget#0" />
-            <element signature="n#!!block;n#updatePassword#0" />
-            <element signature="n#!!block;n#checkCode#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/check.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -548,13 +492,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sqlOperate/SQLSerivce.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="52" column="8" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sqlOperate/constValue.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -563,24 +500,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/template/Tools/close.navbar.html" />
-    <entry file="file://$PROJECT_DIR$/template/DealWrong/DealWrong.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="69" selection-start-line="8" selection-start-column="69" selection-end-line="8" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/template/Forget/forget.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
           <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/SignUp/signUp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="72" />
         </state>
       </provider>
     </entry>
@@ -591,75 +514,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Functions/LoginService/LoginService.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-          <folding>
-            <element signature="e#22#123#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/InitWebsite/FindBackPasswordsInit.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="47" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="47" />
-          <folding>
-            <element signature="e#21#95#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Functions/DealWrongs/constValue.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Functions/SuccessInformation/SuccessDeal.go" />
-    <entry file="file://$PROJECT_DIR$/Functions/FindBackPasswords/findbackPasswords.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-          <folding>
-            <element signature="n#!!block;n#Forget#0" />
-            <element signature="n#!!block;n#DealForget#0" />
-            <element signature="n#!!block;n#ShowInformation#0" />
-            <element signature="n#!!block;n#UpdatePassword#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Functions/Cookies.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="e#19#41#0" expanded="true" />
-            <element signature="n#!!block;n#DealWrongCookie#0" />
-            <element signature="n#!!block;n#DealInformationCookie#0" />
-            <element signature="n#!!block;n#IsCookieExit#0" />
-            <element signature="n#!!block;n#DeleteCookie#0" />
-            <element signature="n#!!block;n#AddCookie#0" />
-            <element signature="n#!!block;n#GetCookieValue#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/img/Logo/EWE_small.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Functions/MakeCooke.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#19#76#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/template/Success/Success.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -668,55 +525,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Functions/Register/ResgisterService.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="58" column="51" selection-start-line="58" selection-start-column="45" selection-end-line="58" selection-end-column="51" />
-          <folding>
-            <element signature="e#18#154#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Functions/DealWrongs/DealWrong.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-          <folding>
-            <element signature="e#20#83#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/img/Support/andorid.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/template/aboutLab.html" />
-    <entry file="file://$PROJECT_DIR$/template/Tools/public.navbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="21" column="47" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
-          <folding>
-            <element signature="e#721#736#0#HTML" expanded="true" />
-            <element signature="e#786#824#0#HTML" expanded="true" />
-            <element signature="e#916#954#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/Tools/private.navbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="38" column="70" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="70" />
-          <folding>
-            <element signature="e#950#1072#0#HTML" />
-            <element signature="e#1146#1184#0#HTML" expanded="true" />
-            <element signature="e#1286#1324#0#HTML" expanded="true" />
-            <element signature="e#1422#1460#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/makeTemplate/ConstValue.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -730,9 +542,6 @@
           <caret line="166" column="14" selection-start-line="166" selection-start-column="14" selection-end-line="166" selection-end-column="14" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Functions/RayRun/RayRunCompile.go">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Functions/AboutLab/Lab.go">
       <provider selected="true" editor-type-id="text-editor">
@@ -751,20 +560,6 @@
     <entry file="file://$PROJECT_DIR$/public/img/People/wyy.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/template/Lab/aboutLab.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2831">
-          <caret line="149" column="82" lean-forward="true" selection-start-line="149" selection-start-column="82" selection-end-line="149" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/makeTemplate/RayRunTemplate.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -772,10 +567,260 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/User_Plot/CheckUpload.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="58" column="40" selection-start-line="58" selection-start-column="40" selection-end-line="58" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/User_Plot/User_Date.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/DealService.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/Manager_File/Manager_File.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="40" column="48" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/CheckService/Check.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/LoginService/User.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="29" column="48" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/FindBackPasswords/findbackPasswords.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="892">
+          <caret line="63" column="49" selection-start-line="63" selection-start-column="49" selection-end-line="63" selection-end-column="49" />
+          <folding>
+            <element signature="n#!!block;n#Forget#0" />
+            <element signature="n#!!block;n#ShowInformation#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/Draw/Draw.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/DealWrongs/constValue.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="22" column="22" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/Register/ResgisterService.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="707">
+          <caret line="53" column="49" selection-start-line="53" selection-start-column="49" selection-end-line="53" selection-end-column="49" />
+          <folding>
+            <element signature="e#18#154#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/Cookies.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+          <folding>
+            <element signature="e#19#41#0" expanded="true" />
+            <element signature="n#!!block;n#DealInformationCookie#0" />
+            <element signature="n#!!block;n#IsCookieExit#0" />
+            <element signature="n#!!block;n#DeleteCookie#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/Manager_Page/Manager_Page.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/LoginService/Manager.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/LoginService/LoginService.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="37" column="19" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="19" />
+          <folding>
+            <element signature="e#22#123#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/MakeCooke.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+          <folding>
+            <element signature="e#19#76#0" expanded="true" />
+            <element signature="n#!!block;n#MakeUserInformationCookie#0" />
+            <element signature="n#!!block;n#GetUserCookie#0" />
+            <element signature="n#!!block;n#DeleteUserCookie#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sqlOperate/SQLSerivce.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1995">
+          <caret line="148" column="27" selection-start-line="148" selection-start-column="16" selection-end-line="148" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/template/RayRun/DocumentsAH0.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1041">
+        <state relative-caret-position="133">
           <caret line="519" column="33" selection-start-line="519" selection-start-column="33" selection-end-line="519" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/DealWrong/DealWrong.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="57" lean-forward="true" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="57" />
+          <folding>
+            <element signature="e#357#396#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InitWebsite/DealWrongInit.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InitWebsite/FindBackPasswordsInit.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="47" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="47" />
+          <folding>
+            <element signature="e#21#95#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/DealWrongs/DealWrong.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="41" column="58" lean-forward="true" selection-start-line="41" selection-start-column="58" selection-end-line="41" selection-end-column="58" />
+          <folding>
+            <element signature="e#20#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/SignUp/signUp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/Lab/aboutLab.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="955">
+          <caret line="149" column="82" lean-forward="true" selection-start-line="149" selection-start-column="82" selection-end-line="149" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/Tools/private.navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-114">
+          <caret line="18" column="69" selection-start-line="18" selection-start-column="62" selection-end-line="18" selection-end-column="69" />
+          <folding>
+            <element signature="e#730#768#0#HTML" expanded="true" />
+            <element signature="e#870#908#0#HTML" expanded="true" />
+            <element signature="e#1007#1045#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InitWebsite/ManagerInit.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="19" column="42" lean-forward="true" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/ManagerNotice.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="47" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/DealWrong/DealWrongLayout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="38" column="34" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/Tools/public.navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+          <folding>
+            <element signature="e#787#825#0#HTML" expanded="true" />
+            <element signature="e#1093#1131#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="18" column="33" lean-forward="true" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/RayRun/CountELine/EIRICount.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Functions/RayRun/RayRunCompile.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="141" column="21" selection-start-line="141" selection-start-column="21" selection-end-line="141" selection-end-column="21" />
         </state>
       </provider>
     </entry>

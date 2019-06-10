@@ -27,7 +27,7 @@ func DealLogin(writer http.ResponseWriter, request *http.Request){
 
 	if err != nil {
 		Functions.Danger(err, "Cannot parse form.")
-		DealWrongs.DealWrongs(ERROCODEFORSYSTEM,writer,request)
+		DealWrongs.DealWrongs(ERROCODEFORSYSTEM,&writer,request)
 	}
 
 	people := request.PostFormValue("people")

@@ -24,7 +24,7 @@ func UploadFileM(writer http.ResponseWriter, request *http.Request)  {
 		if err != nil {
 			Functions.Danger(err, "Cannot parse form.")
 			sysW := Functions.SystemWrong()
-			Functions.DealWrongCookie(request, writer, sysW.W, sysW.S, sysW.Wa)
+			Functions.DealWrongCookie(request, &writer, sysW.W, sysW.S, sysW.Wa)
 			http.Redirect(writer, request, "/deal_wrong", 302)
 			return
 		}
@@ -38,7 +38,7 @@ func UploadFileM(writer http.ResponseWriter, request *http.Request)  {
 
 		if(!ManagerOperator.CheckUploadTag(tag,fileHeader.Filename)){
 			dataW :=Functions.DataWrong()
-			Functions.DealWrongCookie(request, writer, dataW.W, dataW.S, "/Manager_File")
+			Functions.DealWrongCookie(request, &writer, dataW.W, dataW.S, "/Manager_File")
 			http.Redirect(writer, request, "/deal_wrong", 302)
 			return
 		}

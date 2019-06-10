@@ -11,9 +11,9 @@ import (
 //PreWrong
 
 const PreWrongTime  =1000
-const PreWrong  ="PREWRONG"
+const PreWrong  ="preWrong"
 //PreWrong pre错误存储 用于进一步的处理
-func MakePreWrongCookie(message string, write http.ResponseWriter){
+func MakePreWrongCookie(message string, write *http.ResponseWriter){
 	AddCookie(PreWrong,message,write,PreWrongTime)
 }
 
@@ -22,23 +22,22 @@ func GetPreWrongCookie(req *http.Request) string{
 	return GetCookieValue(PreWrong,req)
 }
 //删除 PreWrongCookie
-func DeletePreWrongCookie(write http.ResponseWriter)  {
-	DeleteCookie(write,PreWrong)
+func DeletePreWrongCookie(write *http.ResponseWriter)  {
+	DeleteCookie(*write,PreWrong)
 }
 
 //WrongShow
 
 
-//获取存储信息
-
+//获取存储信息 - User
 const InformationTime  = 500
 const UserName  ="nameOfUser"
 const UserAccount  ="accountOfUser"
 const UserSFP  ="sfpOfUser"
 func MakeUserInformationCookie(writer http.ResponseWriter,user sqlOperate.User) {
-	AddCookie(UserName, user.Name, writer, InformationTime)
-	AddCookie(UserAccount, user.Account, writer, InformationTime)
-	AddCookie(UserSFP, user.Sfp, writer, InformationTime)
+	AddCookie(UserName, user.Name, &writer, InformationTime)
+	AddCookie(UserAccount, user.Account,&writer, InformationTime)
+	AddCookie(UserSFP, user.Sfp,&writer, InformationTime)
 }
 
 func GetUserCookie(request *http.Request) sqlOperate.User{
@@ -55,3 +54,14 @@ func DeleteUserCookie(writer http.ResponseWriter){
 	DeleteCookie(writer,UserAccount)
 	DeleteCookie(writer,UserSFP)
 }
+
+
+//Make Cookie for Manager
+const ManagerCode  = "code"
+const MangerAccount  = "account"
+const ManagerTime  = 10000
+func MakeManagerCookie(code string,account string,writer *http.ResponseWriter){
+	AddCookie(ManagerCode, code, writer, ManagerTime)
+	AddCookie(MangerAccount, account, writer, ManagerTime) //有限时间的链接
+}
+

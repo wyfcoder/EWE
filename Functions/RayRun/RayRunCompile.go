@@ -139,6 +139,7 @@ func CheckRAH(body []string,instructs *[]Compile.Instruct,position int) bool{
 		if !isOk || !CheckF(number){
 			return false
 		}
+		param=body[1]
 		number,isOk =TextDeal.StringToFloat(param)
 
 		if !isOk || !CheckA(number){

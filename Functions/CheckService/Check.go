@@ -9,7 +9,7 @@ import (
 //检验用户状态的有效性
 func CheckUser(writer http.ResponseWriter,request *http.Request) bool{
 	if !Functions.IsCookieExit(request, "account") {
-		Functions.DealWrongCookie(request, writer, "The time is out.", "Login again.", "/login")
+		Functions.DealWrongCookie(request, &writer, "The time is out.", "Login again.", "/login")
 		http.Redirect(writer, request, "/deal_wrong", 302)
 	} else if !CheckCode(request){
 		t :=Functions.ParseTemplateFiles("layout", "close.navbar", "closeWindow")
@@ -23,7 +23,7 @@ func CheckUser(writer http.ResponseWriter,request *http.Request) bool{
 //检验Manager状态的有效性
 func CheckManager(writer http.ResponseWriter,request *http.Request) bool{
 	if !Functions.IsCookieExit(request, "account") {
-		Functions.DealWrongCookie(request, writer, "The time is out.", "Login again.", "/login")
+		Functions.DealWrongCookie(request, &writer, "The time is out.", "Login again.", "/login")
 		http.Redirect(writer, request, "/deal_wrong", 302)
 	} else if !CheckMCode(request){
 		t := Functions.ParseTemplateFiles("layout", "close.navbar", "closeWindow")
