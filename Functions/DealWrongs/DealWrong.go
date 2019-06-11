@@ -54,6 +54,12 @@ func DealErrorCode(errorCode int, writer *http.ResponseWriter,request * http.Req
 	case ErrorCodeForForget:     //找回密码错误
 		writerError(pre_information+ForgetErrorInformation,ForgetErrorSolve,writer)
 		break
+	case ErrorCodeForTimeOut:
+		writerError(pre_information+TimeOutErrorInformation,TimeOutErrorSolve,writer)
+		break
+	case ErrorCodeForLoginAgain:
+		writerError(pre_information+LoginAgainInformation,LoginAgainErrorSolve,writer)
+		break
 	}
 	Functions.DeletePreWrongCookie(writer)
 }

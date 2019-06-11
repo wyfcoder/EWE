@@ -1,0 +1,109 @@
+{{ define "content" }}
+    <div id="news">
+        <a><p class="lead" id="title"></p></a>
+        <textarea rows="3" class="text"  id="content" readonly>
+</textarea>
+        <br/>
+        <button class="btn btn-default next"onclick="return previous()">previous</button>
+        <button class="btn btn-primary" onclick="return next()">next</button>
+    </div>
+    <br/>
+
+    <form action="/feedBack" method="post">
+        <div id="feedBack">
+            <p class="lead"><a>FeedBack</a></p>
+            <textarea rows="5" class="text"  id="content" name="content" placeholder="   Any suggests for our andorid appliaction or webside can be edited.
+   They will make us better.
+   Thank you." required></textarea>
+            <br/>
+            <button class="btn btn-primary">Go</button>
+        </div>
+    </form>
+    <br/>
+    <div style="visibility: collapse" id="datas">[[1,2,"2"]]</div>
+    <div id="support">
+        <a><p class="lead">Technical Support</p></a>
+        <br/>
+        <div class="htmleaf-container">
+            <div class="demo" style="background: #f7f8fa;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="news-slider" class="owl-carousel">
+
+                                <div class="post-slide">
+                                    <div class="post-header">
+                                        <a class=lead>Go</a>
+                                    </div>
+
+                                    <div class="pic">
+                                        <img src="static/img/Support/Go.jpg" alt=""/>
+                                    </div>
+
+                                    <ul class="post-bar">
+                                        <li><i class="fa fa-users"></i> <a>Support</a></li>
+                                    </ul>
+                                    <p class="post-description">
+                                        Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.
+                                        <br/>
+                                        Our website is builded by Go.
+                                    </p>
+                                    <a href="https://golang.google.cn/" class="read-more" target="_blank">Official website</a>
+                                </div>
+
+                                <div class="post-slide">
+                                    <div class="post-header">
+                                        <a class="lead">Andorid</a>
+                                    </div>
+                                    <div class="pic">
+                                        <img src="static/img/Support/andorid.jpg." alt=""/>
+                                    </div>
+                                    <ul class="post-bar">
+                                        <li><i class="fa fa-users"></i> <a >Support</a></li>
+                                    </ul>
+                                    <p class="post-description">
+                                        Android is a free and open source operating system based on Linux. Mainly used in mobile devices, such as smartphones and tablets, led and developed by Google (Google) and the Open Mobile Alliance.
+                                    </p>
+                                    <a href="https://developer.android.google.cn/" class="read-more" target="_blank">Official website</a>
+                                </div>
+
+                                <div class="post-slide">
+                                    <div class="post-header">
+                                        <a class="lead">Baidu map</a>
+                                    </div>
+                                    <div class="pic">
+                                        <img src="static/img/Support/baidumap.jpg." alt=""/>
+                                    </div>
+                                    <ul class="post-bar">
+                                        <li><i class="fa fa-users"></i> <a >Support</a></li>
+                                    </ul>
+                                    <p class="post-description">
+                                        Baidu Map is a platform for users to provide travel-related services including intelligent route planning, intelligent navigation (driving, walking, cycling), real-time road conditions and so on.
+                                    </p>
+                                    <a href="http://lbsyun.baidu.com/" class="read-more" target="_blank">Official website</a>
+                                </div>
+
+                                <div class="post-slide">
+                                    <div class="post-header">
+                                        <a class="lead">highcharts</a>
+                                    </div>
+                                    <div class="pic">
+                                        <img src="static/img/Support/highcharts.png" alt=""/>
+                                    </div>
+                                    <ul class="post-bar">
+                                        <li><i class="fa fa-users"></i> <a >Support</a></li>
+                                    </ul>
+                                    <p class="post-description">
+                                        Highcharts is a graphics library written in pure JavaScript.
+                                        It can easily add interactive graphics to web sites or web applications, and it is free for personal learning, personal websites and non-commercial use.
+                                    </p>
+                                    <a href="https://www.highcharts.com.cn/" class="read-more" target="_blank">Official website</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{end}}

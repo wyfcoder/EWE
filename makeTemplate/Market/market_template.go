@@ -1,13 +1,93 @@
-package makeTemplate
+package Market
 
-import "github.com/WebForEME/sqlOperate"
+import (
+	"github.com/WebForEME/makeTemplate"
+	"github.com/WebForEME/sqlOperate"
+)
+
+
 
 func MakeMarketTemplate() string {
+
+	//前部分
+	html := PreBody
+
+	//添加Navbar
+	html += makeTemplate.Navbar
+
+	html += Body_News
+
+
+	html += Body_Feedback
+
+	html += Body_Github
+
+	html += Body_Support
+
+	html += DynamicMode()  //动态的获取通知数据
+
+	html += Body_End
+
+	return html
+}
+
+func DynamicMode() string{
 	//获得所有的Notices -把其赋值给一个javascript的数组
 	//监听按钮，上滑下滑事件
 	notices := sqlOperate.Notices()
+	//通知数据转化为javascript数组
+	datas := `<script>
+    var   position=1
+    var   datas=[`
+	for i := 0; i < len(notices); i++ {
+		datas += `[`
+		datas += "`" + notices[i].Title + "`"
+		datas += `,`
+		datas += "`" + notices[i].Date + "`"
+		datas += `,`
+		datas += "`" + notices[i].Content + "`"
+		datas += `]`
+		if len(notices)-1 != i {
+			datas += `,`
+		} else {
+			datas += `] 
+    var   size=datas.length;
+    showInformation();
+`
+		}
+	}
 
-	html := `<!DOCTYPE HTML>
+	datas +=`function next(){
+if(position==size){
+position=1;
+}
+else{
+position=position+1;
+}
+showInformation();
+}
+
+function previous(){
+if(position==1){
+position=size;
+}
+
+else{
+position=position-1;
+}
+showInformation();
+}
+
+function showInformation(){
+   var t="Notice "+position.toString()+"/"+size.toString()+" "+datas[position-1][1]+" "+datas[position-1][0];
+   document.getElementById("title").innerText=t;
+   document.getElementById("content").value=datas[position-1][2];
+}
+</script>`
+	return datas
+}
+
+const PreBody  = `<!DOCTYPE HTML>
 <html>
 <head>
     <meta charset="utf-8">
@@ -40,6 +120,9 @@ func MakeMarketTemplate() string {
             .text{width:80%;height:80%;margin_left:10%}
             #feedBack{width:100%; height:30%;margin-left:2%;margin-right:2%}
             #support{width:100%; height:30%;margin-left:2%;margin-right:2%}
+            #sourceCode{width:100%;height:10%;margin-left:15%}
+            #left{float:left;}
+            #left_button{float:left;margin-left:2%}
      </style>
 
       <style type="text/css">
@@ -164,12 +247,10 @@ func MakeMarketTemplate() string {
 </head>
 <body>`
 
-	html += Navbar
-
-	html += `
+const Body_News  =`
 <div id="news">
     <a><p class="lead" id="title"></p></a>
-   <textarea rows="3" class="text"  id="content" readonly>
+   <textarea rows="3" class="text"  id="content" style="font-size: 20px" readonly>
 </textarea>
 <br/>
  <button class="btn btn-default next"onclick="return previous()">previous</button>
@@ -177,20 +258,29 @@ func MakeMarketTemplate() string {
 </div>
 <br/>`
 
-	html+=`
+const Body_Github  =`
+<div id="sourceCode">
+<div id="left"><img src="/static/img/Support/github.jpg"></div>
+<div id="left_button"><button class="btn btn-success"><a href="https://github.com/wyfcoder/EWE"  target="_blank" style="font-size: 15px;color: #FFFFFF">Source codes for website.</a></button></div>
+<div id="left_button"><button class="btn btn-primary"><a href=""  target="_blank"style="font-size: 15px;color: #FFFFFF">Source codes for android.</a></button></div>
+</div>
+<br/>
+`
+
+const Body_Feedback  = `
     <form action="/feedBack" method="post">
         <div id="feedBack">
-   <p class="lead"><a>FeedBack</a></p>
-   <textarea rows="5" class="text"  id="content" name="content" placeholder="   Any suggests for our andorid appliaction or webside can be edited.
+   <p class="lead" ><a style="font-size: 20px;color: #00bf00">Feedback</a></p>
+   <textarea rows="5" class="text" style="font-size: 20px" id="content" name="content" placeholder="   Any suggests for our andorid appliaction, webside or questions can be edited.
    They will make us better.
    Thank you." required></textarea>
         <br/>
-        <button class="btn btn-primary">Go</button>
+        <button class="btn btn-success">Go</button>
         </div>
     </form>
 <br/>`
 
-	html+=`
+const Body_Support  = `
 <div id="support">
    <a><p class="lead">Technical Support</p></a>
 <br/>
@@ -223,10 +313,10 @@ func MakeMarketTemplate() string {
 
        <div class="post-slide">
         <div class="post-header">
-         <a class="lead">Andorid</a>
+         <a class="lead">Android</a>
         </div>
         <div class="pic">
-         <img src="static/img/Support/andorid.jpg." alt=""/>
+         <img src="static/img/Support/android.jpg." alt=""/>
         </div>
         <ul class="post-bar">
          <li><i class="fa fa-users"></i> <a >Support</a></li>
@@ -278,62 +368,7 @@ func MakeMarketTemplate() string {
 </div>
 `
 
-	//通知数据转化为javascript数组
-	datas := `<script>
-   var   position=1
-   var   datas=[`
-	for i := 0; i < len(notices); i++ {
-		datas += `[`
-		datas += "`" + notices[i].Title + "`"
-		datas += `,`
-		datas += "`" + notices[i].Date + "`"
-		datas += `,`
-		datas += "`" + notices[i].Content + "`"
-		datas += `]`
-		if len(notices)-1 != i {
-			datas += `,`
-		} else {
-			datas += `] 
-    var   size=datas.length;
-    showInformation();
-`
-		}
-	}
-	html += datas
-
-	//书写监听函数
-	functions := `
-function next(){
-if(position==size){
-position=1;
-}
-else{
-position=position+1;
-}
-showInformation();
-}
-
-function previous(){
-if(position==1){
-position=size;
-}
-
-else{
-position=position-1;
-}
-showInformation();
-}
-
-function showInformation(){
-   var t="Notice "+position.toString()+"/"+size.toString()+" "+datas[position-1][1]+" "+datas[position-1][0];
-   document.getElementById("title").innerText=t;
-   document.getElementById("content").value=datas[position-1][2];
-}
-</script>`
-
-	html += functions
-
-	end := `<script src="/static/js/jquery-2.1.1.min.js"></script>
+const Body_End =`<script src="/static/js/jquery-2.1.1.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
         <script src="/static/js/jquery-1.11.0.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
@@ -351,7 +386,3 @@ function showInformation(){
     </script>
 </body>
 </html>`
-
-	html += end
-	return html
-}

@@ -1,6 +1,6 @@
 package makeTemplate
 
-//一些固定值
+//Navabar
 
 const (
 	//导航栏
@@ -49,3 +49,4 @@ const (
   </div>
   <br/>`
 )
+

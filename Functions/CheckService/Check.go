@@ -2,18 +2,23 @@ package CheckService
 
 import (
 	"github.com/WebForEME/Functions"
+	"github.com/WebForEME/Functions/DealWrongs"
 	"github.com/WebForEME/sqlOperate"
 	"net/http"
 )
 
+//连接超时
+const ErrorCodeForTimeOut  = 3;
+
+//被连续登陆
+const ErrorCodeForLoginAgain  =4;
+
 //检验用户状态的有效性
 func CheckUser(writer http.ResponseWriter,request *http.Request) bool{
 	if !Functions.IsCookieExit(request, "account") {
-		Functions.DealWrongCookie(request, &writer, "The time is out.", "Login again.", "/login")
-		http.Redirect(writer, request, "/deal_wrong", 302)
+		DealWrongs.DealWrongs(ErrorCodeForTimeOut,&writer,request)
 	} else if !CheckCode(request){
-		t :=Functions.ParseTemplateFiles("layout", "close.navbar", "closeWindow")
-		t.Execute(writer, "The password has expired.")
+		DealWrongs.DealWrongs(ErrorCodeForLoginAgain,&writer,request)
 	}else {
 		return true
 	}
@@ -23,11 +28,9 @@ func CheckUser(writer http.ResponseWriter,request *http.Request) bool{
 //检验Manager状态的有效性
 func CheckManager(writer http.ResponseWriter,request *http.Request) bool{
 	if !Functions.IsCookieExit(request, "account") {
-		Functions.DealWrongCookie(request, &writer, "The time is out.", "Login again.", "/login")
-		http.Redirect(writer, request, "/deal_wrong", 302)
+		DealWrongs.DealWrongs(ErrorCodeForTimeOut,&writer,request)
 	} else if !CheckMCode(request){
-		t := Functions.ParseTemplateFiles("layout", "close.navbar", "closeWindow")
-		t.Execute(writer, "The password has expired.")
+		DealWrongs.DealWrongs(ErrorCodeForLoginAgain,&writer,request)
 	}else {
 		return true
 	}

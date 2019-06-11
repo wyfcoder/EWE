@@ -2,16 +2,16 @@ package User_Market
 
 import (
 	"github.com/WebForEME/Functions/CheckService"
-	"github.com/WebForEME/makeTemplate"
+	Market2 "github.com/WebForEME/makeTemplate/Market"
 	"html/template"
 	"net/http"
 )
 
 //打开集市功能
-func Market(w http.ResponseWriter, r *http.Request) {
-	if(CheckService.CheckUser(w,r)){
+func Market(writer http.ResponseWriter, r *http.Request) {
+	if(CheckService.CheckUser(writer,r)){
 	t := template.New("tmpl.html")
-	t, _ = t.Parse(makeTemplate.MakeMarketTemplate())
-	t.Execute(w, nil)
+	t, _ = t.Parse(Market2.MakeMarketTemplate())
+	t.Execute(writer, nil)
 	}
 }
