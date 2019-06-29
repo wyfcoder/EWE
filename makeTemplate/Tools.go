@@ -25,23 +25,23 @@ const (
         </ul>
 
         <ul class="nav navbar-nav">
-          <li><a href="/download" style="font-size: 20px;color: #00bf00">Download</a></li>
+          <li><a href="/download" style="font-size: 20px;color: #0b99bc">Download</a></li>
         </ul>
 
         <ul class="nav navbar-nav">
-          <li><a href="/Lab" style="font-size: 20px;color: #00bf00">Lab</a></li>
+          <li><a href="/Lab" style="font-size: 20px;color: #0b99bc">Lab</a></li>
         </ul>
 
         <ul class="nav navbar-nav" >
-          <li><a href="/EPrograms" style="font-size: 20px;color: #00bf00">EPrograms</a></li>
+          <li><a href="/EPrograms" style="font-size: 20px;color: #0b99bc">EPrograms</a></li>
         </ul>
 
         <ul class="nav navbar-nav">
-          <li ><a href="/Data" style="font-size: 20px;color: #00bf00">Plot</a></li>
+          <li ><a href="/Data" style="font-size: 20px;color: #0b99bc">Plot</a></li>
         </ul>
 
         <ul class="nav navbar-nav">
-          <li><a href="/RayRun" style="font-size: 20px;color: #ff76b5">RayRun</a></li>
+          <li><a href="/RayRun" style="font-size: 20px;color: #0b99bc">RayRun</a></li>
         </ul>
 
       </div>

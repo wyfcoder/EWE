@@ -3,30 +3,34 @@ package Manager_File
 import (
 	"github.com/WebForEME/Functions"
 	"github.com/WebForEME/Functions/CheckService"
+	"github.com/WebForEME/Functions/DealWrongs"
 	"github.com/WebForEME/ManagerOperator"
 	"github.com/WebForEME/sqlOperate"
 	"net/http"
 )
 
+const ErrorCodeForSystem    = -1 //系统错误码
+const ErrorCodeForTag       =  5 // 文件后缀与标签不符
+const MaxMemory = 1024*1024*1024*100 //100G的文件
+
 func ManagerFile(writer http.ResponseWriter, request *http.Request){
 	if(CheckService.CheckManager(writer,request)){
-		t := Functions.ParseTemplateFiles("ManagerLayout","ManagerBar","ManagerFile")
+		t := Functions.ParseTemplateFiles("ManagerPage/ManagerLayout","ManagerPage/ManagerBar","ManagerFile")
 		files:=sqlOperate.Files()
 		t.Execute(writer, files)
 	}
 }
 
+
+//有待修改
 func UploadFileM(writer http.ResponseWriter, request *http.Request)  {
 	if(CheckService.CheckManager(writer,request)){
 
-		err := request.ParseMultipartForm(1024 * 1024 * 13*100) //读取1300M的数据
+		//上限为100G的文件
+		err := request.ParseMultipartForm(MaxMemory)
 
 		if err != nil {
-			Functions.Danger(err, "Cannot parse form.")
-			sysW := Functions.SystemWrong()
-			Functions.DealWrongCookie(request, &writer, sysW.W, sysW.S, sysW.Wa)
-			http.Redirect(writer, request, "/deal_wrong", 302)
-			return
+			DealWrongs.DealWrongs(ErrorCodeForSystem,&writer,request)
 		}
 
 		//文件的验证
@@ -37,12 +41,11 @@ func UploadFileM(writer http.ResponseWriter, request *http.Request)  {
 		tag   :=request.PostFormValue("tag")
 
 		if(!ManagerOperator.CheckUploadTag(tag,fileHeader.Filename)){
-			dataW :=Functions.DataWrong()
-			Functions.DealWrongCookie(request, &writer, dataW.W, dataW.S, "/Manager_File")
-			http.Redirect(writer, request, "/deal_wrong", 302)
-			return
+			DealWrongs.DealWrongs(ErrorCodeForTag,&writer,request)
 		}
+
 		ManagerOperator.UploadFile(fileHeader,tag,title)
+
 		http.Redirect(writer,request,"/Manager_File",302)
 	}
 }

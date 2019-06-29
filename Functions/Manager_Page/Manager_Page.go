@@ -7,9 +7,10 @@ import (
 	"net/http"
 )
 
+//Manager的首界面
 func ManagerPage(writer http.ResponseWriter, request *http.Request) {
 	if(CheckService.CheckManager(writer,request)){
-		t := Functions.ParseTemplateFiles("ManagerLayout","ManagerBar","ManagerNotice")
+		t := Functions.ParseTemplateFiles("ManagerPage/ManagerLayout","ManagerPage/ManagerBar","ManagerPage/ManagerNotice")
 		notices:=sqlOperate.Notices()
 		t.Execute(writer, notices)
 	}

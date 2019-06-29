@@ -18,13 +18,15 @@ import (
 func InitMarket(mux *http.ServeMux){
 	//主页
 	mux.HandleFunc("/Market", User_Market.Market)
-	//涉及反馈的一块 TODO
+	//涉及反馈的一块
+	mux.HandleFunc("/feedbackDeal",User_Market.FeedbackDeal)
 }
 
 //对下载模块的初始化 wyf
 func InitDownload(mux *http.ServeMux){
 	//主页 下载逻辑
 	mux.HandleFunc("/download", User_File.Download)
+
 	mux.HandleFunc("/downloadFile", Functions.Download)
 }
 
@@ -35,7 +37,7 @@ func InitLab(mux *http.ServeMux){
 
 func InitEProgram(mux *http.ServeMux){
 
-	mux.HandleFunc("/EProgame",EProgram.EProgram)
+	mux.HandleFunc("/EPrograms",EProgram.EProgram)
 
 	//1 绘图模块    TODO 修改使其模块化 draw
 	mux.HandleFunc("/Plot", User_Plot.Data)

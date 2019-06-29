@@ -41,7 +41,7 @@ create table Notice(
 
 create table filesM(
   title  varchar(100),
-  path   varchar (100),
+  path   text ,
   tag    varchar (40),
   pTime  varchar (100)
 )
@@ -68,5 +68,12 @@ create table iridata(
     data text
 )
 
+
+//新开一个表描述feedback
+create table feedback(
+     account varchar(11),
+     time    varchar(50),
+     message text
+)
 
 

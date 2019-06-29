@@ -15,9 +15,9 @@ const ErrorCodeForLoginAgain  =4;
 
 //检验用户状态的有效性
 func CheckUser(writer http.ResponseWriter,request *http.Request) bool{
-	if !Functions.IsCookieExit(request, "account") {
+	if !Functions.IsCookieExit(request, "accountOfUser") {
 		DealWrongs.DealWrongs(ErrorCodeForTimeOut,&writer,request)
-	} else if !CheckCode(request){
+	} else if !CheckUCode(request){
 		DealWrongs.DealWrongs(ErrorCodeForLoginAgain,&writer,request)
 	}else {
 		return true
@@ -27,7 +27,7 @@ func CheckUser(writer http.ResponseWriter,request *http.Request) bool{
 
 //检验Manager状态的有效性
 func CheckManager(writer http.ResponseWriter,request *http.Request) bool{
-	if !Functions.IsCookieExit(request, "account") {
+	if !Functions.IsCookieExit(request, "accountOfManager") {
 		DealWrongs.DealWrongs(ErrorCodeForTimeOut,&writer,request)
 	} else if !CheckMCode(request){
 		DealWrongs.DealWrongs(ErrorCodeForLoginAgain,&writer,request)
@@ -39,14 +39,14 @@ func CheckManager(writer http.ResponseWriter,request *http.Request) bool{
 
 
 
-func CheckCode(req *http.Request) bool {
-	code :=Functions.GetCookieValue("code", req)
-	account := Functions.GetCookieValue("account", req)
+func CheckUCode(req *http.Request) bool {
+	code :=Functions.GetCookieValue("codeOfUser", req)
+	account := Functions.GetCookieValue("accountOfUser", req)
 	return sqlOperate.CheckCode(account, code)
 }
 
 func CheckMCode(req *http.Request) bool {
-	code := Functions.GetCookieValue("code", req)
-	account := Functions.GetCookieValue("account", req)
+	code := Functions.GetCookieValue("codeOfManager", req)
+	account := Functions.GetCookieValue("accountOfManager", req)
 	return sqlOperate.CheckMCode(account, code)
 }

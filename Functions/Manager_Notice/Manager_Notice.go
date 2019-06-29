@@ -7,6 +7,7 @@ import (
 	"net/http"
 )
 
+
 func AddNotice(writer http.ResponseWriter, request *http.Request){
 	if(!Functions.DealContent(writer,request)) {
 		return

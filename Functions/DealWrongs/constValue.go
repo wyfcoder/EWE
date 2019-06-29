@@ -7,7 +7,7 @@ const (
 	NullErrorInformation = "NULL ."
 	NullErrorSolve       = "Please back or login ."
 
-	ErrorCoderForSystem    = -1 //系统错误码
+	ErrorCodeForSystem    = -1 //系统错误码
 	SystemErrorInformation = "System error, sorry ."
 	SystemErrorSolve       = "Please login."
 
@@ -32,4 +32,9 @@ const (
 	ErrorCodeForLoginAgain = 4
 	LoginAgainInformation = "Your account is logged in again."
 	LoginAgainErrorSolve = "You can find back your account or just login."
+
+	//标签与文件的后缀不符合
+	ErrorCodeForTag=5
+	TagErrorInformation = "The file suffix you choose is different from the lable you choose."
+	TagErrorSolve       = "You can check your file again."
 )

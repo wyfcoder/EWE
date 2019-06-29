@@ -71,6 +71,7 @@ func (d* Data)GetId() string{
 }
 
 
+//=======================================================================
 type Notice struct {
 	Title   string
 	Content string
@@ -90,7 +91,7 @@ func (notice *Notice)GetDate() string{
 }
 
 
-
+//===============================================================================
 type FileInformation struct{
 	Title      string
 	Date       string
@@ -112,4 +113,26 @@ func (file *FileInformation)GetPath() string{
 
 func (file *FileInformation)GetTitle() string{
 	return file.Title
+}
+
+//============================================================================
+type feedbackItem struct {
+
+	Time string
+
+	Message string
+
+	Account string
+}
+
+func (item *feedbackItem) GetTime() string{
+	return item.Time
+}
+
+func (item *feedbackItem) GetMessage() string{
+	return item.Message
+}
+
+func (item *feedbackItem) GetAccount() string{
+	return item.Account
 }

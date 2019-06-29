@@ -1,0 +1,22 @@
+{{ define "content" }}
+    <br/>
+        <a class="lead">Feedback</a>
+    <br/>
+    <br/>
+    {{ range . }}
+        <div class="panel panel-default">
+
+            <div class="panel-heading">
+                <span class="lead"> <i class="fa fa-paper-plane-o"></i> {{.GetTime}}  from {{.GetAccount}}</span>
+                <div class="pull-right"><a href="/deleteFeedback?Account={{.GetAccount}}&Time={{.GetTime}}"><i class="fa fa-check"></i></a></div>
+            </div>
+
+            <div class="panel-body">
+                {{.GetMessage}}
+            </div>
+        </div>
+    {{else}}
+        <p class="lead">Don't have any feedback.</p>
+    {{end}}
+
+{{end}}

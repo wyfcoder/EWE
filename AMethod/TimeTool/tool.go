@@ -75,3 +75,8 @@ func TimeStringNow() TimeString{
 	return timeString
 }
 
+func NowString() string{
+	timeString :=time.Unix(time.Now().Unix(), 0).Format("2006-01-02 15:04:05")
+	return timeString
+}
+

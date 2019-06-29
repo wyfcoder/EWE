@@ -23,7 +23,7 @@ func DeleteFile(writer http.ResponseWriter, request *http.Request) {
 		Functions.DealWrongCookie(request, &writer, sysW.W, sysW.S, sysW.Wa)
 		http.Redirect(writer, request, "/deal_wrong", 302)
 	}
-	if !CheckService.CheckCode(request) {
+	if !CheckService.CheckUCode(request) {
 		t := Functions.ParseTemplateFiles("layout", "close.navbar", "closeWindow")
 		t.Execute(writer, "The password has expired.")
 		return

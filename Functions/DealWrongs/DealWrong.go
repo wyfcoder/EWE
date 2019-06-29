@@ -42,7 +42,7 @@ func DealErrorCode(errorCode int, writer *http.ResponseWriter,request * http.Req
 	pre_information :=Functions.GetPreWrongCookie(request)
 
 	switch errorCode {
-	case ErrorCoderForSystem:    //系统错误
+	case ErrorCodeForSystem:    //系统错误
 		writerError(pre_information+SystemErrorInformation,SystemErrorSolve,writer)
 		break
 	case ErrorCodeForLogin:     //登陆错误
@@ -59,6 +59,9 @@ func DealErrorCode(errorCode int, writer *http.ResponseWriter,request * http.Req
 		break
 	case ErrorCodeForLoginAgain:
 		writerError(pre_information+LoginAgainInformation,LoginAgainErrorSolve,writer)
+		break
+	case ErrorCodeForTag:
+		writerError(pre_information+TagErrorInformation,TagErrorSolve,writer)
 		break
 	}
 	Functions.DeletePreWrongCookie(writer)

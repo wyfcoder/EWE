@@ -28,12 +28,14 @@ func main() {
 	InitWebsite.InitEProgram(mux)
 	InitWebsite.InitLab(mux)
 
+
 	mux.HandleFunc("/Data", User_Plot.Data)
 	mux.HandleFunc("/checkUploadFile", User_Plot.CheckUploadFile)
 
 	//Manager 模式登陆,Notice 服务 和 File 服务
 	InitWebsite.InitNotice(mux)
 	InitWebsite.InitUploadFile(mux);
+	InitWebsite.InitFeedBack(mux);
 
 	server := &http.Server{
 		Addr:    "0.0.0.0:8080",

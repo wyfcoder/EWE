@@ -28,7 +28,7 @@
             <br/>
             <input type="file"  id="upload" name="upload" required/>
 
-            <p class="help-block">Data file.File size does not exceed 100G</p>
+            <p class="help-block">Data file.File size does not exceed 1G</p>
 
         </div>
         <br/>
@@ -44,7 +44,7 @@
         <div class="panel panel-default">
 
             <div class="panel-heading">
-                <span class="lead"> <i class="fa fa-folder-o"></i> {{.GetTitle}}-{{.GetTag}}</span>
+                <span class="lead"> <i class="fa fa-star-o"></i> {{.GetTitle}}-{{.GetTag}}</span>
                 <div class="pull-right"><a href="/deleteMFile?Date={{.GetDate}}&Name={{.GetTitle}}&Path={{.GetPath}}"><i class="fa fa-remove"></i></a></div>
             </div>
 

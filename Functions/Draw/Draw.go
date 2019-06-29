@@ -24,7 +24,7 @@ func DrawCharts(writer http.ResponseWriter, request *http.Request) {
 	}
 
 	//安全检查
-	if CheckService.CheckCode(request){
+	if CheckService.CheckUCode(request){
 		plot(writer,request)
 	}
 }

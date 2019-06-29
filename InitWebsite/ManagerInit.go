@@ -4,6 +4,7 @@ package InitWebsite
 
 import (
 	"github.com/WebForEME/Functions/DeleteService"
+	"github.com/WebForEME/Functions/Manager_Feedback"
 	"github.com/WebForEME/Functions/Manager_File"
 	"github.com/WebForEME/Functions/Manager_Notice"
 	"github.com/WebForEME/Functions/Manager_Page"
@@ -35,8 +36,11 @@ func InitUploadFile(mux *http.ServeMux){
 
 //实现查看反馈信息模块 TODO
 func InitFeedBack(mux *http.ServeMux){
+	mux.HandleFunc("/Manager_Feedback",Manager_Feedback.ManagerFeedback)
 
+	mux.HandleFunc("/deleteFeedback",Manager_Feedback.DeleteFeedback)
 }
+
 
 //实现综合数据查看模块 TODO
 func InitComprehensiveControl() {

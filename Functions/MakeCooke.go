@@ -57,11 +57,22 @@ func DeleteUserCookie(writer http.ResponseWriter){
 
 
 //Make Cookie for Manager
-const ManagerCode  = "code"
-const MangerAccount  = "account"
+const ManagerCode  = "codeOfManager"
+const MangerAccount  = "accountOfManager"
 const ManagerTime  = 10000
 func MakeManagerCookie(code string,account string,writer *http.ResponseWriter){
 	AddCookie(ManagerCode, code, writer, ManagerTime)
 	AddCookie(MangerAccount, account, writer, ManagerTime) //有限时间的链接
 }
+
+//Make Cookie for user
+const UserCode  ="codeOfUser"
+const UserTime  = 10000
+
+func MakeUserCookie(code string,account string,writer *http.ResponseWriter){
+	AddCookie(UserCode, code, writer, UserTime)
+	AddCookie(UserAccount, account, writer, UserTime) //有限时间的链接
+}
+
+
 

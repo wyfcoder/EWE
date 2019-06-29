@@ -35,6 +35,7 @@ func querayManger2(userName string, information *User) error {
 	return Db.QueryRow(selectManagerAccount, userName).Scan(&information.Name, &information.Account, &information.Password)
 }
 
+//TODO 反馈错误 需要修改 返回一个Error 判断为系统错误
 func AddNotice(name string, content string) {
 	stmt, _ := Db.Prepare(insertIntoNotice)
 	defer stmt.Close()
@@ -63,6 +64,7 @@ func AddFileM(title string,tag string,path string){
 	stmt, _ := Db.Prepare(insertIntoFileM)
 	defer stmt.Close()
 	stmt.QueryRow(title,tag,path,time.Unix(time.Now().Unix(), 0).Format("2006-01-02 15:04:05"))
+
 }
 
 func DeleteFileM(title string,date string){
@@ -73,10 +75,24 @@ func Files() (files []FileInformation){
 	rows, err := Db.Query(selectFile)
 	for rows.Next() {
 		conv := FileInformation{}
-		if err = rows.Scan(&conv.Title, &conv.Path, &conv.Date,&conv.Tag); err != nil {
+		if err = rows.Scan(&conv.Title, &conv.Tag, &conv.Date,&conv.Path); err != nil {
 			return
 		}
 		files = append(files, conv)
+	}
+	rows.Close()
+	return
+}
+
+
+func Feedback() (feedbackItems []feedbackItem){
+	rows, err := Db.Query(selectFeedback)
+	for rows.Next() {
+		conv := feedbackItem{}
+		if err = rows.Scan(&conv.Time, &conv.Message, &conv.Account); err != nil {
+			return
+		}
+		feedbackItems = append(feedbackItems, conv)
 	}
 	rows.Close()
 	return

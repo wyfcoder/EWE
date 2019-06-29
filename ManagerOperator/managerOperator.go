@@ -81,21 +81,13 @@ func CheckUploadTag(tag string,fileName string) bool {
 	return true
 }
 
-func isExit(list []string,value string) bool{
-	for i:=0;i<len(list);i++{
-		if list[i]==value{
-		   return true
-	}
-	}
-	return false
-}
-
 //上传文件到指定的目录
 func UploadFile(fileHeader *multipart.FileHeader,tag string ,title string){
 
 	file, err := fileHeader.Open()
 
-	road :=Dir+fileHeader.Filename
+	road :=getCurrentPath()+"/files/"+fileHeader.Filename
+
 	file2, err := os.OpenFile(road, os.O_RDWR|os.O_CREATE, 0766)
 
 	if err == nil {
@@ -110,5 +102,17 @@ func UploadFile(fileHeader *multipart.FileHeader,tag string ,title string){
 
 //将文件信息存入数据库
 func saveInformationToDB(tag string,title string,road string){
-	sqlOperate.AddFileM(title,tag,road)
+	sqlOperate.AddFileM(title,road,tag)
 }
+
+//获取项目的目录
+func getCurrentPath() string{
+
+	dir, err := os.Getwd()
+	if err != nil {
+		return ""
+	}
+	return dir
+}
+
+

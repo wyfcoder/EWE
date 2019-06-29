@@ -268,11 +268,12 @@ const Body_Github  =`
 `
 
 const Body_Feedback  = `
-    <form action="/feedBack" method="post">
+    <form action="/feedbackDeal" method="post">
         <div id="feedBack">
    <p class="lead" ><a style="font-size: 20px;color: #00bf00">Feedback</a></p>
    <textarea rows="5" class="text" style="font-size: 20px" id="content" name="content" placeholder="   Any suggests for our andorid appliaction, webside or questions can be edited.
    They will make us better.
+   If you want to ask us some questions, please leave your contact information.
    Thank you." required></textarea>
         <br/>
         <button class="btn btn-success">Go</button>
