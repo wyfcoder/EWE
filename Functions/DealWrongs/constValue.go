@@ -37,4 +37,34 @@ const (
 	ErrorCodeForTag=5
 	TagErrorInformation = "The file suffix you choose is different from the lable you choose."
 	TagErrorSolve       = "You can check your file again."
+
+	//重复文件错误
+	ErrorCodeForFileName=6
+	FileNameErrorInformation = "The file's name is used."
+	FileNameErrorSolve       = "You can rename your file."
+
+	//长传文件过大错误
+	ErrorCodeForFileSize = 7
+	FileSizeErrorInformation = "The file you upload is too larger."
+	FileSizeErrorSolve ="Reduce the size of the file."
+
+	//文件内容错误
+	ErrorCodeForFileContent =8
+	FileContentErrorInformation ="The content of file you upload is wrong."
+	FileContentErrorSolve ="Check the file's content."
+
+	//文件个数错误
+	ErrorCodeForFileNumber =9
+	FileNumberErrorInformation ="The Number of file you upload is more than one."
+	FileNumberErrorSolve ="Upload file one by one."
+
+	//文件为空
+	ErrorCodeForFileNull =10
+	FileNullErrorInformation = "The file is Null."
+	FileNullErrorSolve ="Please check your file."
+
+	//绘图文件不一致
+	ErrorCodeForDrawTag = 11
+	DrawTagErrorInformation = "Tags of files are not same."
+	DrawTagErrorSolve = "Please select files again and make sure their tags are same."
 )

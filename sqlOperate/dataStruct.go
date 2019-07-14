@@ -23,7 +23,8 @@ func (u *User) GetSfp() string {
 	return u.Sfp
 }
 
-//错误信息的处理
+//错误消息处理
+//==========================================================
 type Wrongs struct {
 	W string //错误信息
 	S string //解决方法
@@ -42,33 +43,6 @@ func (w *Wrongs) Way() string{
 	return w.Wa
 }
 
-type Data struct {
-	Id       string
-	Name     string
-	Tag      string
-	Time     string
-	Describe string
-}
-
-func (d *Data) GetName()string{
-	return d.Name
-}
-
-func (d *Data)GetTag()  string{
-	return d.Tag
-}
-
-func (d *Data)GetTime()string{
-	return d.Time
-}
-
-func (d *Data)GetDescribe() string{
-	return d.Describe
-}
-
-func (d* Data)GetId() string{
-	return d.Id
-}
 
 
 //=======================================================================

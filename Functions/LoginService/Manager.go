@@ -1,9 +1,9 @@
 package LoginService
 
 import (
+	"github.com/WebForEME/AMethod/MathTool"
 	"github.com/WebForEME/Functions"
 	"github.com/WebForEME/Functions/DealWrongs"
-	"github.com/WebForEME/randomOperator"
 	"github.com/WebForEME/sqlOperate"
 	"net/http"
 )
@@ -21,7 +21,7 @@ func managerMode(writer http.ResponseWriter, request *http.Request) {
 		return
 	}
 
-	code := randomOperator.CreateVerificationCode()
+	code := MathTool.CreateVerificationCode()
 
 	sqlOperate.UpdateCode2(u.Account, code)
 

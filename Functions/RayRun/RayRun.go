@@ -1,14 +1,14 @@
 package RayRun
 
 import (
-	"github.com/WebForEME/makeTemplate"
+	RayRun2 "github.com/WebForEME/makeTemplate/RayRun"
 	"html/template"
 	"net/http"
 )
 
 func RayRun(writer http.ResponseWriter, request *http.Request) {
 	t := template.New("tmpl.html")
-	t, _ = t.Parse(makeTemplate.MakeRayRun())
+	t, _ = t.Parse(RayRun2.MakeRayRun())
 	t.Execute(writer, nil)
 }
 

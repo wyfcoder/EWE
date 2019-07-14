@@ -99,7 +99,7 @@ func GetWebData(instruct Compile.Instruct,data *[]float64)error{
 //数据库操作
 func GetDatabaseData(time string) []float64{
 	//给用户回馈数据里的信息
-	year,month,day,txt :=sqlOperate.GetIRIData(time)
+	year,month,day,txt := sqlOperate.GetIRIData(time)
 	_,_,txt=TextDeal.DealText(&txt)
 	data :=[]float64{}
 	TextDeal.DealText2(&txt,&data)

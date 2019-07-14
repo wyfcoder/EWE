@@ -1,9 +1,9 @@
 package FindBackPasswords
 
 import (
+	"github.com/WebForEME/AMethod/MathTool"
 	"github.com/WebForEME/Functions"
 	"github.com/WebForEME/Functions/DealWrongs"
-	"github.com/WebForEME/randomOperator"
 	"github.com/WebForEME/sqlOperate"
 	"net/http"
 )
@@ -70,7 +70,7 @@ func UpdatePassword(writer http.ResponseWriter, request *http.Request){
 
 	sqlOperate.ResetPassword(account, password) //插入数据
 
-	sqlOperate.UpdateCode(account, randomOperator.CreateVerificationCode()) //更新验证码
+	sqlOperate.UpdateCode(account, MathTool.CreateVerificationCode()) //更新验证码
 
 	Functions.DeleteUserCookie(writer)
 

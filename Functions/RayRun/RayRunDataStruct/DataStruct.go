@@ -6,5 +6,13 @@ type RayRunData struct {
 	Name string
 }
 
+func (data RayRunData)GetLineName() string{
+	return data.Name
+}
+
+func (data RayRunData)GetLineData() *[]float64{
+	return &data.Data
+}
+
 
 

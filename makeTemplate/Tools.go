@@ -36,14 +36,6 @@ const (
           <li><a href="/EPrograms" style="font-size: 20px;color: #0b99bc">EPrograms</a></li>
         </ul>
 
-        <ul class="nav navbar-nav">
-          <li ><a href="/Data" style="font-size: 20px;color: #0b99bc">Plot</a></li>
-        </ul>
-
-        <ul class="nav navbar-nav">
-          <li><a href="/RayRun" style="font-size: 20px;color: #0b99bc">RayRun</a></li>
-        </ul>
-
       </div>
     </div>
   </div>

@@ -1,8 +1,8 @@
-package makeTemplate
+package RayRun
 
 import (
-	"github.com/WebForEME/AMethod/HtmlTool"
 	"github.com/WebForEME/Functions/RayRun/RayRunDataStruct"
+	"github.com/WebForEME/makeTemplate"
 )
 
 //射线追踪的模板程序,先架构一个静态的网页
@@ -191,8 +191,8 @@ const (
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand"  style="font-size: 20px">
-          <i class="fa fa-signal"></i>
+        <a class="navbar-brand" >
+          <i class="fa fa-google-wallet"></i>
           RayRun
         </a>
       </div>
@@ -207,7 +207,7 @@ const (
         </ul>
 
         <ul class="nav navbar-nav">
-          <li><a href="/Data"  style="font-size: 20px;color: #ff76b5">back</a></li>
+          <li><a href="/EPrograms"  style="font-size: 20px;color: #ff76b5">back</a></li>
         </ul>
       </div>
     </div>
@@ -482,18 +482,9 @@ func DrawData( eLines *[]RayRunDataStruct.RayRunData,rLines *[]RayRunDataStruct.
 
 //绘制曲线
 func drawLines (lines *[]RayRunDataStruct.RayRunData) string{
-	html:=""
-	for i:=0 ;i<len(*lines) ;i++{
-		if i!=0{
-			html+="{"
+	    linesD :=  []makeTemplate.DataPlot{}
+	    for i:=0 ; i<len(*lines) ;i++{
+	    	linesD = append(linesD,(*lines)[i])
 		}
-		html+="name: '"+(*lines)[i].Name+"',"
-		html+="data :["
-		html+=HtmlTool.DrawData(&(*lines)[i].Data)
-		html+="]"
-		if i!=len(*lines)-1{
-			html+="},"
-		}
-	}
-	return html
+        return makeTemplate.DataDraw2D(&linesD)
 }

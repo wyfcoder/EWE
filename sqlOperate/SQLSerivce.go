@@ -176,7 +176,7 @@ func DeleteData(account string, text string) {
 	Db.Exec(deleteFile, account, text)
 }
 
-//提取用户的数据
+//提取用户的数据 --不包含具体图像数据
 func Datas(account string) (datas []Data, err error) {
 	rows, err := Db.Query("SELECT Id,fileName, tag, time, describe FROM datas where id='" + account + "'")
 	if err != nil {
@@ -193,7 +193,26 @@ func Datas(account string) (datas []Data, err error) {
 	return
 }
 
+//提取用户数据-- 保护具体的图像数据
+func DataTables(account string,data *[]DataPlot) error{
+	rows, err := Db.Query("SELECT fileName, tag, information FROM datas where id='" + account + "'")
+	if err != nil{
+		return err
+	}
+	for rows.Next() {
+		conv := DataPlot{}
+		information := ""
+		if err = rows.Scan(&conv.Name, &conv.Tag, &information); err != nil {
+			return err
+		}
+		TextDeal.DealText2(&information,&conv.Datas)
+		(*data) = append((*data), conv)
+	}
+	return nil
+}
+
 //数据序列化
+
 func GetValue(id string, name string) []float64 {
 	data, err := Db.Query("SELECT information FROM datas where id='" + id + "'and fileName='" + name + "'")
 	text := ""

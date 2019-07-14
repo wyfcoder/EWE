@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
+	"github.com/WebForEME/AMethod/MathTool"
 	"github.com/WebForEME/makeTemplate"
-	"github.com/WebForEME/randomOperator"
 	"github.com/WebForEME/sqlOperate"
 	"html/template"
 	"net/http"
@@ -63,7 +63,7 @@ func userMode(writer http.ResponseWriter, request *http.Request) {
 	}
 	addCookie("account", u.Account, writer, 1000) //有限时间的链接
 
-	code := randomOperator.CreateVerificationCode()
+	code := MathTool.CreateVerificationCode()
 	sqlOperate.UpdateCode(u.Account, code)
 	addCookie("code", code, writer, 1000)
 	http.Redirect(writer, request, "/Market", 302)
@@ -83,7 +83,7 @@ func managerMode(writer http.ResponseWriter, request *http.Request) {
 		return
 	}
 
-	code := randomOperator.CreateVerificationCode()
+	code := MathTool.CreateVerificationCode()
 	sqlOperate.UpdateCode2(u.Account, code)
 	addCookie("code", code, writer, 1500)
 	addCookie("account", u.Account, writer, 1500) //有限时间的链接
@@ -227,7 +227,7 @@ func updatePassword(writer http.ResponseWriter, request *http.Request) {
 	password := request.PostFormValue("password")
 
 	sqlOperate.ResetPassword(account, password)
-	sqlOperate.UpdateCode(account, randomOperator.CreateVerificationCode())
+	sqlOperate.UpdateCode(account, MathTool.CreateVerificationCode())
 	t := parseTemplateFiles("layout", "close.navbar", "closeWindow")
 	t.Execute(writer, changePassword)
 	deleteCookie(writer, "account")

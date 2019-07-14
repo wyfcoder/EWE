@@ -17,6 +17,7 @@ const (
 	PM            = "14.50"
 	)
 func insertRayRun(id string,text string){
+
 	stmt, _ := Db.Prepare(insertIntoRayRun)
 	defer stmt.Close()
 	stmt.QueryRow(id,text)

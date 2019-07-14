@@ -1,4 +1,5 @@
-package randomOperator
+package MathTool
+
 
 import (
 	"math/rand"
@@ -16,3 +17,4 @@ func CreateVerificationCode() string  {
 	}
 	return code
 }
+

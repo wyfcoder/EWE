@@ -1,7 +1,6 @@
 package main
 
 import (
-	"github.com/WebForEME/Functions/User_Plot"
 	"github.com/WebForEME/InitWebsite"
 	"net/http"
 )
@@ -27,10 +26,6 @@ func main() {
 	InitWebsite.InitDownload(mux)
 	InitWebsite.InitEProgram(mux)
 	InitWebsite.InitLab(mux)
-
-
-	mux.HandleFunc("/Data", User_Plot.Data)
-	mux.HandleFunc("/checkUploadFile", User_Plot.CheckUploadFile)
 
 	//Manager 模式登陆,Notice 服务 和 File 服务
 	InitWebsite.InitNotice(mux)

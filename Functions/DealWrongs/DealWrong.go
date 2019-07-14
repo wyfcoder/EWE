@@ -44,25 +44,30 @@ func DealErrorCode(errorCode int, writer *http.ResponseWriter,request * http.Req
 	switch errorCode {
 	case ErrorCodeForSystem:    //系统错误
 		writerError(pre_information+SystemErrorInformation,SystemErrorSolve,writer)
-		break
 	case ErrorCodeForLogin:     //登陆错误
 		writerError(pre_information+LoginErrorInformation,LoginErrorSolve,writer)
-		break
 	case ErrorCodeForRegister: //注册错误
 		writerError(pre_information+RegisterErrorInformation,RegisterErrorSolve,writer)
-		break
 	case ErrorCodeForForget:     //找回密码错误
 		writerError(pre_information+ForgetErrorInformation,ForgetErrorSolve,writer)
-		break
-	case ErrorCodeForTimeOut:
+	case ErrorCodeForTimeOut:    //在线超时
 		writerError(pre_information+TimeOutErrorInformation,TimeOutErrorSolve,writer)
-		break
-	case ErrorCodeForLoginAgain:
+	case ErrorCodeForLoginAgain: //重复登陆
 		writerError(pre_information+LoginAgainInformation,LoginAgainErrorSolve,writer)
-		break
-	case ErrorCodeForTag:
+	case ErrorCodeForTag: //标签错误
 		writerError(pre_information+TagErrorInformation,TagErrorSolve,writer)
-		break
+	case ErrorCodeForFileName: //文件名重复
+		writerError(pre_information+FileNameErrorInformation,FileNameErrorSolve,writer)
+	case ErrorCodeForFileSize: //文件大小过大
+		writerError(pre_information+FileSizeErrorInformation,FileSizeErrorSolve,writer)
+	case ErrorCodeForFileContent:
+		writerError(pre_information+FileContentErrorInformation,FileContentErrorSolve,writer)
+	case ErrorCodeForFileNumber:
+		writerError(pre_information+FileNumberErrorInformation,FileNumberErrorSolve,writer)
+	case ErrorCodeForFileNull:
+		writerError(pre_information+FileNullErrorInformation,FileNullErrorSolve,writer)
+	case ErrorCodeForDrawTag:
+		writerError(pre_information+DrawTagErrorInformation,DrawTagErrorSolve,writer)
 	}
 	Functions.DeletePreWrongCookie(writer)
 }

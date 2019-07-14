@@ -1,9 +1,9 @@
 package LoginService
 
 import (
+	"github.com/WebForEME/AMethod/MathTool"
 	"github.com/WebForEME/Functions"
 	"github.com/WebForEME/Functions/DealWrongs"
-	"github.com/WebForEME/randomOperator"
 	"github.com/WebForEME/sqlOperate"
 	"net/http"
 )
@@ -26,7 +26,7 @@ func userMode(writer http.ResponseWriter, request *http.Request) {
 	}
 
 	//获取验证码
-	code := randomOperator.CreateVerificationCode()
+	code := MathTool.CreateVerificationCode()
 	sqlOperate.UpdateCode(u.Account, code)
 
 	Functions.MakeUserCookie(code,u.Account,&writer)

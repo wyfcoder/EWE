@@ -40,13 +40,13 @@ func CheckManager(writer http.ResponseWriter,request *http.Request) bool{
 
 
 func CheckUCode(req *http.Request) bool {
-	code :=Functions.GetCookieValue("codeOfUser", req)
-	account := Functions.GetCookieValue("accountOfUser", req)
+	code :=Functions.GetUserCodeCookieValue(req)
+	account := Functions.GetUserAccountCookieValue(req)
 	return sqlOperate.CheckCode(account, code)
 }
 
 func CheckMCode(req *http.Request) bool {
-	code := Functions.GetCookieValue("codeOfManager", req)
-	account := Functions.GetCookieValue("accountOfManager", req)
+	code := Functions.GetManagerCodeCookieValue(req)
+	account := Functions.GetManagerAccountCookieValue(req)
 	return sqlOperate.CheckMCode(account, code)
 }
