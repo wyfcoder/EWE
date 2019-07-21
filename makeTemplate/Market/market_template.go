@@ -252,7 +252,7 @@ const Body_News  =`
     <a><p class="lead" id="title"></p></a>
    <textarea rows="3" class="text"  id="content" style="font-size: 20px" readonly>
 </textarea>
-<br/>
+<br/><br/>
  <button class="btn btn-default next"onclick="return previous()">previous</button>
  <button class="btn btn-primary" onclick="return next()">next</button>
 </div>
@@ -262,7 +262,7 @@ const Body_Github  =`
 <div id="sourceCode">
 <div id="left"><img src="/static/img/Support/github.jpg"></div>
 <div id="left_button"><button class="btn btn-success"><a href="https://github.com/wyfcoder/EWE"  target="_blank" style="font-size: 15px;color: #FFFFFF">Source codes for website.</a></button></div>
-<div id="left_button"><button class="btn btn-primary"><a href=""  target="_blank"style="font-size: 15px;color: #FFFFFF">Source codes for android.</a></button></div>
+<div id="left_button"><button class="btn btn-primary"><a href="https://github.com/ElephantWithCode/MapApplication" target="_blank"style="font-size: 15px;color: #FFFFFF">Source codes for android.</a></button></div>
 </div>
 <br/>
 `
@@ -275,6 +275,7 @@ const Body_Feedback  = `
    They will make us better.
    If you want to ask us some questions, please leave your contact information.
    Thank you." required></textarea>
+        <br/>
         <br/>
         <button class="btn btn-success">Go</button>
         </div>

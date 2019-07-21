@@ -1,4 +1,4 @@
-Create Database EME;
+Create Database EWE;
 
 Create Table informationOfUsers(
 id   varchar (11) primary key not null,
@@ -51,13 +51,13 @@ insert into Manager values('wyf','150031','wyf')
 insert into ManagerVerificationcode values('wyf','150031')
 
 
-//为rayRun数据库加载数据
+--为rayRun数据库加载数据
 create table rayrun(
  id varchar(11)  primary key,
  data text
 )
 
-//RayRun iri 模型
+--RayRun iri 模型
 insert into iridata values('PM','2011','10','11','')
 insert into iridata values('AM','2011','10','11','')
 create table iridata(

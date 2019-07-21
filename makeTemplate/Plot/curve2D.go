@@ -12,7 +12,7 @@ func Curve2D(data *[]sqlOperate.DataPlot) string{
 		linesD = append(linesD,(*data)[i])
 	}
 	dataString := makeTemplate.DataDraw2D(&linesD)
-
-	return Head + Navbar + Body + dataString + Tail
+	selectComponent := makeTemplate.MakeSelectComponent(&linesD)
+	return Head + Navbar + BodyPre+selectComponent + BodyLast + dataString + Tail
 
 }

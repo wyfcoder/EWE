@@ -1,3 +1,4 @@
+//绘画的一些实体文件
 package Plot
 
 const Head  =`<html>
@@ -64,23 +65,20 @@ const Navbar  =`<div class="navbar navbar-default navbar-static-top" role="navig
     </div>
 </div>`
 
-const Body  =`
+const BodyPre  =`
 <div id="container"></div>
+<br/>
 <HR style="FILTER: progid:DXImageTransform.Microsoft.Shadow(color:#987cb9,direction:145,strength:15)" width="80%" color=#987cb9 SIZE=1>
 <div id="edit">
 <p class="lead">Edit Canvas<button class="btn btn btn-default" onclick="redraw()" style="float: right" >Change</button></p>
 <HR style="FILTER: progid:DXImageTransform.Microsoft.Shadow(color:#987cb9,direction:145,strength:15)" width="80%" color=#987cb9 SIZE=1>
 <input type="text"  id="picker"  placeholder="select color">
-<select>
-<option>assss</option>
-<option>bsss</option>
-</select>
+`
+const BodyLast  =` 
 </input>
 <br/>
 <br/>
 <input class="form-control" placeholder="title" id="title">
-<br/>
-<input class="form-control" placeholder="subTitle" id="subTitle">
 <br/>
 <input class="form-control" placeholder="x-label" id="xLabel">
 <br/>
@@ -127,8 +125,12 @@ function redraw() {
     let name  =document.getElementById("title");
     let xName =document.getElementById("xLabel");
     let yName =document.getElementById("yLabel");
+    var selectLine = document.getElementById("selectLine");
+    var index = selectLine.selectedIndex;
+    let myColors =Highcharts.getOptions().colors;
+    myColors[index] = '#'+color.value;
 Highcharts.setOptions({
-		colors: ["#"+color.value]
+		colors: myColors
 	});
     chart=drawP( name.value.toString(),xName.value.toString(), yName.value.toString());
 }
