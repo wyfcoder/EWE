@@ -32,3 +32,19 @@ func DrawData3D(data *[]float64) string{
 
 	return html
 }
+
+func DrawData4D(data *[]float64) string{
+	html :=""
+	for i := 0; i < len(*data); i += 4 {
+		x := strconv.FormatFloat((*data)[i], 'f', -1, 64)
+		y := strconv.FormatFloat((*data)[i+1], 'f', -1, 64)
+		z := strconv.FormatFloat((*data)[i+2],'f',-1,64)
+		k := strconv.FormatFloat((*data)[i+3],'f',-1,64)
+		html += "[" + x + "," + y + "," + z + ","+k+"]"
+		if i != len(*data)-4 {
+			html += ","
+		}
+	}
+
+	return html
+}

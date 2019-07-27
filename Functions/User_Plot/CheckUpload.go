@@ -82,7 +82,7 @@ func checkText(tag string, text *string) bool {
 			return true
 		}
 	case "2D Vector":
-		if count%3==0{
+		if count%4==0{
 			return true
 		}
 	}

@@ -78,9 +78,9 @@ func plotMain(data *[]sqlOperate.DataPlot) *template.Template{
 	case Curve2D:
 		t,_=t.Parse(Plot.Curve2D(data))
 	case Polar2D:
-
+		t,_= t.Parse(Plot.Polar2D(data))
 	case Vector2D:
-
+		t,_= t.Parse(Plot.VectorPlot(data))
 	}
 	return t
 }

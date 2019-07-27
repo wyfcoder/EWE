@@ -74,7 +74,7 @@ const BodyPre  =`
 <HR style="FILTER: progid:DXImageTransform.Microsoft.Shadow(color:#987cb9,direction:145,strength:15)" width="80%" color=#987cb9 SIZE=1>
 <input type="text"  id="picker"  placeholder="select color">
 `
-const BodyLast  =` 
+const BodyCenter  =` 
 </input>
 <br/>
 <br/>
@@ -86,13 +86,6 @@ const BodyLast  =`
 <br/>
 <br/>
 </div>
-
-<script src="https://code.highcharts.com.cn/highcharts/highcharts.js"></script>
-        <script src="https://code.highcharts.com.cn/highcharts/modules/exporting.js"></script>
-        <script src="https://code.highcharts.com.cn/highcharts/modules/series-label.js"></script>
-        <script src="https://code.highcharts.com.cn/highcharts/modules/oldie.js"></script>
-        <script src="https://code.highcharts.com.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
-        <script src="https://code.highcharts.com.cn/highcharts/themes/grid-light.js"></script>
 <script>$('#picker').colpick({
 
 	layout:'hex',
@@ -117,96 +110,7 @@ const BodyLast  =`
 
 });
 </script>
-<script>
-    drawP("Graph","x","y");
-
-function redraw() {
-    let color =document.getElementById("picker");
-    let name  =document.getElementById("title");
-    let xName =document.getElementById("xLabel");
-    let yName =document.getElementById("yLabel");
-    var selectLine = document.getElementById("selectLine");
-    var index = selectLine.selectedIndex;
-    let myColors =Highcharts.getOptions().colors;
-    myColors[index] = '#'+color.value;
-Highcharts.setOptions({
-		colors: myColors
-	});
-    chart=drawP( name.value.toString(),xName.value.toString(), yName.value.toString());
-}
-
-function drawP(title,x,y){
-return Highcharts.chart('container', {
-        chart: {
-            type: 'spline'
-        },
-        title: {
-            text: title
-        },
-        subtitle: {
-            text: ''
-        },
-        xAxis: {
-            reversed: false,
-            title: {
-                enabled: true,
-                text: x
-            },
-            labels: {
-                formatter: function () {
-                    return this.value;
-                }
-            },
-            maxPadding: 0.05,
-            showLastLabel: true
-        },
-        yAxis: {
-            title: {
-                text: y
-            },
-            labels: {
-                formatter: function () {
-                    return this.value;
-                }
-            },
-            lineWidth: 2
-        },
-      		legend: {
-				layout: 'vertical',
-				align: 'right',
-				verticalAlign: 'middle'
-		},
-        tooltip: {
-            headerFormat: '<b>{series.name}</b><br/>',
-            pointFormat: '{point.x},{point.y}'
-        },
-        plotOptions: {
-            spline: {
-                marker: {
-                    enable: false
-                }
-            }
-        },
-        series: [{`
-
-const  Tail = `
-}],
-		responsive: {
-				rules: [{
-						condition: {
-								maxWidth: 500
-						},
-						chartOptions: {
-								legend: {
-										layout: 'horizontal',
-										align: 'center',
-										verticalAlign: 'bottom'
-								}
-						}
-				}]
-		}
-})
-}
-</script>
+`
+const  BodyTail  =` 
 </body>
 </html>`

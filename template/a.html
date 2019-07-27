@@ -1,176 +1,32 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<div id="support">
+    <a><p class="lead">Technical Support</p></a>
+    <br/>
+    <a class=lead href="https://golang.google.cn/" target="_blank">Go</a>
+    <a class="lead"  href="https://developer.android.google.cn/">Android</a>
+    <a class="lead" href="http://lbsyun.baidu.com/" >Baidu map</a>
+    <a class="lead" href="https://www.highcharts.com.cn/">highcharts</a>
+</div>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=9">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>EWE</title>
-
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
-    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=znos8mGRdphs0uYwfsffj4NOLofXIMmT"></script>
-    <script type="text/javascript" src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
-
-    <style type="text/css">
-        ul,li{list-style: none;margin:0;padding:0;float:left;}
-        html{height:100%}
-        body{height:100%;padding:0px;font-family:"微软雅黑";}
-        #news{height:45%;width:100%;margin-left:2%;margin-right:2%}
-        #plot{height:70%;width:100%;margin-left:2%;margin-right:2%}
-        #container{height:100%;width:100%;margin-left:2%;margin-right:2%}
-        .text{width:80%;height:70%}
-        .next{margin-left:80%}
-        #r-result{width: 20%;
-            height: 30%;
-            margin-top:5%;
-            margin-left:2%;
-        }
-    </style>
-
-</head>
-<body>
-<div class="navbar navbar-default navbar-static-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand">
-                <i class="fa fa-signal"></i>
-                Ewe
-            </a>
-        </div>
-        <div class="navbar-collapse collapse">
-
-            <ul class="nav navbar-nav">
-                <li><a href="/market">Market</a></li>
-            </ul>
-
-            <ul class="nav navbar-nav">
-                <li><a href="/home">MyData</a></li>
-            </ul>
-
-            <ul class="nav navbar-nav">
-                <li><a href="/download">Download</a></li>
-            </ul>
-
-            <ul class="nav navbar-nav">
-                <li><a href="/upload">Upload Data</a></li>
-            </ul>
-
-            <ul class="nav navbar-nav">
-                <li><a>About Lab</a></li>
-            </ul>
-
-            <ul class="nav navbar-nav">
-                <li><a>Contact Us</a></li>
-            </ul>
-
-        </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Support</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="navbar-link" href="https://golang.google.cn/" target="_blank">Go<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="navbar-link"  href="https://developer.android.google.cn/" target="_blank">Android</a>
+            </li>
+            <li class="nav-item">
+                <a class="navbar-link" href="http://lbsyun.baidu.com/" target="_blank">Baidu map</a>
+            </li>
+            <li class="nav-item">
+                <a class="navbar-link" href="https://www.highcharts.com.cn/" target="_blank">highcharts</a>
+            </li>
+        </ul>
     </div>
-</div>
-<div id="news" >
-<a><p class="lead">News</p></a>
-<textarea rows="3" class="text">
-   关于公示长江学者到岗时间的通知
-根据教育部人事司《关于核查聘期内长江学者到岗时间的通知》（教人司〔2017〕404号）要求，现将我校聘任期限内的长江学者特聘教授、讲座教授、青年长江学者2016年11月至2017年10月期间到岗情况进行公示。
-
-公示时间：2017年11月29日～12月5日
-
-如对公示有反映和意见，请反馈至人事处/人才办人才开发科。
-
-联 系 人：马 骁  李明
-
-联系电话：029-81891796
-
-电子信箱：rckfk@xidian.edu.cn
-</textarea>
-<br/>
-<button class="btn btn-primary next">next</button>
-</div>
-<div id="plot">
-    <a><p class="lead">Signal Foresee</p></a>
-    <div id="container">
-    </div>
-</div>
-<div id="r-result">
-    <p class="lead"><a>Oprator</a></p>
-    <button class="btn form-control btn-primary"/>Show</button>
-    <br/>
-    <br/>
-    <button class="btn form-control btn-primary"/>Close</button>
-    <br/>
-    <br/>
-    <button class="btn form-control btn-primary">About Datas</button>
-</div>
-</div>
-<script type="text/javascript">
-    var map = new BMap.Map("container");
-    map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
-    map.addControl(new BMap.NavigationControl());
-    map.addControl(new BMap.ScaleControl());
-    map.addControl(new BMap.OverviewMapControl());
-    map.addControl(new BMap.MapTypeControl());
-    map.centerAndZoom(new BMap.Point(108.840053,34.129522), 15.8);
-    map.enableScrollWheelZoom();
-    if(!isSupportCanvas()){
-        alert('热力图目前只支持有canvas支持的浏览器,您所使用的浏览器不能使用热力图功能~')
-    }
-    //详细的参数,可以查看heatmap.js的文档 https://github.com/pa7/heatmap.js/blob/master/README.md
-    //参数说明如下:
-    /* visible 热力图是否显示,默认为true
-     * opacity 热力的透明度,1-100
-     * radius 势力图的每个点的半径大小
-     * gradient  {JSON} 热力图的渐变区间 . gradient如下所示
-     *	{
-            .2:'rgb(0, 255, 255)',
-            .5:'rgb(0, 110, 255)',
-            .8:'rgb(100, 0, 255)'
-        }
-        其中 key 表示插值的位置, 0~1.
-            value 为颜色值.
-     */
-    heatmapOverlay = new BMapLib.HeatmapOverlay({"radius":20});
-    map.addOverlay(heatmapOverlay);
-    heatmapOverlay.setDataSet({data:points,max:100});
-    //是否显示热力图
-    function openHeatmap(){
-        heatmapOverlay.show();
-    }
-    function closeHeatmap(){
-        heatmapOverlay.hide();
-    }
-    closeHeatmap();
-    function setGradient(){
-        /*格式如下所示:
-       {
-             0:'rgb(102, 255, 0)',
-             .5:'rgb(255, 170, 0)',
-             1:'rgb(255, 0, 0)'
-       }*/
-        var gradient = {};
-        var colors = document.querySelectorAll("input[type='color']");
-        colors = [].slice.call(colors,0);
-        colors.forEach(function(ele){
-            gradient[ele.getAttribute("data-key")] = ele.value;
-        });
-        heatmapOverlay.setOptions({"gradient":gradient});
-    }
-    //判断浏览区是否支持canvas
-    function isSupportCanvas(){
-        var elem = document.createElement('canvas');
-        return !!(elem.getContext && elem.getContext('2d'));
-    }
-</script>
-
-
-</body>
-</html>
-
+</nav>
