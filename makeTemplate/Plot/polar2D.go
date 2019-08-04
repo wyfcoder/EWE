@@ -68,13 +68,13 @@ return Highcharts.chart('container', {
 	},
 	series: [{`
 
-const PolorScriptTai  =`}]
+const PolarScriptTai  =`}]
 })
 }
 </script>`
 
 func Polar2D(data *[]sqlOperate.DataPlot)string{
-	return Head + Navbar + BodyPre+makeTemplate.MakeSelectComponent(data) + BodyCenter + PolorScriptPre + getDataForPolar(data)+ PolorScriptTai + BodyTail
+	return Head + Navbar + BodyPre+makeTemplate.MakeSelectComponent(data) + BodyCenter + PolorScriptPre + getDataForPolar(data)+ PolarScriptTai + BodyTail
 }
 
 func getDataForPolar(plot *[]sqlOperate.DataPlot) string{

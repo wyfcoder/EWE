@@ -1,21 +1,30 @@
 {{ define "content" }}
-
-    <p class="lead">Edit</p>
+<form action="/PSR_deal" method="post">
+    <p class="lead">Search</p>
         <div class="edit">
             <div class="editPlace">
-                <input id="codes" class="form-control" placeholder="Edit search codes.">
+                {{if .GetCommands}}
+                <input id="codes" name="codes" class="form-control" value="{{.GetCommands}}">
+                {{else}}
+                    <input id="codes" name="codes" class="form-control" placeholder="ID1,Date1,Name1;ID2,Date2,Name2">
+                {{end}}
             </div>
             <div class="searchPlace">
                 <button style="background: white;margin-top: 2%"><i class="fa fa-search"></i></button>
             </div>
         </div>
+</form>
         <br/>
         <br/>
-        <input readonly style="border: white;margin-top: 2%" id="checker" placeholder="Checker.">
+        {{if .GetError}}
+            <input readonly style="border: white;margin-top: 2%" id="checker" placeholder="{{.GetError}}">
+        {{else}}
+            <input readonly style="border: white;margin-top: 2%" id="checker" placeholder="check.">
+        {{end}}
         <br/>
         <br/>
     <p class="lead">Result</p>
-    {{ range . }}
+    {{ range .GetList }}
     <div class="panel panel-default">
         <div class="panel-heading">
             <span class="lead"> <i class="fa fa-file-o"></i> {{.GetID}}|{{.GetTag}}q</span>

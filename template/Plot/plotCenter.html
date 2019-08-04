@@ -4,7 +4,7 @@
     {{ range . }}
         <div class="panel panel-default">
             <div class="panel-heading">
-                <span class="lead"> <i class="fa fa-folder-o"></i> {{.GetName}}|  {{.GetTag}}</span>
+                <span class="lead"><a href="/PlotDownloadData?id={{.GetId}}&name={{.GetName}}"><i class="fa fa-download"></i></a> {{.GetName}}|  {{.GetTag}}</span>
                 <div class="pull-right"><a href="/PlotDeleteData?id={{.GetId}}&name={{.GetName}}"><i class="fa fa-remove"></i></a></div>
             </div>
             <div class="panel-body">

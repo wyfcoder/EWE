@@ -41,16 +41,18 @@ func InitEProgram(mux *http.ServeMux){
 
 	mux.HandleFunc("/EPrograms",EProgram.EProgram)
 
-	//1 绘图模块    TODO 修改使其模块化 draw
+	//1 绘图模块    TODO
 	mux.HandleFunc("/PlotCenter", User_Plot.PlotCenter)
 	//绘图中心 可以进行文件管理 绘图选择
+
 	mux.HandleFunc("/PlotCheckUploadFile", User_Plot.CheckUploadFile)
 	//处理绘制的图像上传功能
+
 	mux.HandleFunc("/PlotDeleteData", User_Plot.DeleteFile)
 	//删除数据
 
-	//mux.HandleFunc("/PlotCheck",Draw.DrawCheck) //TODO 需要解决
-	//处理绘制图像的合法性
+	mux.HandleFunc("/PlotDownloadData",User_Plot.DownloadFile)
+	//数据下载
 
 	mux.HandleFunc("/Plot",Draw.DrawCharts) //TODO 困难之处
 	//绘制图像
@@ -65,5 +67,6 @@ func InitEProgram(mux *http.ServeMux){
 
 	//3 PSR   查询绘制数据程序 TODO 有待实现
 	mux.HandleFunc("/PSR",PSR.PSR)
+	mux.HandleFunc("/PSR_deal",PSR.PSRDeal)
 }
 

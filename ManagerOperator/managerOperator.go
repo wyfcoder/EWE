@@ -1,6 +1,7 @@
 package ManagerOperator
 
 import (
+	"github.com/WebForEME/AMethod/SystemTool"
 	"github.com/WebForEME/sqlOperate"
 	"io/ioutil"
 	"mime/multipart"
@@ -83,11 +84,15 @@ func CheckUploadTag(tag string,fileName string) bool {
 
 //上传文件到指定的目录
 func UploadFile(fileHeader *multipart.FileHeader,tag string ,title string){
-
-	file, err := fileHeader.Open()
-
-	road :=getCurrentPath()+"/files/"+fileHeader.Filename
-
+	file,err :=os.Open(fileHeader.Filename)
+	road := ""
+	//TODO 判断操作系统
+	if SystemTool.OsSystem() == 1{
+	    road += "files\\"
+ 	}else {
+		road += "files/"
+	}
+	road += title+tag
 	file2, err := os.OpenFile(road, os.O_RDWR|os.O_CREATE, 0766)
 
 	if err == nil {
