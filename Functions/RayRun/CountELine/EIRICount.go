@@ -6,7 +6,7 @@ import (
 	"github.com/WebForEME/AMethod/TimeTool"
 	"github.com/WebForEME/AMethod/WebTool"
 	"github.com/WebForEME/Functions/RayRun/RayRunDataStruct"
-	"github.com/WebForEME/sqlOperate"
+	"github.com/WebForEME/sqlOperate/programDB/RayRun"
 	time2 "time"
 )
 
@@ -99,7 +99,7 @@ func GetWebData(instruct Compile.Instruct,data *[]float64)error{
 //数据库操作
 func GetDatabaseData(time string) []float64{
 	//给用户回馈数据里的信息
-	year,month,day,txt := sqlOperate.GetIRIData(time)
+	year,month,day,txt := RayRun.GetIRIData(time)
 	_,_,txt=TextDeal.DealText(&txt)
 	data :=[]float64{}
 	TextDeal.DealText2(&txt,&data)
@@ -117,5 +117,5 @@ func UpdateDatabase(){
 		return
 	}
 	pm,err :=CombineWebData(timeString.Year,timeString.Month,timeString.Day,PM,XiAnLatitude,XiAnLongitude)
-	sqlOperate.UpDateIRIData(am,pm)
+	RayRun.UpDateIRIData(am,pm)
 }

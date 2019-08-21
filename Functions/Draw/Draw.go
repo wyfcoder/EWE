@@ -31,7 +31,7 @@ func DrawCharts(writer http.ResponseWriter, request *http.Request) {
 	}
 }
 
-//对应的绘图类型 TODO : 绘图模块混乱 需要修改
+//对应的绘图类型
 func plot(writer http.ResponseWriter,request *http.Request){
 	listString    :=request.FormValue("list")
 	if listString ==  ""{
@@ -39,7 +39,7 @@ func plot(writer http.ResponseWriter,request *http.Request){
 	}
 	//解析 0 1 2 ... 获取选择列表
 	list := []int{}
-	TextDeal.DecodeListString(listString,&list)
+	TextDeal.DecodeListString2i(listString,&list)
 
 	//如果为空，表示用户没有选择
 	if len(list) == 0{

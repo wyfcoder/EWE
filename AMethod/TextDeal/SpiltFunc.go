@@ -14,3 +14,11 @@ func SpiltSpace(rune rune) bool{
 	}
 	return false
 }
+
+//|分隔
+func SpiltVertical(rune rune) bool{
+	if rune == '|'{
+		return true
+	}
+	return false
+}

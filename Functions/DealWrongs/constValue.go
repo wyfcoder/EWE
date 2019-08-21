@@ -48,7 +48,7 @@ const (
 	FileSizeErrorInformation = "The file you upload is too larger."
 	FileSizeErrorSolve ="Reduce the size of the file."
 
-	//文件内容错误
+	//上传文件内容错误
 	ErrorCodeForFileContent =8
 	FileContentErrorInformation ="The content of file you upload is wrong."
 	FileContentErrorSolve ="Check the file's content."
@@ -67,4 +67,10 @@ const (
 	ErrorCodeForDrawTag = 11
 	DrawTagErrorInformation = "Tags of files are not same."
 	DrawTagErrorSolve = "Please select files again and make sure their tags are same."
+
+	//绘制文件内容错误
+	ErrorCodeForFileContents = 12
+	FileContentsErrorInformation = "The file's content you select is wrong."
+	FileContentsErrorSolve = "Check the file's content."
+
 )

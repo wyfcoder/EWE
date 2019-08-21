@@ -68,5 +68,7 @@ func InitEProgram(mux *http.ServeMux){
 	//3 PSR   查询绘制数据程序 TODO 有待实现
 	mux.HandleFunc("/PSR",PSR.PSR)
 	mux.HandleFunc("/PSR_deal",PSR.PSRDeal)
+	mux.HandleFunc("/PSR_plot",PSR.PSRPlot)
+	mux.HandleFunc("/PSR_plot_downloadData",PSR.DownloadFile)
 }
 

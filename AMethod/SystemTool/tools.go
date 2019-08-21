@@ -10,9 +10,7 @@ func  OsSystem() int{
 	}
 
 	if sysType == "windows" {
-
 		return 2
-
 	}
 
 	return -1

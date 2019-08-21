@@ -58,16 +58,16 @@ func DealText(text *string) (bool, int, string) {
 func DealText2(text *string,data *[]float64){
 	s:=[]byte{}
 	for i := 0; i < len(*text); i++ {
-		if (*text)[i] != ' ' {
-			s = append(s, (*text)[i])
-			if i != len(*text)-1 {
-				continue
+		if (*text)[i] != '.' && !( (*text)[i] >= '0' && (*text)[i] <= '9'){
+			if len(s) != 0{
+				s2 := string(s)
+				number, _ := strconv.ParseFloat(s2, 64)
+				(*data) = append((*data), number)
+				s = s[0:0]
 			}
+			continue
 		}
-		s2 := string(s)
-		number, _ := strconv.ParseFloat(s2, 64)
-		(*data) = append((*data), number)
-		s = s[0:0]
+		s = append(s, (*text)[i])
 	}
 }
 

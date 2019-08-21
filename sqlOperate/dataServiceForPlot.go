@@ -2,7 +2,6 @@ package sqlOperate
 
 import (
 	"github.com/WebForEME/AMethod/TextDeal"
-	"os"
 )
 
 //TODO：错误的处理
@@ -12,20 +11,16 @@ func DeleteData(account string, text string) {
 }
 
 //完成数据文件的临时生产,查询结果只有一条数据
-func DownloadData(account string , text string){
+func DownloadData(account string , text string) string{
+
 	rows, err := Db.Query("SELECT information FROM datas where id='" + account + "' and fileName ='"+text+"'")
 	if err != nil{
-		return
-	}
-	file,err:=os.Create("UserTempFile/"+text+".txt")//指定文件
-	if err!=nil{
-		return
+		return ""
 	}
 	fileContent  := ""
 	rows.Next()
 	rows.Scan(&fileContent)
-	file.WriteString(fileContent)
-	file.Close()
+	return fileContent
 }
 
 

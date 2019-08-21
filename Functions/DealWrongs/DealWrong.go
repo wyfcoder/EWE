@@ -68,6 +68,8 @@ func DealErrorCode(errorCode int, writer *http.ResponseWriter,request * http.Req
 		writerError(pre_information+FileNullErrorInformation,FileNullErrorSolve,writer)
 	case ErrorCodeForDrawTag:
 		writerError(pre_information+DrawTagErrorInformation,DrawTagErrorSolve,writer)
+	case ErrorCodeForFileContents:
+		writerError(pre_information+FileContentsErrorInformation,FileContentsErrorSolve,writer)
 	}
 	Functions.DeletePreWrongCookie(writer)
 }

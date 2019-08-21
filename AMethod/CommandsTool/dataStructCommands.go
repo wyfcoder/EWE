@@ -1,9 +1,12 @@
 package CommandsTool
 
+// 0 1 2 3 三种模式
+//代表 (a,a,a) (a,*,a) (a,a,*) (a,*,*)
 type SearchCommand struct {
 	ID string
 	Date string
 	Name string
+	Type int
 }
 
 

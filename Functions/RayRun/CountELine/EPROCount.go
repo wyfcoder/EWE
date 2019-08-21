@@ -6,7 +6,7 @@ import (
 	"github.com/WebForEME/AMethod/TextDeal"
 	"github.com/WebForEME/AMethod/TimeTool"
 	"github.com/WebForEME/Functions/RayRun/RayRunDataStruct"
-	"github.com/WebForEME/sqlOperate"
+	"github.com/WebForEME/sqlOperate/programDB/RayRun"
 	"math"
 	"strconv"
 	"time"
@@ -30,7 +30,7 @@ func CountEPRO(instruct Compile.Instruct, eLine *RayRunDataStruct.RayRunData) {
 func CountEPROOne(eLine *RayRunDataStruct.RayRunData, month int, day int) {
 	id := GetId(month, day)
 	text:=""
-	sqlOperate.SelectFromRayRun(strconv.Itoa(id),&text)
+	RayRun.SelectFromRayRun(strconv.Itoa(id),&text)
 	_,_,text=TextDeal.DealText(&text)
 	data :=[]float64{}
 	TextDeal.DealText2(&text,&data)

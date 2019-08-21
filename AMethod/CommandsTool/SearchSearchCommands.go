@@ -35,15 +35,25 @@ func searchCommandTrue(command string) (bool,SearchCommand){
 		return false,commandData
 	}
 	_,ok := TimeTool.StringToDate(list[1])
+
 	if list[1] != "*" &&  !ok{
 		return false,commandData
 	}
 
-	if list[2]!="*" && len(list[2])==0{
+	if len(list[2]) == 0{
 		return false,commandData
+	}
+
+	typeC := 0
+	if list[1] == "*"{
+		typeC += 1
+	}
+	if list[2] == "*"{
+		typeC += 2
 	}
 	commandData.ID=list[0]
 	commandData.Date=list[1]
 	commandData.Name=list[2]
+	commandData.Type=typeC
 	return true,commandData
 }

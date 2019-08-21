@@ -17,28 +17,30 @@
         <br/>
         <br/>
         {{if .GetError}}
-            <input readonly style="border: white;margin-top: 2%" id="checker" placeholder="{{.GetError}}">
+            <input readonly style="border: white;margin-top: 2%" class="form-control" id="checker" value="{{.GetError}}">
         {{else}}
             <input readonly style="border: white;margin-top: 2%" id="checker" placeholder="check.">
         {{end}}
         <br/>
         <br/>
-    <p class="lead">Result</p>
+<form method="post" action="/PSR_plot" target="_blank">
+    <p class="lead">Result<button type="submit" class="btn btn-default" onclick="return checkBox()" style="float: right">Show</button></p>
     {{ range .GetList }}
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <span class="lead"> <i class="fa fa-file-o"></i> {{.GetID}}|{{.GetTag}}q</span>
-        </div>
-        <div class="panel-body">
-            <div class="pull-right">
-                <a href="/PlotDraw?id={{.GetId}}&timeStart={{.GetStartTime}}&timeEnd={{.GetEndTime}}&tag=heatMap">Draw</a>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span class="lead"><a href="/PSR_plot_downloadData?id={{.GetID}}&name={{.GetName}}&date={{.GetDate}}"><i class="fa fa-download"></i></a> ID: {{.GetID}}</span>
             </div>
-            {{.GetTime}} {{.GetDescribe}}
+            <div class="panel-body">
+                Date :{{.GetDate}} FileName:{{.GetName}}
+                <div class="pull-right">
+                    <input type="checkbox" name="checkbox" id="{{.GetID}}|{{.GetDate}}|{{.GetName}}">
+                </div>
+            </div>
         </div>
-    </div>
-{{else}}
-<p class="lead">Don't have any Result.</p>
-
-{{end}}
+    {{else}}
+        <p class="lead">Don't have any result.</p>
+    {{end}}
+    <input type="hidden"  name="list" id="list"/>
+</form>
 
 {{ end }}

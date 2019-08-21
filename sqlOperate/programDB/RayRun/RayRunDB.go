@@ -1,7 +1,8 @@
-package sqlOperate
+package RayRun
 
 import (
 	"github.com/WebForEME/AMethod/TimeTool"
+	"github.com/WebForEME/sqlOperate"
 )
 
 //RayRun 程序的数据库函数
@@ -18,25 +19,25 @@ const (
 	)
 func insertRayRun(id string,text string){
 
-	stmt, _ := Db.Prepare(insertIntoRayRun)
+	stmt, _ := sqlOperate.Db.Prepare(insertIntoRayRun)
 	defer stmt.Close()
 	stmt.QueryRow(id,text)
 }
 func SelectFromRayRun(id string,data *string){
-	Db.QueryRow(selectRayRunText,id).Scan(data)
+	sqlOperate.Db.QueryRow(selectRayRunText,id).Scan(data)
 }
 
 //处理IRI数据根据信息返回一次数据
 func GetIRIData(time string)(year string,month string,day string,text string){
-	Db.QueryRow(selectIRIDATA,time).Scan(&year,&month,&day,&text)
+	sqlOperate.Db.QueryRow(selectIRIDATA,time).Scan(&year,&month,&day,&text)
 	return year,month,day,text
 }
 
 //更新数据
 func UpDateIRIData(textAM string,textPM string){
-	Db.Exec(deleteIRIDATA)
+	sqlOperate.Db.Exec(deleteIRIDATA)
 	timeString :=TimeTool.TimeStringNow()
-	stmt, _ := Db.Prepare(insertIRIDATA)
+	stmt, _ := sqlOperate.Db.Prepare(insertIRIDATA)
 	defer stmt.Close()
 	stmt.QueryRow(AM,timeString.Year,timeString.Month,timeString.Day,textAM)
 	stmt.QueryRow(PM,timeString.Year,timeString.Month,timeString.Day,textPM)

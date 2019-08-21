@@ -18,6 +18,7 @@ func DrawData( data *[]float64) string{
 	return html
 }
 
+//[1,2,3]
 func DrawData3D(data *[]float64) string{
 	html :=""
 	for i := 0; i < len(*data); i += 3 {
@@ -33,6 +34,7 @@ func DrawData3D(data *[]float64) string{
 	return html
 }
 
+//[1,2,3,4]
 func DrawData4D(data *[]float64) string{
 	html :=""
 	for i := 0; i < len(*data); i += 4 {
@@ -46,5 +48,18 @@ func DrawData4D(data *[]float64) string{
 		}
 	}
 
+	return html
+}
+
+//[1.2.3] 转化为一数字
+func DrawList(data *[]int) string{
+	html := ""
+	for i:= 0;i< len(*data) ;i++{
+		html += strconv.Itoa((*data)[i])
+
+		if i != len(*data) -1{
+			html += ","
+		}
+	}
 	return html
 }

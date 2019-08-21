@@ -26,7 +26,6 @@
                 width: 10%;
             }
             .checker{
-                float: left;
                 margin-left: 1%;
             }
         </style>
@@ -44,7 +43,21 @@
 
     <script src="/static/js/jquery-2.1.1.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
-
+    <script>
+        function checkBox() {
+            var a = document.getElementsByName('checkbox')
+            var input =document.getElementById("list")
+            if (input.value != ""){
+                input.value = ""
+            }
+            var b = 0;     //设定一个初始值
+            for (var i = 0; i < a.length; i++) {
+                if (a[i].checked == true) {
+                    input.value  +=  " "+a[i].id
+                }
+            }
+        }
+    </script>
     </body>
     </html>
 

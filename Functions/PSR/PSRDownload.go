@@ -1,16 +1,17 @@
-package User_Plot
+package PSR
 
 import (
 	"fmt"
 	"github.com/WebForEME/AMethod/OSFileTool"
 	"github.com/WebForEME/Functions/CheckService"
 	"github.com/WebForEME/Functions/DealWrongs"
-	"github.com/WebForEME/sqlOperate"
+	PSRDB "github.com/WebForEME/sqlOperate/programDB/PSR"
 	"net/http"
 )
 
-const FileHeader  = "UserTempFile"
-const FileBoy  = "plotData"
+const FileHead  = "UserTempFile"
+const FileBody  = "psrData"
+
 
 func DownloadFile(writer http.ResponseWriter, request *http.Request){
 	err := request.ParseForm()
@@ -22,20 +23,19 @@ func DownloadFile(writer http.ResponseWriter, request *http.Request){
 	}
 	id := request.Form["id"]
 	name := request.Form["name"]
-	fileTail := id[0] + "_" +name[0]
-	//返回数据即可
-	data :=sqlOperate.DownloadData(id[0] , name[0])
+	date :=request.Form["date"]
+
+	data :=PSRDB.DownloadFile(id[0],date[0],name[0])
 
 	path := []string{}
-	path= append(path, FileHeader)
-	path= append(path,FileBoy)
-	path= append(path,fileTail)
+	path = append(path,FileHead)
+	path = append(path,FileBody)
+	path = append(path,id[0]+"_"+date[0]+"_"+name[0])
 
-	err,pathString :=OSFileTool.CreateFile(path,&data)
+	_,pathString :=OSFileTool.CreateFile(path, &data)
 
 	writer.Header().Add("Content-Disposition", fmt.Sprintf("attachment; filename=%s", name[0]+".txt"))
 	writer.Header().Add("Content-Type", "application/octet-stream")
 	http.ServeFile(writer, request, pathString)
-
 	OSFileTool.DeleteFile(pathString)
 }
